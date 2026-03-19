@@ -1752,6 +1752,18 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-\[0_3px_15px_rgba\(255\2c 255\2c 255\2c 0\.30\)\2c inset_0_0_0_1px_rgba\(255\2c 255\2c 255\2c 0\.08\)\] {
+  --tw-shadow: 0 3px 15px rgba(255,255,255,0.30),inset 0 0 0 1px rgba(255,255,255,0.08);
+  --tw-shadow-colored: 0 3px 15px var(--tw-shadow-color), inset 0 0 0 1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.\!shadow-\[0_3px_15px_rgba\(255\2c 255\2c 255\2c 0\.30\)\2c inset_0_0_0_1px_rgba\(255\2c 255\2c 255\2c 0\.08\)\] {
+  --tw-shadow: 0 3px 15px rgba(255,255,255,0.30),inset 0 0 0 1px rgba(255,255,255,0.08) !important;
+  --tw-shadow-colored: 0 3px 15px var(--tw-shadow-color), inset 0 0 0 1px var(--tw-shadow-color) !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
 .blur {
   --tw-blur: blur(8px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);

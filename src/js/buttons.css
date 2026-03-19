@@ -44,9 +44,7 @@
 }
 
 .button-secondary {
-  background: linear-gradient(135deg,
-      rgba(253, 234, 193, 0.247) 0%,
-      rgba(245, 232, 200, 0.18) 100%);
+  background: #ffffff;
   color: rgba(255, 255, 255, 0.92);
   box-shadow:
     0 3px 15px rgba(238, 211, 162, 0.30),
@@ -66,7 +64,7 @@
   content: "";
   position: absolute;
   inset: -40% -80%;
-  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  background: linear-gradient(120deg, transparent, rgba(221, 198, 162, 0.45), transparent);
   transform: translateX(-65%);
   opacity: 0;
   transition: transform 0.8s ease, opacity 0.3s ease;
