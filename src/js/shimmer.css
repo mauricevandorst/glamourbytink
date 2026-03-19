@@ -1,0 +1,25 @@
+.cta-shimmer {
+  animation: cta-shimmer 4s ease-in-out infinite alternate;
+  background-size: 220% 100%;
+  background-position: -20% 50%;
+  opacity: 0.1;
+  will-change: background-position, opacity;
+}
+
+@keyframes cta-shimmer {
+  0% {
+    opacity: 0.08;
+    background-position: -20% 50%;
+  }
+  35% {
+    opacity: 0.5;
+  }
+  65% {
+    opacity: 0.28;
+    background-position: 120% 50%;
+  }
+  100% {
+    opacity: 0.08;
+    background-position: 120% 50%;
+  }
+}

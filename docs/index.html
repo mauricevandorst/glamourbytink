@@ -1,0 +1,1191 @@
+﻿<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <title>Glamour by Tink | Boek een behandeling</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Boek jouw custom behandeling in Amsterdam. Persoonlijk ontwerp, premium studio en heldere begeleiding van intake tot nazorg." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./js/buttons.css" />
+  <link rel="stylesheet" href="./js/gallery-carousel.css" />
+</head>
+
+<body class="bg-[#f7f3ee] text-white font-sans">
+  <div class="fixed inset-0 z-40 flex items-center justify-center bg-[#f7f3ee] opacity-0 pointer-events-none"
+    data-intro-overlay>
+    <div class="flex flex-col items-center gap-2 text-wood/80 opacity-0 scale-90 transition-all duration-700 ease-out"
+      data-intro-logo>
+      <span class="text-4xl sm:text-6xl tracking-[0.35em] font-semibold">GLAMOUR</span>
+      <span class="text-[11px] sm:text-sm uppercase tracking-[0.5em]">Permanente make-up</span>
+    </div>
+  </div>
+
+  <header
+    class="fixed inset-x-0 top-0 z-50 h-20 border-b border-transparent bg-transparent backdrop-blur-0 transition-[background-color,backdrop-filter,box-shadow,border-color] duration-300 animate-fadeInDown"
+    data-site-header>
+    <div class="mx-auto flex h-full items-center justify-between px-6">
+      <button
+        class="relative z-50 flex h-9 w-9 items-center justify-center rounded-full text-white transition hover:text-accent"
+        type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu">
+        <span class="sr-only">Open menu</span>
+        <span class="relative flex h-4 w-5 flex-col justify-between">
+          <span class="block h-[2px] w-full rounded-full bg-white transition-transform duration-300"
+            data-line-top></span>
+          <span class="block h-[2px] w-full rounded-full bg-white transition-opacity duration-300"
+            data-line-middle></span>
+          <span class="block h-[2px] w-full rounded-full bg-white transition-transform duration-300"
+            data-line-bottom></span>
+        </span>
+      </button>
+
+      <a class="inline-flex flex-col items-center text-white" href="#">
+        <span class="text-3xl tracking-[0.1em]">Glamour</span>
+        <span class="text-xs uppercase tracking-[0.45em] text-beige/80 lg:inline">by Tink</span>
+      </a>
+
+      <a class="flex h-9 w-9 items-center justify-center rounded-full text-white transition hover:text-accent"
+        href="tel:+31623262640" aria-label="Bel mij">
+        <img src="./assets/icons/phone.svg" alt=""
+          class="w-7 h-7 transition-transform duration-300 group-hover:translate-x-1" data-phone-icon
+          data-phone-light="./assets/icons/phone.svg" data-phone-dark="./assets/icons/phone-dark.svg" />
+      </a>
+    </div>
+
+  </header>
+
+  <main class="overflow-x-hidden">
+
+    <!-- Hero -->
+    <section
+      class="relative flex justify-center items-end pb-20 lg:pb-24 w-full h-[100dvh] min-h-[600px] overflow-hidden">
+      <video autoplay muted loop playsinline data-hero-video class="absolute inset-0 h-full w-full object-cover">
+        <source src="./assets/videos/hero-video.mp4" type="video/mp4" />
+      </video>
+      <div data-hero-overlay class="absolute inset-0 bg-black/40">
+      </div>
+
+      <div class="flex mx-auto items-center w-full max-w-6xl">
+        <div
+          class="relative w-full max-w-3xl z-10 flex flex-col gap-10 md:gap-14 h-full items-center justify-start text-white px-6">
+          <div class="flex flex-col justify-start items-center gap-6">
+            <p class="text-3xl sm:text-4xl md:text-6xl text-white/90 animate-fadeInUp200 font-playfair">
+              Permanente make-up, <strong>perfect</strong> afgestemd op jouw <strong>uitstraling</strong>.
+            </p>
+            <p class="text-[13px] w-full sm:text-base text-white/80 tracking-[0.02em] animate-fadeInUp200">
+              Behandelingen met verfijnde, natuurlijke resultaten en met oog voor detail, vorm en balans. Gespecialiseerd in
+              wenkbrauwen, lippen en eyeliner. Ik versterk jouw uitstraling.</p>
+          </div>
+          <div class="w-full flex flex-col justify-center items-start gap-6">
+            <a href="https://wa.me/31623262640?text=Hoi%20Marissa%2C%20ik%20zou%20graag%20een%20afspraak%20bij%20je%20willen%20maken."
+              target="_blank" class="group flex gap-2 button-primary animate-fadeInUp400">
+              Afspraak maken
+              <span class="group-hover:translate-x-1 duration-300">→</span>
+            </a>
+            <div class="flex justify-start items-center w-full animate-fadeInUp600">
+              <div class="relative flex -space-x-3 w-full">
+                <img src="./assets/images/post-2.jpg"
+                  alt="Voorbeeld van een behandeling in de stijl van Glamour by Tink"
+                  class="h-7 w-7 border-[2px] border-white rounded-full " />
+                <img src="./assets/images/post-3.jpg"
+                  alt="Voorbeeld van een behandeling in de stijl van Glamour by Tink"
+                  class="h-7 w-7 border-[2px] border-white rounded-full " />
+                <img src="./assets/images/post-4.jpg"
+                  alt="Voorbeeld van een behandeling in de stijl van Glamour by Tink"
+                  class="h-7 w-7 border-[2px] border-white rounded-full " />
+                <img src="./assets/images/post-5.jpg"
+                  alt="Voorbeeld van een behandeling in de stijl van Glamour by Tink"
+                  class="h-7 w-7 border-[2px] border-white rounded-full " />
+                <img src="./assets/images/post-6.jpg"
+                  alt="Voorbeeld van een behandeling in de stijl van Glamour by Tink"
+                  class="h-7 w-7 border-[2px] border-white rounded-full " />
+                <img src="./assets/images/post-7.jpg"
+                  alt="Voorbeeld van een behandeling in de stijl van Glamour by Tink"
+                  class="h-7 w-7 border-[2px] border-white rounded-full " />
+                <img src="./assets/images/post-8.jpg"
+                  alt="Voorbeeld van een behandeling in de stijl van Glamour by Tink"
+                  class="h-7 w-7 border-[2px] border-white rounded-full " />
+                <img src="./assets/images/post-9.jpg"
+                  alt="Voorbeeld van een behandeling in de stijl van Glamour by Tink"
+                  class="h-7 w-7 border-[2px] border-white rounded-full " />
+              </div>
+              <p class="text-xs mt-[0.5rem] font-extralight text-start text-white/70 w-full">
+                200+ tevreden klanten gingen je voor </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Over mij -->
+    <section id="over-mij" class="bg-[#fbf8f3] text-charcoal py-16">
+      <div class="mx-auto flex w-full max-w-5xl flex-col gap-12 px-6 md:flex-row md:items-start md:gap-16">
+        <div class="relative w-full">
+          <div class="w-[80%] sm:h-[70%] md:w-[90%]">
+            <div data-scroll-fade data-sparkle-trail data-scroll-axis="x" data-scroll-distance="-22"
+              data-scroll-start="0.80" data-scroll-end="0.25" class="relative w-full">
+              <img src="./assets/images/impression-1.jpg" alt="Tattoo artiest aan het werk"
+                class="h-auto w-full object-cover h-[350px] sm:h-[550px] rounded-[4px]" />
+            </div>
+          </div>
+          <div class="absolute right-0 top-[33.3%] w-1/2">
+            <div data-scroll-fade data-sparkle-trail data-scroll-axis="x" data-scroll-distance="15"
+              data-scroll-start="1" data-scroll-end="0" class="relative w-full">
+              <img src="./assets/images/impression-2.jpg" alt="Studio sfeer en consult"
+                class="block ml-auto rounded-[3px] shadow-[-6px_7px_12px_rgba(68,52,32,0.18)]" />
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3 md:w-3/5">
+          <div class="flex flex-col gap-4">
+            <div class="flex flex-col" data-scroll-fade data-scroll-axis="x" data-scroll-distance="14">
+              <div class="mb-3 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-wood/80">
+                Over mij
+              </div>
+              <h2 class="text-3xl font-extrabold uppercase tracking-[0.25em]">Glamour by Tink</h2>
+            </div>
+            <p class="text-sm leading-relaxed text-charcoal/70" data-scroll-fade data-scroll-axis="x"
+              data-scroll-distance="18">
+              Glamour by Tink, opgericht door Marissa is intussen uitgegroeid tot een onderscheidende salon in de
+              Zaanse PMU-scene en biedt behandelingen in een schone, professionele en rustige studio.
+            </p>
+            <p class="text-sm leading-relaxed text-charcoal/70" data-scroll-fade data-scroll-axis="x"
+              data-scroll-distance="18">
+              Wij gebruiken altijd een hygiënische werkplek, goede apparatuur en een professionele aanpak zodat jij
+              ontspannen je behandeling kunt laten zetten.
+            </p>
+          </div>
+          <a href="galerij.html" class="button-secondary !bg-white !text-charcoal" target="_blank" data-scroll-fade
+            data-scroll-axis="x" data-scroll-distance="12" data-scroll-axis="y">
+            Bekijk mijn werk</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instagram galerij -->
+    <section id="instagram" class="bg-white text-charcoal py-16">
+      <div class="flex w-full max-w-[92vw] flex-col justify-center mx-auto lg:max-w-[1850px] lg:w-[92vw]">
+        <div class="mb-10 flex flex-col gap-4">
+          <div>
+            <div data-scroll-fade data-scroll-axis="x" data-scroll-distance="14"
+              class="w-full justify-center mb-3 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-wood/70">
+              Instagram
+            </div>
+            <h2
+              class="w-full inline-flex justify-center text-3xl font-extrabold uppercase tracking-[0.18em] sm:text-4xl"
+              data-scroll-fade data-scroll-axis="x" data-scroll-distance="18">
+              Posts</h2>
+          </div>
+          <div class="w-full flex justify-center" data-scroll-fade data-scroll-axis="x" data-scroll-distance="20">
+            <p class="w-full max-w-[80vw] text-center max-w-2xl text-sm leading-relaxed text-charcoal/70">
+              Bekijk een paar van mijn posts om de stijl en sfeer van de salon en het werk te proeven.
+            </p>
+          </div>
+        </div>
+
+        <div class="group relative" data-carousel>
+          <div
+            class="carousel-scrollbar-hidden flex snap-x snap-mandatory select-none items-stretch gap-6 overflow-x-auto overflow-y-visible px-4 pb-6 pt-4 scroll-smooth lg:cursor-grab"
+            data-carousel-track data-scroll-fade data-scroll-axis="x" data-scroll-distance="26">
+            <article
+              class="group self-start w-[80vw] max-w-[300px] shrink-0 snap-start overflow-hidden rounded-[5px] border border-[#e6dccd] bg-white/90 shadow-[0_12px_30px_rgba(60,45,20,0.08)] transition hover:shadow-[0_18px_40px_rgba(60,45,20,0.12)] sm:w-[300px]">
+              <div class="flex items-center gap-3 border-b border-[#eadfce] px-4 pb-3 pt-3">
+                <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                  aria-label="Bekijk profielafbeelding van deze post op Instagram">
+                  <img src="./assets/images/instagram-logo.jpg" alt="Profielfoto van het Instagram-account"
+                    class="h-9 w-9 rounded-full object-cover" loading="lazy" />
+                </a>
+                <div class="leading-tight">
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk profielnaam van deze post op Instagram"
+                    class="block text-sm font-semibold text-charcoal transition\">Glamour by Tink</a>
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk locatie van deze post op Instagram"
+                    class="block text-xs text-wood/90 transition">Assendelft</a>
+                </div>
+              </div>
+
+              <div>
+                <img class="h-56 w-full object-cover transition duration-500" src="./assets/images/post-2.jpg"
+                  alt="Voorbeeld van een recente Instagram-post" loading="lazy" />
+              </div>
+
+              <div class="space-y-3 px-4 pt-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Like op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/heart.svg" alt="" aria-hidden="true" class="h-5 w-5 opacity-80" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Comment op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/comment.svg" alt="" aria-hidden="true" class="h-5 w-5 opacity-80" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Deel via Instagram DM"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/paper-plane.svg" alt="" aria-hidden="true" class="h-5 w-5 opacity-80" />
+                    </a>
+                  </div>
+
+                  <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Opslaan op Instagram"
+                    class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                    <img src="./assets/icons/save.svg" alt="" aria-hidden="true" class="h-5 w-5 opacity-80" />
+                  </a>
+                </div>
+
+                <p class="pb-4 text-xs leading-1 text-charcoal/70" data-caption>
+                  <span class="font-semibold text-charcoal">glamourbytink_pmu</span>
+                  <span data-caption-text>
+                    Dit is een voorbeeldtekst 📸 Hier moet uiteindelijk de tekst van desbetreffende post komen.
+                  </span>
+                  <button type="button" class="ml-1 hidden text-[11px] font-semibold text-slate-400"
+                    data-caption-more>...
+                    meer</button>
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="group self-start w-[80vw] max-w-[300px] shrink-0 snap-start overflow-hidden rounded-[5px] border border-[#e6dccd] bg-white/90 shadow-[0_12px_30px_rgba(60,45,20,0.08)] transition hover:shadow-[0_18px_40px_rgba(60,45,20,0.12)] sm:w-[300px]">
+              <div class="flex items-center gap-3 border-b border-[#eadfce] px-4 pb-3 pt-3">
+                <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                  aria-label="Bekijk profielafbeelding van deze post op Instagram">
+                  <img src="./assets/images/instagram-logo.jpg" alt="Profielfoto van het Instagram-account"
+                    class="h-9 w-9 rounded-full object-cover" loading="lazy" />
+                </a>
+                <div class="leading-tight">
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk profielnaam van deze post op Instagram"
+                    class="block text-sm font-semibold text-charcoal transition\">Glamour by Tink</a>
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk locatie van deze post op Instagram"
+                    class="block text-xs text-wood/90 transition">Assendelft</a>
+                </div>
+              </div>
+
+              <div>
+                <img class="h-56 w-full object-cover transition duration-500" src="./assets/images/post-1.jpg"
+                  alt="Voorbeeld van een recente Instagram-post" loading="lazy" />
+              </div>
+
+              <div class="space-y-3 px-4 pt-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Like op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/heart.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Comment op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/comment.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Deel via Instagram DM"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/paper-plane.svg" alt="" aria-hidden="true" class=\"h-5 w-5
+                        opacity-80\" />
+                    </a>
+                  </div>
+
+                  <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Opslaan op Instagram"
+                    class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                    <img src="./assets/icons/save.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                  </a>
+                </div>
+
+                <p class="pb-4 text-xs leading-1 text-charcoal/70" data-caption>
+                  <span class="font-semibold text-charcoal\">glamourbytink_pmu</span>
+                  <span data-caption-text>
+                    Dit is een voorbeeldtekst 📸 Hier moet uiteindelijk de tekst van desbetreffende post komen.
+                  </span>
+                  <button type="button" class="ml-1 hidden text-[11px] font-semibold text-slate-400"
+                    data-caption-more>...
+                    meer</button>
+                </p>
+              </div>
+            </article>
+            <article
+              class="group self-start w-[80vw] max-w-[300px] shrink-0 snap-start overflow-hidden rounded-[5px] border border-[#e6dccd] bg-white/90 shadow-[0_12px_30px_rgba(60,45,20,0.08)] transition hover:shadow-[0_18px_40px_rgba(60,45,20,0.12)] sm:w-[300px]">
+              <div class="flex items-center gap-3 border-b border-[#eadfce] px-4 pb-3 pt-3">
+                <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                  aria-label="Bekijk profielafbeelding van deze post op Instagram">
+                  <img src="./assets/images/instagram-logo.jpg" alt="Profielfoto van het Instagram-account"
+                    class="h-9 w-9 rounded-full object-cover" loading="lazy" />
+                </a>
+                <div class="leading-tight">
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk profielnaam van deze post op Instagram"
+                    class="block text-sm font-semibold text-charcoal transition\">Glamour by Tink</a>
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk locatie van deze post op Instagram"
+                    class="block text-xs text-wood/90 transition">Assendelft</a>
+                </div>
+              </div>
+
+              <div>
+                <img class="h-56 w-full object-cover transition duration-500" src="./assets/images/post-3.jpg"
+                  alt="Voorbeeld van een recente Instagram-post" loading="lazy" />
+              </div>
+
+              <div class="space-y-3 px-4 pt-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Like op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/heart.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Comment op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/comment.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Deel via Instagram DM"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/paper-plane.svg" alt="" aria-hidden="true" class=\"h-5 w-5
+                        opacity-80\" />
+                    </a>
+                  </div>
+
+                  <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Opslaan op Instagram"
+                    class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                    <img src="./assets/icons/save.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                  </a>
+                </div>
+
+                <p class="pb-4 text-xs leading-1 text-charcoal/70" data-caption>
+                  <span class="font-semibold text-charcoal\">glamourbytink_pmu</span>
+                  <span data-caption-text>
+                    Dit is een voorbeeldtekst 📸 Hier moet uiteindelijk de tekst van desbetreffende post komen.
+                  </span>
+                  <button type="button" class="ml-1 hidden text-[11px] font-semibold text-slate-400"
+                    data-caption-more>...
+                    meer</button>
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="group self-start w-[80vw] max-w-[300px] shrink-0 snap-start overflow-hidden rounded-[5px] border border-[#e6dccd] bg-white/90 shadow-[0_12px_30px_rgba(60,45,20,0.08)] transition hover:shadow-[0_18px_40px_rgba(60,45,20,0.12)] sm:w-[300px]">
+              <div class="flex items-center gap-3 border-b border-[#eadfce] px-4 pb-3 pt-3">
+                <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                  aria-label="Bekijk profielafbeelding van deze post op Instagram">
+                  <img src="./assets/images/instagram-logo.jpg" alt="Profielfoto van het Instagram-account"
+                    class="h-9 w-9 rounded-full object-cover" loading="lazy" />
+                </a>
+                <div class="leading-tight">
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk profielnaam van deze post op Instagram"
+                    class="block text-sm font-semibold text-charcoal transition\">Glamour by Tink</a>
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk locatie van deze post op Instagram"
+                    class="block text-xs text-wood/90 transition">Assendelft</a>
+                </div>
+              </div>
+
+              <div>
+                <img class="h-56 w-full object-cover transition duration-500" src="./assets/images/post-4.jpg"
+                  alt="Voorbeeld van een recente Instagram-post" loading="lazy" />
+              </div>
+
+              <div class="space-y-3 px-4 pt-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Like op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/heart.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Comment op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/comment.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Deel via Instagram DM"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/paper-plane.svg" alt="" aria-hidden="true" class=\"h-5 w-5
+                        opacity-80\" />
+                    </a>
+                  </div>
+
+                  <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Opslaan op Instagram"
+                    class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                    <img src="./assets/icons/save.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                  </a>
+                </div>
+
+                <p class="pb-4 text-xs leading-1 text-charcoal/70" data-caption>
+                  <span class="font-semibold text-charcoal\">glamourbytink_pmu</span>
+                  <span data-caption-text>
+                    Dit is een voorbeeldtekst 📸 Hier moet uiteindelijk de tekst van desbetreffende post komen.
+                  </span>
+                  <button type="button" class="ml-1 hidden text-[11px] font-semibold text-slate-400"
+                    data-caption-more>...
+                    meer</button>
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="group self-start w-[80vw] max-w-[300px] shrink-0 snap-start overflow-hidden rounded-[5px] border border-[#e6dccd] bg-white/90 shadow-[0_12px_30px_rgba(60,45,20,0.08)] transition hover:shadow-[0_18px_40px_rgba(60,45,20,0.12)] sm:w-[300px]">
+              <div class="flex items-center gap-3 border-b border-[#eadfce] px-4 pb-3 pt-3">
+                <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                  aria-label="Bekijk profielafbeelding van deze post op Instagram">
+                  <img src="./assets/images/instagram-logo.jpg" alt="Profielfoto van het Instagram-account"
+                    class="h-9 w-9 rounded-full object-cover" loading="lazy" />
+                </a>
+                <div class="leading-tight">
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk profielnaam van deze post op Instagram"
+                    class="block text-sm font-semibold text-charcoal transition\">Glamour by Tink</a>
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk locatie van deze post op Instagram"
+                    class="block text-xs text-wood/90 transition">Assendelft</a>
+                </div>
+              </div>
+
+              <div>
+                <img class="h-56 w-full object-cover transition duration-500" src="./assets/images/post-5.jpg"
+                  alt="Voorbeeld van een recente Instagram-post" loading="lazy" />
+              </div>
+
+              <div class="space-y-3 px-4 pt-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Like op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/heart.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Comment op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/comment.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Deel via Instagram DM"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/paper-plane.svg" alt="" aria-hidden="true" class=\"h-5 w-5
+                        opacity-80\" />
+                    </a>
+                  </div>
+
+                  <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Opslaan op Instagram"
+                    class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                    <img src="./assets/icons/save.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                  </a>
+                </div>
+
+                <p class="pb-4 text-xs leading-1 text-charcoal/70" data-caption>
+                  <span class="font-semibold text-charcoal\">glamourbytink_pmu</span>
+                  <span data-caption-text>
+                    Dit is een voorbeeldtekst 📸 Hier moet uiteindelijk de tekst van desbetreffende post komen.
+                  </span>
+                  <button type="button" class="ml-1 hidden text-[11px] font-semibold text-slate-400"
+                    data-caption-more>...
+                    meer</button>
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="group self-start w-[80vw] max-w-[300px] shrink-0 snap-start overflow-hidden rounded-[5px] border border-[#e6dccd] bg-white/90 shadow-[0_12px_30px_rgba(60,45,20,0.08)] transition hover:shadow-[0_18px_40px_rgba(60,45,20,0.12)] sm:w-[300px]">
+              <div class="flex items-center gap-3 border-b border-[#eadfce] px-4 pb-3 pt-3">
+                <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                  aria-label="Bekijk profielafbeelding van deze post op Instagram">
+                  <img src="./assets/images/instagram-logo.jpg" alt="Profielfoto van het Instagram-account"
+                    class="h-9 w-9 rounded-full object-cover" loading="lazy" />
+                </a>
+                <div class="leading-tight">
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk profielnaam van deze post op Instagram"
+                    class="block text-sm font-semibold text-charcoal transition\">Glamour by Tink</a>
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk locatie van deze post op Instagram"
+                    class="block text-xs text-wood/90 transition">Assendelft</a>
+                </div>
+              </div>
+
+              <div>
+                <img class="h-56 w-full object-cover transition duration-500" src="./assets/images/post-6.jpg"
+                  alt="Voorbeeld van een recente Instagram-post" loading="lazy" />
+              </div>
+
+              <div class="space-y-3 px-4 pt-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Like op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/heart.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Comment op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/comment.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Deel via Instagram DM"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/paper-plane.svg" alt="" aria-hidden="true" class=\"h-5 w-5
+                        opacity-80\" />
+                    </a>
+                  </div>
+
+                  <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Opslaan op Instagram"
+                    class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                    <img src="./assets/icons/save.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                  </a>
+                </div>
+
+                <p class="pb-4 text-xs leading-1 text-charcoal/70" data-caption>
+                  <span class="font-semibold text-charcoal\">glamourbytink_pmu</span>
+                  <span data-caption-text>
+                    Dit is een voorbeeldtekst 📸 Hier moet uiteindelijk de tekst van desbetreffende post komen.
+                  </span>
+                  <button type="button" class="ml-1 hidden text-[11px] font-semibold text-slate-400"
+                    data-caption-more>...
+                    meer</button>
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="group self-start w-[80vw] max-w-[300px] shrink-0 snap-start overflow-hidden rounded-[5px] border border-[#e6dccd] bg-white/90 shadow-[0_12px_30px_rgba(60,45,20,0.08)] transition hover:shadow-[0_18px_40px_rgba(60,45,20,0.12)] sm:w-[300px]">
+              <div class="flex items-center gap-3 border-b border-[#eadfce] px-4 pb-3 pt-3">
+                <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                  aria-label="Bekijk profielafbeelding van deze post op Instagram">
+                  <img src="./assets/images/instagram-logo.jpg" alt="Profielfoto van het Instagram-account"
+                    class="h-9 w-9 rounded-full object-cover" loading="lazy" />
+                </a>
+                <div class="leading-tight">
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk profielnaam van deze post op Instagram"
+                    class="block text-sm font-semibold text-charcoal transition\">Glamour by Tink</a>
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk locatie van deze post op Instagram"
+                    class="block text-xs text-wood/90 transition">Assendelft</a>
+                </div>
+              </div>
+
+              <div>
+                <img class="h-56 w-full object-cover transition duration-500" src="./assets/images/post-7.jpg"
+                  alt="Voorbeeld van een recente Instagram-post" loading="lazy" />
+              </div>
+
+              <div class="space-y-3 px-4 pt-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Like op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/heart.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Comment op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/comment.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Deel via Instagram DM"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/paper-plane.svg" alt="" aria-hidden="true" class=\"h-5 w-5
+                        opacity-80\" />
+                    </a>
+                  </div>
+
+                  <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Opslaan op Instagram"
+                    class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                    <img src="./assets/icons/save.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                  </a>
+                </div>
+
+                <p class="pb-4 text-xs leading-1 text-charcoal/70" data-caption>
+                  <span class="font-semibold text-charcoal\">glamourbytink_pmu</span>
+                  <span data-caption-text>
+                    Dit is een voorbeeldtekst 📸 Hier moet uiteindelijk de tekst van desbetreffende post komen.
+                  </span>
+                  <button type="button" class="ml-1 hidden text-[11px] font-semibold text-slate-400"
+                    data-caption-more>...
+                    meer</button>
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="group self-start w-[80vw] max-w-[300px] shrink-0 snap-start overflow-hidden rounded-[5px] border border-[#e6dccd] bg-white/90 shadow-[0_12px_30px_rgba(60,45,20,0.08)] transition hover:shadow-[0_18px_40px_rgba(60,45,20,0.12)] sm:w-[300px]">
+              <div class="flex items-center gap-3 border-b border-[#eadfce] px-4 pb-3 pt-3">
+                <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                  aria-label="Bekijk profielafbeelding van deze post op Instagram">
+                  <img src="./assets/images/instagram-logo.jpg" alt="Profielfoto van het Instagram-account"
+                    class="h-9 w-9 rounded-full object-cover" loading="lazy" />
+                </a>
+                <div class="leading-tight">
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk profielnaam van deze post op Instagram"
+                    class="block text-sm font-semibold text-charcoal transition\">Glamour by Tink</a>
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk locatie van deze post op Instagram"
+                    class="block text-xs text-wood/90 transition">Assendelft</a>
+                </div>
+              </div>
+
+              <div>
+                <img class="h-56 w-full object-cover transition duration-500" src="./assets/images/post-8.jpg"
+                  alt="Voorbeeld van een recente Instagram-post" loading="lazy" />
+              </div>
+
+              <div class="space-y-3 px-4 pt-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Like op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/heart.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Comment op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/comment.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Deel via Instagram DM"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/paper-plane.svg" alt="" aria-hidden="true" class=\"h-5 w-5
+                        opacity-80\" />
+                    </a>
+                  </div>
+
+                  <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Opslaan op Instagram"
+                    class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                    <img src="./assets/icons/save.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                  </a>
+                </div>
+
+                <p class="pb-4 text-xs leading-1 text-charcoal/70" data-caption>
+                  <span class="font-semibold text-charcoal\">glamourbytink_pmu</span>
+                  <span data-caption-text>
+                    Dit is een voorbeeldtekst 📸 Hier moet uiteindelijk de tekst van desbetreffende post komen.
+                  </span>
+                  <button type="button" class="ml-1 hidden text-[11px] font-semibold text-slate-400"
+                    data-caption-more>...
+                    meer</button>
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="group self-start w-[80vw] max-w-[300px] shrink-0 snap-start overflow-hidden rounded-[5px] border border-[#e6dccd] bg-white/90 shadow-[0_12px_30px_rgba(60,45,20,0.08)] transition hover:shadow-[0_18px_40px_rgba(60,45,20,0.12)] sm:w-[300px]">
+              <div class="flex items-center gap-3 border-b border-[#eadfce] px-4 pb-3 pt-3">
+                <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                  aria-label="Bekijk profielafbeelding van deze post op Instagram">
+                  <img src="./assets/images/instagram-logo.jpg" alt="Profielfoto van het Instagram-account"
+                    class="h-9 w-9 rounded-full object-cover" loading="lazy" />
+                </a>
+                <div class="leading-tight">
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk profielnaam van deze post op Instagram"
+                    class="block text-sm font-semibold text-charcoal transition\">Glamour by Tink</a>
+                  <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                    aria-label="Bekijk locatie van deze post op Instagram"
+                    class="block text-xs text-wood/90 transition">Assendelft</a>
+                </div>
+              </div>
+
+              <div>
+                <img class="h-56 w-full object-cover transition duration-500" src="./assets/images/post-9.jpg"
+                  alt="Voorbeeld van een recente Instagram-post" loading="lazy" />
+              </div>
+
+              <div class="space-y-3 px-4 pt-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Like op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/heart.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Comment op Instagram post"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/comment.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                    </a>
+                    <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                      aria-label="Deel via Instagram DM"
+                      class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                      <img src="./assets/icons/paper-plane.svg" alt="" aria-hidden="true" class=\"h-5 w-5
+                        opacity-80\" />
+                    </a>
+                  </div>
+
+                  <a href="https://www.instagram.com/p/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Opslaan op Instagram"
+                    class="inline-flex h-max w-max items-center justify-center transition hover:opacity-80">
+                    <img src="./assets/icons/save.svg" alt="" aria-hidden="true" class=\"h-5 w-5 opacity-80\" />
+                  </a>
+                </div>
+
+                <p class="pb-4 text-xs leading-1 text-charcoal/70" data-caption>
+                  <span class="font-semibold text-charcoal\">glamourbytink_pmu</span>
+                  <span data-caption-text>
+                    Dit is een voorbeeldtekst 📸 Hier moet uiteindelijk de tekst van desbetreffende post komen.
+                  </span>
+                  <button type="button" class="ml-1 hidden text-[11px] font-semibold text-slate-400"
+                    data-caption-more>...
+                    meer</button>
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="w-[80vw] min-h-[350px] justify-center flex flex-col gap-2 max-w-[200px] shrink-0 snap-start overflow-hidden rounded-[5px] shadow-[0_12px_30px_rgba(60,45,20,0.08)] transition hover:shadow-[0_18px_40px_rgba(60,45,20,0.12)] sm:w-[200px]">
+              <a href="galerij.html" target="_blank" rel="noopener noreferrer"
+                class="group w-full flex gap-2 button-primary hover:!shadow-none">
+                Bekijk fotogalerij
+              </a>
+              <a href="https://www.instagram.com/glamourbytink_pmu"
+                class="group w-full flex gap-2 button-secondary !bg-white/70 !text-charcoal">
+                <img src="./assets/icons/instagram-logo-white.svg" alt="" aria-hidden="true"
+                  class="relative z-10 h-4 w-4" />
+                <span class="relative z-10">Bekijk instagram</span>
+              </a>
+            </article>
+          </div>
+
+          <button type="button"
+            class="absolute left-5 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-full border border-[#e6dccd] bg-white/80 p-3 text-charcoal shadow-[0_12px_24px_rgba(60,45,20,0.12)] backdrop-blur transition-all duration-300 ease-out hover:bg-white/95 lg:flex lg:opacity-0 lg:-translate-x-2 lg:pointer-events-none group-hover:lg:opacity-100 group-hover:lg:translate-x-0 group-hover:lg:pointer-events-auto"
+            aria-label="Vorige posts" data-carousel-prev>
+            <img src="./assets/icons/chevron-right.svg" alt="" aria-hidden="true"
+              class="h-4 w-4 rotate-180 transition-transform duration-300 ease-out group-hover:translate-x-0" />
+          </button>
+          <button type="button"
+            class="absolute right-5 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-full border border-[#e6dccd] bg-white/80 p-3 text-charcoal shadow-[0_12px_24px_rgba(60,45,20,0.12)] backdrop-blur transition-all duration-300 ease-out hover:bg-white/95 lg:flex lg:opacity-0 lg:translate-x-2 lg:pointer-events-none group-hover:lg:opacity-100 group-hover:lg:translate-x-0 group-hover:lg:pointer-events-auto"
+            aria-label="Volgende posts" data-carousel-next>
+            <img src="./assets/icons/chevron-right.svg" alt="" aria-hidden="true"
+              class="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-0" />
+          </button>
+        </div>
+
+        <div class="mt-4 flex flex-col justify-center w-full gap-4">
+          <p class="w-full text-sm leading-relaxed text-start sm:text-center text-charcoal/70" data-scroll-fade
+            data-scroll-axis="x" data-scroll-distance="26">
+            Interesse gekregen? Maak een afspraak voor een kennismaking, consult of sessie.
+          </p>
+          <div class="flex flex-col gap-2 items-center">
+            <a href="https://wa.me/31623262640?text=Hoi%20Marissa%2C%20ik%20zou%20graag%20een%20afspraak%20bij%20je%20willen%20maken."
+              target="_blank" class="group w-full sm:w-fit sm:min-w-[250px] flex gap-2 button-primary !shadow-none"
+              data-scroll-fade data-scroll-axis="x" data-scroll-distance="26">
+              Afspraak maken
+              <span class="group-hover:translate-x-1 duration-300">→</span>
+            </a>
+            <a href="galerij.html"
+              class="w-full sm:w-fit sm:min-w-[250px] flex gap-2 button-secondary !bg-white/70 !text-charcoal"
+              data-scroll-fade data-scroll-axis="x" data-scroll-distance="26">
+              Bekijk al mijn werk
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verzorgingstips -->
+    <section id="verzorging" class="hidden bg-[#fbf8f3] text-charcoal py-16" data-scroll-fade data-scroll-axis="y"
+      data-scroll-distance="18" data-scroll-start="0.9">
+      <div class="lg:max-w-[1850px] lg:w-[92vw] mx-6 lg:mx-auto">
+        <div class="mb-10 flex flex-col gap-4">
+          <div data-scroll-fade data-scroll-axis="x" data-scroll-distance="14"
+            class="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-wood/70 md:justify-center md:w-full ">
+            Verzorgingstips
+          </div>
+          <h2
+            class="text-[1.65rem] sm:text-3xl font-extrabold uppercase tracking-[0.18em] md:text-center md:w-full md:text-4xl"
+            data-scroll-fade data-scroll-axis="x" data-scroll-distance="18">
+            Tattoo gezet?
+          </h2>
+          <div class="flex justify-center md:w-full">
+            <p class="max-w-3xl text-sm leading-relaxed text-charcoal/70 md:text-center" data-scroll-fade
+              data-scroll-axis="x" data-scroll-distance="20">
+              Vanaf het eerste moment zijn goede reiniging en continue bescherming van je behandeling onwijs belangrijk.
+              Om de beste kwaliteit te garanderen zijn dit de bare minimums waarmee jij jouw kunstwerk goed verzorgd.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mx-auto w-full max-w-7xl px-6">
+        <div class="group relative">
+          <div
+            class="relative flex snap-x snap-mandatory items-start gap-16 overflow-x-auto pb-6 scroll-smooth carousel-scrollbar-hidden"
+            aria-label="Nazorg stappen" data-care-carousel data-care-viewport data-step-size="304">
+            <div class="relative flex h-[260px] w-[1152px] items-start gap-16">
+              <svg class="pointer-events-none absolute left-0 top-8 z-0 block h-16 w-[inherit]" viewBox="0 0 1152 120"
+                preserveAspectRatio="none" aria-hidden="true" data-scroll-fade data-scroll-axis="y"
+                data-scroll-start="0.85">
+                <path d="M0 60 C 144 15, 288 15, 432 60 S 720 105, 864 60 S 1056 15, 1152 60" fill="none"
+                  stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round" />
+              </svg>
+
+              <article class="relative mt-[40px] w-[240px] pt-12 snap-start" data-care-step data-scroll-fade
+                data-scroll-axis="y" data-scroll-start="0.85">
+                <div
+                  class="absolute -top-2 left-0 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-wood/40 bg-white text-sm font-semibold tracking-[0.2em] text-wood">
+                  01
+                </div>
+                <h3 class="text-base font-semibold uppercase tracking-[0.18em]">Reinigen</h3>
+                <p class="mt-2 text-sm leading-relaxed text-charcoal/70">
+                  Na ongeveer 2 tot 4 uur kun je de folie verwijderen. Reinig de behandeling voorzichtig met lauw water
+                  en
+                  milde, parfumvrije zeep.
+                  Spoel goed af en dep de huid droog met een schone handdoek.
+                </p>
+              </article>
+
+              <article class="relative mt-[35px] w-[240px] pt-12 snap-start" data-care-step data-scroll-fade
+                data-scroll-axis="y" data-scroll-start="0.85">
+                <div
+                  class="absolute -top-2 left-0 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-wood/40 bg-white text-sm font-semibold tracking-[0.2em] text-wood">
+                  02
+                </div>
+                <h3 class="text-base font-semibold uppercase tracking-[0.18em]">Hydrateren</h3>
+                <p class="mt-2 text-sm leading-relaxed text-charcoal/70">
+                  Breng een dun laagje nazorgzalf aan. Herhaal dit 2 tot 3 keer per dag zodat de huid gehydrateerd
+                  blijft
+                  en het genezingsproces goed zijn werk kan doen.
+                </p>
+              </article>
+
+              <article class="relative mt-[63px] w-[240px] pt-12 snap-start" data-care-step data-scroll-fade
+                data-scroll-axis="y" data-scroll-start="0.85">
+                <div
+                  class="absolute -top-2 left-0 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-wood/40 bg-white text-sm font-semibold tracking-[0.2em] text-wood">
+                  03
+                </div>
+                <h3 class="text-base font-semibold uppercase tracking-[0.18em]">Beschermen</h3>
+                <p class="mt-2 text-sm leading-relaxed text-charcoal/70">
+                  Draag losse kleding en voorkom wrijving op de behandeling. Heel belangrijk, krab of pulk niet aan de
+                  huid
+                  wanneer deze begint te vervellen.
+                </p>
+              </article>
+
+              <article class="relative mt-[36px] w-[240px] pt-12 snap-start" data-care-step data-scroll-fade
+                data-scroll-axis="x" data-scroll-distance="14" data-scroll-start="0.85">
+                <div
+                  class="absolute -top-2 left-0 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-wood/40 bg-white text-sm font-semibold tracking-[0.2em] text-wood">
+                  04
+                </div>
+                <h3 class="text-base font-semibold uppercase tracking-[0.18em]">Vermijden</h3>
+                <p class="mt-2 text-sm leading-relaxed text-charcoal/70">
+                  Vermijd zonlicht, sauna en zwemmen gedurende de eerste 2 tot 3 weken. Blijf de behandeling verzorgen
+                  totdat
+                  de huid volledig is hersteld.
+                </p>
+              </article>
+            </div>
+          </div>
+          <button type="button"
+            class="absolute left-4 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-full border border-[#e6dccd] bg-white/80 p-3 text-charcoal shadow-[0_12px_24px_rgba(60,45,20,0.12)] backdrop-blur transition-all duration-300 ease-out hover:bg-white/95 sm:flex sm:opacity-0 sm:-translate-x-2 sm:pointer-events-none group-hover:sm:opacity-100 group-hover:sm:translate-x-0 group-hover:sm:pointer-events-auto lg:hidden data-[hidden=true]:opacity-0 data-[hidden=true]:pointer-events-none"
+            aria-label="Vorige stap" data-care-prev data-hidden="false">
+            <img src="./assets/icons/chevron-right.svg" alt="" aria-hidden="true"
+              class="h-4 w-4 rotate-180 transition-transform duration-300 ease-out group-hover:translate-x-0" />
+          </button>
+          <button type="button"
+            class="absolute right-4 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-full border border-[#e6dccd] bg-white/80 p-3 text-charcoal shadow-[0_12px_24px_rgba(60,45,20,0.12)] backdrop-blur transition-all duration-300 ease-out hover:bg-white/95 sm:flex sm:opacity-0 sm:translate-x-2 sm:pointer-events-none group-hover:sm:opacity-100 group-hover:sm:translate-x-0 group-hover:sm:pointer-events-auto lg:hidden data-[hidden=true]:opacity-0 data-[hidden=true]:pointer-events-none"
+            aria-label="Volgende stap" data-care-next data-hidden="false">
+            <img src="./assets/icons/chevron-right.svg" alt="" aria-hidden="true"
+              class="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-0" />
+          </button>
+        </div>
+        <div class="mt-6 flex items-center justify-center gap-2" data-care-indicators data-scroll-fade
+          data-scroll-axis="x" data-scroll-distance="18" data-scroll-start="1.2">
+          <button type="button"
+            class="h-2 w-2 rounded-full border border-wood/40 transition-all duration-300 data-[active=true]:w-6 data-[active=true]:bg-wood/80"
+            aria-label="Ga naar stap 1" data-care-indicator data-active="true" aria-current="true"></button>
+          <button type="button"
+            class="h-2 w-2 rounded-full border border-wood/40 transition-all duration-300 data-[active=true]:w-6 data-[active=true]:bg-wood/80"
+            aria-label="Ga naar stap 2" data-care-indicator data-active="false"></button>
+          <button type="button"
+            class="h-2 w-2 rounded-full border border-wood/40 transition-all duration-300 data-[active=true]:w-6 data-[active=true]:bg-wood/80"
+            aria-label="Ga naar stap 3" data-care-indicator data-active="false"></button>
+          <button type="button"
+            class="h-2 w-2 rounded-full border border-wood/40 transition-all duration-300 data-[active=true]:w-6 data-[active=true]:bg-wood/80"
+            aria-label="Ga naar stap 4" data-care-indicator data-active="false"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="relative overflow-hidden bg-[#f7f3ee] text-charcoal py-16">
+      <div aria-hidden="true" class="pointer-events-none absolute -top-24 left-1/2 h-72 w-[600px] -translate-x-1/2">
+      </div>
+      <div class="lg:max-w-[1850px] lg:w-[92vw] mx-6 lg:mx-auto">
+        <div class="flex flex-col gap-4">
+          <div data-scroll-fade data-scroll-axis="x" data-scroll-distance="14"
+            class="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-wood/70 md:justify-center md:w-full ">
+            Google
+          </div>
+          <h2
+            class="text-[1.65rem] sm:text-3xl font-extrabold uppercase tracking-[0.18em] md:text-center md:w-full md:text-4xl"
+            data-scroll-fade data-scroll-axis="x" data-scroll-distance="18">
+            Reviews
+          </h2>
+          <div class="flex justify-center md:w-full">
+            <p class="max-w-3xl text-sm leading-relaxed text-charcoal/70 md:text-center" data-scroll-fade
+              data-scroll-axis="x" data-scroll-distance="20">
+              Lees reviews van klanten die een behandeling bij mij hebben gehad. Bekijk de
+              reviews rechtstreeks via Google.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google reviews Widget -->
+      <div class="mx-auto w-full max-w-6xl px-6" data-scroll-fade data-scroll-axis="x" data-scroll-distance="14"
+        data-scroll-start="0.80" data-scroll-end="0">
+        <div class="w-full flex justify-center relative overflow-hidden">
+          <div class="max-w-7xl w-full px-2 sm:px-3 lg:px-4" id="featurable-fc036a48-225d-4d8d-947d-c55c5ca2b8ed"
+            data-featurable-async>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Boek nu CTA -->
+    <section id="boek" class="hidden bg-[#f7f3ee] text-charcoal">
+      <div
+        class="flex w-full border border-[#eadfce] bg-gradient-to-br from-white via-[#f2e9dd] to-[#eadfce] md:flex-row md:items-center md:gap-10">
+        <div
+          class="mx-auto w-full max-w-5xl px-6 py-12 md:py-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8"
+          data-scroll-fade data-scroll-axis="x" data-scroll-distance="14" data-scroll-start="0.80"
+          data-scroll-end="0.20">
+          <div class="relative z-10 max-w-2xl">
+            <div class="mb-3 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-wood/70">
+              Tattoo in gedachten?
+            </div>
+            <h2 class="text-3xl font-extrabold uppercase sm:text-4xl">Deel je idee </h2>
+            <p class="mt-3 text-sm text-charcoal/70">
+              Deel je gedachten, illustraties, waar je hem wilt en wanneer je hem wilt plaatsen.
+            </p>
+            <p class="mt-2 text-sm text-charcoal/70">
+              Plan samen een kennismakingsgesprek in om alles door te nemen en een plan te maken.
+            </p>
+          </div>
+          <div class="relative z-10 flex flex-col gap-2 w-max">
+            <a href="https://wa.me/31623262640?text=Hoi%20Marissa%2C%20ik%20zou%20graag%20een%20tattoo%20met%20je%20willen%20bespreken."
+              target="_blank"
+              class="group w-full flex gap-2 button-secondary !bg-white/70 !text-charcoal text-nowrap !shadow-none">
+              Bericht sturen
+              <span class="group-hover:translate-x-1 duration-300">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="relative bg-[#f2ede5] text-charcoal border-t border-[#e4d6c4]">
+      <div aria-hidden="true"
+        class="pointer-events-none absolute -top-24 right-10 h-44 w-44 rounded-full bg-accent/10 blur-3xl"></div>
+      <div class="mx-auto w-full max-w-6xl px-6 py-12 md:py-16" data-scroll-fade data-scroll-axis="x"
+        data-scroll-distance="14" data-scroll-start="0.85">
+        <div class="grid gap-10 md:grid-cols-[1.1fr_0.9fr_0.9fr]">
+          <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-2">
+              <span class="text-3xl tracking-[0.2em]">GLAMOUR</span>
+              <span class="text-xs uppercase tracking-[0.45em] text-charcoal/70">Permanente make-up</span>
+            </div>
+            <p class="max-w-sm text-sm leading-relaxed text-charcoal/70">
+              Premium custom behandelingen in een rustige, moderne studio. Onze focus ligt op precisie, schaduw en
+              tijdloze designs.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://wa.me/31623262640?text=Hoi%20Marissa%2C%20ik%20zou%20graag%20een%20consult%20bij%20je%20willen%20boeken."
+                target="_blank" class="group flex items-center gap-2 button-primary !shadow-none" data-scroll-fade
+                data-scroll-axis="x" data-scroll-distance="14" data-scroll-start="2">
+                Boek consult
+                <span class="group-hover:translate-x-1 duration-300">→</span>
+              </a>
+              <a href="galerij.html" class="group flex items-center gap-2 button-secondary !bg-white/70 !text-charcoal"
+                data-scroll-fade data-scroll-axis="x" data-scroll-distance="14" data-scroll-start="2">
+                Bekijk werk
+                <span class="group-hover:translate-x-1 duration-300">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-4" data-scroll-fade data-scroll-axis="x" data-scroll-distance="14"
+            data-scroll-start="0.85">
+            <div class="text-xs uppercase tracking-[0.2em] text-wood/70">Contact</div>
+            <div class="flex flex-col gap-3 text-sm text-charcoal/70">
+              <a class="inline-flex items-center gap-3 transition hover:text-accent" href="tel:+31623262640">
+                <img src="./assets/icons/phone-dark.svg" alt="" aria-hidden="true" class="h-4 w-4" />
+                +31 6 23262640
+              </a>
+              <a class="inline-flex items-center gap-3 transition hover:text-accent" href="https://wa.me/31623262640"
+                target="_blank" rel="noopener noreferrer">
+                <img src="./assets/icons/whatsapp-logo-charcoal.svg" alt="" aria-hidden="true" class="h-4 w-4" />
+                WhatsApp
+              </a>
+              <a class="inline-flex items-center gap-3 transition hover:text-accent"
+                href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer">
+                <img src="./assets/icons/instagram-logo-charcoal.svg" alt="" aria-hidden="true" class="h-4 w-4" />
+                @glamourbytink_pmu
+              </a>
+              <a class="inline-flex items-center gap-3 transition hover:text-accent"
+                href="https://www.tiktok.com/@glamour.by.tink" target="_blank" rel="noopener noreferrer">
+                <img src="./assets/icons/tiktok-logo-charcoal.svg" alt="" aria-hidden="true" class="h-4 w-4" />
+                @glamour.by.tink
+              </a>
+              <a href="https://www.google.com/maps?q=Norbertijnenstraat+1,+1566+LK+Assendelft" target="_blank"
+                rel="noopener noreferrer" class="inline-flex items-center gap-3 transition hover:text-accent">
+                <img src="./assets/icons/location-pin-charcoal.svg" alt="" aria-hidden="true" class="h-4 w-4" />
+                Norbertijnenstraat 1, 1566 LK Assendelft
+              </a>
+              <div class="text-wood/70">Alleen op afspraak</div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-4" data-scroll-fade data-scroll-axis="x" data-scroll-distance="14"
+            data-scroll-start="1.2">
+            <div class="text-xs uppercase tracking-[0.2em] text-wood/70">Snel naar</div>
+            <div class="flex flex-col gap-3 text-sm text-charcoal/70">
+              <a class="transition hover:text-accent" href="#">Home</a>
+              <a class="transition hover:text-accent" href="#over-mij">Over mij</a>
+              <a class="transition hover:text-accent" href="./galerij.html">Galerij</a>
+              <a class="transition hover:text-accent" href="#instagram">Instagram posts</a>
+              <a class="transition hover:text-accent" href="./algemene-voorwaarden.html">Algemene voorwaarden</a>
+              <a class="transition hover:text-accent" href="./privacy.html">Privacybeleid</a>
+              <a class="transition hover:text-accent" href="tel:+31623262640">Bel direct</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 border-t border-[#e6dccd]"></div>
+        <div
+          class="pt-6 flex flex-col gap-3 text-xs uppercase tracking-[0.2em] text-wood/60 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex flex-col gap-2 sm:gap-1">
+            <span>© <span data-current-year>2026</span> Glamour by Tink</span>
+          </div>
+          <a href="https://mauricevandorst.com/" target="_blank"
+            class="group text-[10px] tracking-[0.1em] text-wood/50">Website by <span
+              class="text-wood/70 group-hover:text-charcoal/70">van
+              Dorst</span></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Zwevend WhatsApp icoon (mobiel) -->
+    <a href="https://wa.me/31623262640" target="_blank" rel="noopener noreferrer" data-reveal data-reveal-delay="2"
+      class="fixed bottom-6 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-green-500 shadow-lg hover:bg-green-600 lg:hidden"
+      aria-label="Chat via WhatsApp">
+      <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.216 175.552" aria-hidden="true">
+        <defs>
+          <linearGradient id="b" x1="85.915" x2="86.535" y1="32.567" y2="137.092" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#57d163" />
+            <stop offset="1" stop-color="#23b33a" />
+          </linearGradient>
+          <filter id="a" width="1.115" height="1.114" x="-.057" y="-.057" color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="3.531" />
+          </filter>
+        </defs>
+        <path fill="#b3b3b3"
+          d="m54.532 138.45 2.235 1.324c9.387 5.571 20.15 8.518 31.126 8.523h.023c33.707 0 61.139-27.426 61.153-61.135.006-16.335-6.349-31.696-17.895-43.251A60.75 60.75 0 0 0 87.94 25.983c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.558zm-40.811 23.544L24.16 123.88c-6.438-11.154-9.825-23.808-9.821-36.772.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954zm0 0"
+          filter="url(#a)" />
+        <path fill="#fff"
+          d="m12.966 161.238 10.439-38.114a73.42 73.42 0 0 1-9.821-36.772c.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954z" />
+        <path fill="url(#b)"
+          d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.313-6.179 22.558 23.146-6.069 2.235 1.324c9.387 5.571 20.15 8.517 31.126 8.523h.023c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.895-43.251 60.75 60.75 0 0 0-43.235-17.928z" />
+        <path fill="#fff" fill-rule="evenodd"
+          d="M68.772 55.603c-1.378-3.061-2.828-3.123-4.137-3.176l-3.524-.043c-1.226 0-3.218.46-4.902 2.3s-6.435 6.287-6.435 15.332 6.588 17.785 7.506 19.013 12.718 20.381 31.405 27.75c15.529 6.124 18.689 4.906 22.061 4.6s10.877-4.447 12.408-8.74 1.532-7.971 1.073-8.74-1.685-1.226-3.525-2.146-10.877-5.367-12.562-5.981-2.91-.919-4.137.921-4.746 5.979-5.819 7.206-2.144 1.381-3.984.462-7.76-2.861-14.784-9.124c-5.465-4.873-9.154-10.891-10.228-12.73s-.114-2.835.808-3.751c.825-.824 1.838-2.147 2.759-3.22s1.224-1.84 1.836-3.065.307-2.301-.153-3.22-4.032-10.011-5.666-13.647" />
+      </svg>
+    </a>
+
+  </main>
+
+  <div id="mobile-menu"
+    class="fixed inset-0 z-40 flex items-start justify-center bg-[#f8f3ee] pt-20 opacity-0 pointer-events-none backdrop-blur transition-all duration-500 w-[80vw] max-w-[300px]"
+    aria-hidden="true" data-mobile-menu>
+    <div class="w-full h-[100vh] rounded-[5px] p-4 transition-all duration-500 translate-y-4 opacity-0"
+      data-mobile-panel>
+      <nav class="flex flex-col text-xl font-montserrat tracking-[0.05em] text-charcoal">
+        <a class="group menu-item flex items-center justify-between text-xs uppercase py-4 border-b-[1px] border-[#e6dccd] font-bold opacity-0 -translate-y-2 transition-all duration-500 delay-[80ms]"
+          href="./">
+          <span class="group-hover:text-wood/70 duration-300">Home</span>
+          <img src="./assets/icons/chevron-right.svg" alt=""
+            class="text-wood w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+        </a>
+        <a class="group menu-item flex items-center justify-between text-xs uppercase py-4 border-b-[1px] border-[#e6dccd] font-bold opacity-0 -translate-y-2 transition-all duration-500 delay-[0ms]"
+          href="https://wa.me/31623262640?text=Hoi%20Marissa%2C%20ik%20zou%20graag%20een%20afspraak%20bij%20je%20willen%20maken.">
+          <span class="group-hover:text-wood/70 duration-300">Nu boeken</span>
+          <img src="./assets/icons/chevron-right.svg" alt=""
+            class="text-wood w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+        </a>
+        <a class="group menu-item flex items-center justify-between text-xs uppercase py-4 border-b-[1px] border-[#e6dccd] font-bold opacity-0 -translate-y-2 transition-all duration-500 delay-[80ms]"
+          href="#over-mij">
+          <span class="group-hover:text-wood/70 duration-300">Over mij</span>
+          <img src="./assets/icons/chevron-right.svg" alt=""
+            class="text-wood w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+        </a>
+        <a class="group menu-item flex items-center justify-between text-xs uppercase py-4 border-b-[1px] border-[#e6dccd] font-bold opacity-0 -translate-y-2 transition-all duration-500 delay-[80ms]"
+          href="./galerij.html">
+          <span class="group-hover:text-wood/70 duration-300">Galerij</span>
+          <img src="./assets/icons/chevron-right.svg" alt=""
+            class="text-wood w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+        </a>
+        <a class="group menu-item flex items-center justify-between text-xs uppercase py-4 border-b-[1px] border-[#e6dccd] font-bold opacity-0 -translate-y-2 transition-all duration-500 delay-[160ms]"
+          href="./#verzorging">
+          <span class="group-hover:text-wood/70 duration-300">verzorgingstips</span>
+          <img src="./assets/icons/chevron-right.svg" alt=""
+            class="text-wood w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+        </a>
+        <a class="group menu-item flex items-center justify-between text-xs uppercase py-4 font-bold opacity-0 -translate-y-2 transition-all duration-500 delay-[240ms]"
+          href="tel:+31623262640">
+          <span class="group-hover:text-wood/70 duration-300">Bel mij</span>
+          <img src="./assets/icons/chevron-right.svg" alt=""
+            class="text-wood w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+        </a>
+        <a href="https://wa.me/31623262640?text=Hoi%20Marissa%2C%20ik%20zou%20graag%20een%20afspraak%20bij%20je%20willen%20maken."
+          target="_blank" class="group mt-4 flex gap-2 button-primary">
+          Boek nu
+          <span class="group-hover:translate-x-1 duration-300">→</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <script src="./js/intro-overlay.js"></script>
+  <script src="./js/current-year.js"></script>
+  <script src="./js/header-menu.js"></script>
+  <script src="./js/hero-video.js"></script>
+  <script src="./js/caption-more.js"></script>
+  <script src="./js/gallery-carousel.js"></script>
+  <script src="./js/smooth-scroll.js"></script>
+  <script src="./js/scroll-reveal.js"></script>
+  <script src="./js/care-steps-carousel.js"></script>
+  <script src="./js/featurable-credit-hider.js" defer></script>
+  <script src="https://featurable.com/assets/bundle.js" defer charset="UTF-8"></script>
+</body>
+
+</html>
