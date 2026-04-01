@@ -452,6 +452,7 @@ function initCursorGlow(reducedMotion) {
 function initScrollIndicatorMotion({ reducedMotion }) {
   const indicator = document.querySelector('[data-scroll-indicator]');
   const heroSection = document.querySelector('.hero-scene');
+  const salonizedWidget = document.getElementById('salonized-widget');
   const indicatorLabel = indicator?.querySelector('p');
   const indicatorIcon = indicator?.querySelector('svg');
 
@@ -460,6 +461,21 @@ function initScrollIndicatorMotion({ reducedMotion }) {
   }
 
   indicator.style.willChange = 'transform, opacity';
+
+  let widgetVisible = false;
+  const widgetShowThreshold = 205;
+  const widgetHideThreshold = 165;
+
+  if (salonizedWidget) {
+    salonizedWidget.style.setProperty('opacity', '0', 'important');
+    salonizedWidget.style.setProperty('pointer-events', 'none', 'important');
+    salonizedWidget.style.setProperty('transform', 'translate3d(22px, 0, 0)', 'important');
+    salonizedWidget.style.setProperty(
+      'transition',
+      'transform 0.72s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s linear',
+      'important'
+    );
+  }
 
   if (reducedMotion) {
     indicator.style.transform = 'translate3d(0, 0, 0)';
@@ -527,6 +543,19 @@ function initScrollIndicatorMotion({ reducedMotion }) {
 
     indicator.style.transform = `translate3d(0, ${offsetY.toFixed(2)}px, 0)`;
     indicator.style.opacity = opacity.toFixed(3);
+
+    if (salonizedWidget) {
+      const shouldShowWidget = widgetVisible
+        ? window.scrollY > widgetHideThreshold
+        : window.scrollY > widgetShowThreshold;
+
+      if (shouldShowWidget !== widgetVisible) {
+        widgetVisible = shouldShowWidget;
+        salonizedWidget.style.setProperty('opacity', widgetVisible ? '1' : '0', 'important');
+        salonizedWidget.style.setProperty('pointer-events', widgetVisible ? 'auto' : 'none', 'important');
+        salonizedWidget.style.setProperty('transform', widgetVisible ? 'translate3d(0, 0, 0)' : 'translate3d(22px, 0, 0)', 'important');
+      }
+    }
   };
 
   const scheduleUpdate = () => {
