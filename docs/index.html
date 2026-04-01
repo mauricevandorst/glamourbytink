@@ -63,7 +63,7 @@
       </nav>
     </header>
 
-    <main id="main" class="panel-scroll" aria-label="Homepage panel layout">
+    <main id="main" class="panel-scroll pb-[20rem]" aria-label="Homepage panel layout">
       <div class="hero-panel-stack">
         <!-- HERO: cinematic opening with layered type and parallax media -->
         <section class="scene panel-section hero-scene">
@@ -79,7 +79,7 @@
                 <span class="hero-line"><span>Jouw glow-up begint</span></span>
                 <span class="hero-line"><span>met één behandeling</span></span>
               </h1>
-              <p class="hero-subcopy">Welkom in mijn warme, elegante studio voor natuurlijke en verfijnde PMU afgestemd
+              <p class="hero-subcopy">Welkom in mijn warme, elegante PMU studio voor natuurlijke en verfijnde PMU afgestemd
                 op jouw looks.</p>
               <div class="hero-actions">
                 <a href="behandelingen.html" class="site-button site-button--solid"><span>Behandelingen</span></a>
@@ -172,40 +172,24 @@
         </section>
       </div>
 
-      <section class="scene panel-section separator-section" aria-label="Parallax separator">
-        <div class="separator-media" aria-hidden="true">
-          <video class="separator-image" data-parallax-layer data-parallax-speed="-0.12" data-parallax-tablet="-0.05"
-            data-parallax-max="72" autoplay muted loop playsinline>
-            <source src="./assets/videos/hero-video.mp4" type="video/mp4">
-          </video>
-          <div class="separator-wash"></div>
-        </div>
-        <div class="scene-frame max-w-7xl mx-auto px-4 md:px-8 separator-copy">
-          <p class="eyebrow">Salon in Assendelft</p>
-          <h2 class="separator-title">Salon Tour</h2>
-        </div>
-      </section>
-
       <!-- STICKY SPLIT SECTION: sticky visual left, evolving service story right -->
-      <section class="scene panel-section split-section">
+      <section class="scene panel-section split-section bg-black">
         <div class="scene-frame max-w-7xl mx-auto px-4 md:px-8 split-shell">
-          <div>
+          <div class="visual-stage-shell">
             <div class="visual-stage glass-card">
               <div class="visual-item is-active" data-visual="brows">
-                <div class="visual-media media-lift" data-parallax-layer data-parallax-speed="-0.06"
-                  data-parallax-tablet="-0.03" data-parallax-max="40">
-                  <img src="./assets/images/banner-1.jpg" alt="Powder brow treatment in detail" loading="lazy"
+                <div class="visual-media media-lift">
+                  <img src="./assets/images/ombre-brows.jpg" alt="Ombré brow behandeling in detail" loading="lazy"
                     decoding="async">
                 </div>
                 <div class="visual-overlay">
-                  <strong>Powder Brows</strong>
+                  <strong>Ombré Brows</strong>
                   <span>Natuurlijk volume, zachte structuur, lange houdbaarheid.</span>
                 </div>
               </div>
 
               <div class="visual-item" data-visual="lips">
-                <div class="visual-media media-lift" data-parallax-layer data-parallax-speed="-0.06"
-                  data-parallax-tablet="-0.03" data-parallax-max="40">
+                <div class="visual-media media-lift">
                   <img src="./assets/images/lips.jpg" alt="Lip blush behandeling met verfijnde kleur" loading="lazy"
                     decoding="async">
                 </div>
@@ -216,9 +200,8 @@
               </div>
 
               <div class="visual-item" data-visual="liner">
-                <div class="visual-media media-lift" data-parallax-layer data-parallax-speed="-0.06"
-                  data-parallax-tablet="-0.03" data-parallax-max="40">
-                  <img src="./assets/images/hero.jpg" alt="Studio detail met focus op oogopslag" loading="lazy"
+                <div class="visual-media media-lift">
+                  <img src="./assets/images/neon.jpg" alt="Infralash eyeliner met subtiel gelifte oogopslag" loading="lazy"
                     decoding="async">
                 </div>
                 <div class="visual-overlay">
@@ -226,45 +209,32 @@
                   <span>Meer intensiteit in de blik, met een gecontroleerde, elegante lijn.</span>
                 </div>
               </div>
-
-              <div class="visual-item" data-visual="academy">
-                <div class="visual-media media-lift" data-parallax-layer data-parallax-speed="-0.06"
-                  data-parallax-tablet="-0.03" data-parallax-max="40">
-                  <img src="./assets/images/neon.jpg" alt="Academy sfeer en studio setting" loading="lazy"
-                    decoding="async">
-                </div>
-                <div class="visual-overlay">
-                  <strong>Academy</strong>
-                  <span>Training voor artists die niet alleen techniek, maar ook smaak willen trainen.</span>
-                </div>
-              </div>
             </div>
           </div>
 
-          <div>
+          <div class="split-copy">
             <p class="eyebrow">Je gevoel is belangrijk</p>
             <h2 class="split-heading">Wat je voelt, is net zo zorgvuldig gebouwd als wat je ziet.</h2>
             <p class="section-intro mt-5 mb-8">Elke treatment heeft een eigen ritme. Daarom verschuift de visuele focus
-              mee terwijl je scrolt: van brows naar lips, van blik naar opleiding, zonder dat de pagina in herhaling
-              valt.</p>
+              mee: van brows naar lips tot blik, zonder dat het in herhaling valt.</p>
 
             <article class="service-step depth-card" data-visual="brows">
               <span class="service-index">01 / Brows</span>
-              <h3>Architectuur voor het gezicht</h3>
-              <p class="service-copy mt-4">Powder brows draaien om vorm, schaduw en zachtheid. De opbouw is precies
-                genoeg om structuur te geven, maar licht genoeg om je expressie te behouden.</p>
+              <h3>Ombré Brows</h3>
+              <p class="service-copy mt-4">Natuurlijk volume, zachte structuur, lange houdbaarheid. Je uitstraling
+                blijft natuurlijk en verfijnd, zonder dat het kunstmatig aanvoelt.</p>
             </article>
 
             <article class="service-step depth-card" data-visual="lips">
               <span class="service-index">02 / Lips</span>
-              <h3>Kleur die niet schreeuwt</h3>
+              <h3>Lip Blush</h3>
               <p class="service-copy mt-4">Lip blush brengt verfijning terug in de mondlijn en herstelt balans in kleur
                 en contour. Het resultaat voelt fris, niet zwaar.</p>
             </article>
 
             <article class="service-step depth-card" data-visual="liner">
               <span class="service-index">03 / Eyes</span>
-              <h3>Meer focus in de blik</h3>
+              <h3>Eyeliner PMU</h3>
               <p class="service-copy mt-4">Subtiele eyeliner PMU geeft definitie waar mascara ophoudt. Geen harde
                 make-up look, maar een blik die meer diepte en ritme krijgt.</p>
             </article>

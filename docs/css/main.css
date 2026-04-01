@@ -203,10 +203,11 @@ img {
   z-index: 1;
   min-height: 100svh;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .panel-scroll {
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
 }
 
 .hero-panel-stack {
@@ -521,7 +522,7 @@ body.is-ready .hero-scene .hero-rail>* {
 
 .story-section {
   --story-fade-progress: 0;
-  --story-fade-height: 20px;
+  --story-fade-height: 10px;
   --story-fade-stop: calc(var(--story-fade-height) * (1 - var(--story-fade-progress)));
   position: relative;
   z-index: 4;
@@ -725,7 +726,6 @@ body.is-ready .hero-scene .hero-rail>* {
 
 .panel-copy p,
 .section-intro,
-.service-copy,
 .stack-body,
 .cta-copy,
 .showcase-copy,
@@ -734,12 +734,15 @@ body.is-ready .hero-scene .hero-rail>* {
   line-height: 1.8;
 }
 
+.service-copy {
+  color: var(--site-muted);
+}
+
 .panel-copy p {
   font-size: 0.88rem;
   line-height: 1.62;
 }
 
-.split-section,
 .showcase-section,
 .stack-section,
 .cta-section {
@@ -748,16 +751,37 @@ body.is-ready .hero-scene .hero-rail>* {
 
 .split-shell {
   display: grid;
+  position: relative;
   gap: 2rem;
+  --split-visual-offset: clamp(5rem, 9vw, 6.5rem);
+  isolation: isolate;
+}
+
+.visual-stage-shell {
+  position: sticky;
+  top: var(--split-visual-offset);
+  z-index: 20;
+  align-self: start;
 }
 
 .visual-stage {
   position: relative;
-  top: auto;
+  z-index: 2;
   height: min(62vh, 34rem);
   min-height: 28rem;
-  border-radius: 2rem;
+  max-height: calc(100svh - var(--split-visual-offset) - 1.5rem);
   overflow: hidden;
+  box-shadow: 0 26px 64px rgba(0, 0, 0, 0.26);
+}
+
+.visual-stage::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 34%;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.24) 48%, rgba(0, 0, 0, 0.88) 100%);
 }
 
 .visual-item {
@@ -778,7 +802,7 @@ body.is-ready .hero-scene .hero-rail>* {
 .visual-overlay {
   position: absolute;
   inset: auto 1.25rem 1.25rem 1.25rem;
-  z-index: 1;
+  z-index: 3;
   padding: 1rem 1.1rem;
   border-radius: 1.2rem;
 }
@@ -788,8 +812,14 @@ body.is-ready .hero-scene .hero-rail>* {
   margin-bottom: 0.35rem;
 }
 
+.split-copy {
+  position: relative;
+  z-index: 1;
+}
+
 .service-step {
   position: relative;
+  z-index: 1;
   padding: 1.6rem;
   border-radius: 0;
   transition:
@@ -1092,10 +1122,6 @@ body.is-ready .hero-scene .hero-rail>* {
 }
 
 @media (max-width: 767px) {
-  .panel-scroll {
-    scroll-snap-type: none;
-  }
-
   .panel-section {
     min-height: auto;
     opacity: 1;
@@ -1189,11 +1215,40 @@ body.is-ready .hero-scene .hero-rail>* {
     font-size: clamp(2.2rem, 12vw, 3.8rem);
   }
 
+  .visual-stage-shell::after {
+    content: "";
+    position: absolute;
+    inset: 225px 0 auto 0;
+    height: 15px;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.7) 42%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  .visual-stage-shell::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: -100svh -100vw 100% -100vw;
+    z-index: 0;
+    pointer-events: none;
+    background: #000000;
+  }
+
   .visual-stage {
-    position: relative;
-    top: auto;
-    height: 25rem;
-    min-height: 25rem;
+    background: #000000;
+    height: 225px;
+    min-height: 225px;
+    max-height: 225px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.36), 0 48px 80px -38px rgba(0, 0, 0, 0.95);
+  }
+
+  .visual-stage::after {
+    display: none;
+  }
+
+  .split-copy::before {
+    display: none;
   }
 
   .showcase-track {
@@ -1803,6 +1858,10 @@ video {
   pointer-events: none;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .static {
   position: static;
 }
@@ -2191,6 +2250,10 @@ video {
   padding-bottom: 1rem;
 }
 
+.pb-\[20rem\] {
+  padding-bottom: 20rem;
+}
+
 .pb-\[6rem\] {
   padding-bottom: 6rem;
 }
@@ -2304,10 +2367,6 @@ video {
 
 .text-white\/90 {
   color: rgb(255 255 255 / 0.9);
-}
-
-.filter {
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .backdrop-blur {

@@ -314,7 +314,16 @@ function initSplitVisualSync() {
     return;
   }
 
+  const lastStep = steps[steps.length - 1];
+  let currentVisualId = null;
+
   const setActive = (visualId) => {
+    if (visualId === currentVisualId) {
+      return;
+    }
+
+    currentVisualId = visualId;
+
     steps.forEach((step) => {
       step.classList.toggle('is-active', step.dataset.visual === visualId);
     });
@@ -326,23 +335,45 @@ function initSplitVisualSync() {
 
   setActive(steps[0].dataset.visual);
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const topHit = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+  const sync = () => {
+    const vh = window.innerHeight;
+    const mid = vh / 2;
 
-      if (topHit && topHit.target.dataset.visual) {
-        setActive(topHit.target.dataset.visual);
+    let bestStep = null;
+    let bestDist = Infinity;
+
+    steps.forEach((step) => {
+      const rect = step.getBoundingClientRect();
+
+      // Skip steps fully outside the viewport.
+      if (rect.bottom < 0 || rect.top > vh) {
+        return;
       }
-    },
-    {
-      threshold: [0.35, 0.55, 0.75]
+
+      const dist = Math.abs(rect.top + rect.height / 2 - mid);
+
+      if (dist < bestDist) {
+        bestDist = dist;
+        bestStep = step;
+      }
+    });
+
+    if (bestStep) {
+      setActive(bestStep.dataset.visual);
+      return;
     }
-  );
+
+    // No step visible: if the section is above the viewport, lock to last item.
+    if (lastStep.getBoundingClientRect().bottom < 0) {
+      setActive(lastStep.dataset.visual);
+    }
+  };
+
+  sync();
+  window.addEventListener('scroll', sync, { passive: true });
+  window.addEventListener('resize', sync, { passive: true });
 
   steps.forEach((step) => {
-    observer.observe(step);
     step.addEventListener('mouseenter', () => setActive(step.dataset.visual));
     step.addEventListener('focusin', () => setActive(step.dataset.visual));
   });
