@@ -1,8 +1,11 @@
-@import "./home-experience.css";
+/*
+  Custom stylesheet for the Glamour by Tink site.
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+  This file defines a custom accent colour and a few utility
+  classes used across pages.  TailwindCSS provides most of
+  the styling; the classes here supplement it with a warm
+  copper tone reminiscent of the original site.
+*/
 
 :root {
   --accent: #c5a48e;

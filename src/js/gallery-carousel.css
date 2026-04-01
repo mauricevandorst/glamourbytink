@@ -1,8 +1,0 @@
-.carousel-scrollbar-hidden {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.carousel-scrollbar-hidden::-webkit-scrollbar {
-  display: none;
-}

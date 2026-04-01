@@ -1,0 +1,130 @@
+<!--
+  Treatments page for the Glamour by Tink site.
+  Lists the services and training courses offered along with
+  a short description and indicative price.  All content
+  is static and uses TailwindCSS classes for layout.
+-->
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Behandelingen – Glamour by Tink</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body class="bg-black text-white font-sans">
+  <!-- Navigation (reused from index) -->
+  <header class="fixed top-0 inset-x-0 bg-black bg-opacity-80 backdrop-blur z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-3">
+      <a href="index.html" class="flex items-center space-x-2">
+        <img src="assets/logo.png" alt="Glamour by Tink" class="h-8 w-auto">
+      </a>
+      <button id="navToggle" class="sm:hidden text-white focus:outline-none" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <nav id="navMenu" class="hidden sm:flex space-x-6 uppercase tracking-wider text-sm font-semibold">
+        <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+        <a href="behandelingen.html" class="hover:text-accent transition-colors">Behandelingen</a>
+        <a href="over-ons.html" class="hover:text-accent transition-colors">Over&nbsp;ons</a>
+        <a href="afspraak.html" class="hover:text-accent transition-colors">Afspraak</a>
+      </nav>
+    </div>
+    <nav id="mobileMenu" class="sm:hidden hidden bg-black bg-opacity-90 backdrop-blur p-4">
+      <ul class="space-y-2 text-center uppercase tracking-wider text-sm font-semibold">
+        <li><a href="index.html" class="block py-2 hover:text-accent transition-colors">Home</a></li>
+        <li><a href="behandelingen.html" class="block py-2 hover:text-accent transition-colors">Behandelingen</a></li>
+        <li><a href="over-ons.html" class="block py-2 hover:text-accent transition-colors">Over&nbsp;ons</a></li>
+        <li><a href="afspraak.html" class="block py-2 hover:text-accent transition-colors">Afspraak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pt-24 pb-16">
+    <section class="text-center px-4 md:px-8 py-12">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Onze behandelingen</h1>
+      <p class="max-w-3xl mx-auto text-lg mb-12">Of je nu op zoek bent naar een subtiel accent of een volledige transformatie, bij Glamour by Tink ben je in vertrouwde handen. Ontdek hieronder al onze behandelingen en opleidingen.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Ombré Powder Brows -->
+        <div class="bg-white/5 p-6 rounded-lg flex flex-col">
+          <img src="assets/lips.jpg" alt="Ombré Powder Brows" class="w-full h-40 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-semibold mb-2">Ombré Powder Brows</h3>
+          <p class="text-sm flex-grow mb-4">Perfect gevormde wenkbrauwen met een zachte, poederachtige finish die lang mooi blijft.</p>
+          <span class="text-accent font-semibold">vanaf €299</span>
+        </div>
+        <!-- Lip Pigmentatie -->
+        <div class="bg-white/5 p-6 rounded-lg flex flex-col">
+          <img src="assets/lips.jpg" alt="Lip Pigmentatie" class="w-full h-40 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-semibold mb-2">Lip Pigmentatie</h3>
+          <p class="text-sm flex-grow mb-4">Breng subtiele kleur en definitie aan je lippen voor een natuurlijke, volle look.</p>
+          <span class="text-accent font-semibold">vanaf €249</span>
+        </div>
+        <!-- Brow Lamination -->
+        <div class="bg-white/5 p-6 rounded-lg flex flex-col">
+          <img src="assets/lips.jpg" alt="Brow Lamination" class="w-full h-40 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-semibold mb-2">Brow Lamination</h3>
+          <p class="text-sm flex-grow mb-4">Lift en fixeer jouw natuurlijke haren voor volle, strak gestylde wenkbrauwen.</p>
+          <span class="text-accent font-semibold">vanaf €75</span>
+        </div>
+        <!-- Eyeliner PMU -->
+        <div class="bg-white/5 p-6 rounded-lg flex flex-col">
+          <img src="assets/lips.jpg" alt="Eyeliner PMU" class="w-full h-40 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-semibold mb-2">Eyeliner PMU</h3>
+          <p class="text-sm flex-grow mb-4">Een strakke eyeliner die altijd perfect zit, zonder dagelijkse moeite.</p>
+          <span class="text-accent font-semibold">vanaf €199</span>
+        </div>
+        <!-- Basisopleiding Powderbrows -->
+        <div class="bg-white/5 p-6 rounded-lg flex flex-col">
+          <img src="assets/lips.jpg" alt="Basisopleiding Powderbrows" class="w-full h-40 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-semibold mb-2">Basisopleiding Powderbrows</h3>
+          <p class="text-sm flex-grow mb-4">Leer alle ins en outs van de powderbrow‑techniek tijdens onze volledige opleiding.</p>
+          <span class="text-accent font-semibold">€1.299</span>
+        </div>
+        <!-- Masterclass -->
+        <div class="bg-white/5 p-6 rounded-lg flex flex-col">
+          <img src="assets/lips.jpg" alt="Masterclass Ombre Brows" class="w-full h-40 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-semibold mb-2">Masterclass Ombre Brows</h3>
+          <p class="text-sm flex-grow mb-4">Voor professionals die hun vaardigheden willen verbeteren met geavanceerde technieken.</p>
+          <span class="text-accent font-semibold">€799</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote + CTA -->
+    <section class="py-16 px-4 md:px-8 bg-black">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2 relative">
+          <img src="assets/neon.jpg" alt="Inspirerende quote" class="w-full h-64 object-cover rounded-lg">
+          <blockquote class="absolute inset-0 flex items-center justify-center text-center p-6 text-2xl md:text-3xl font-bold italic backdrop-blur-sm bg-black/50">
+            “If not now, when?”
+          </blockquote>
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Wij creëren schoonheid, speciaal voor jou.</h2>
+          <p class="mb-6">Onze behandelingen zijn afgestemd op jouw wensen en kenmerken. Maak vandaag nog een afspraak en ervaar het zelfvertrouwen dat bij jou past.</p>
+          <a href="afspraak.html" class="btn-secondary">Maak een afspraak</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-black border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+      <img src="assets/logo.png" alt="Glamour by Tink" class="h-8 w-auto">
+      <nav class="flex space-x-6 uppercase text-sm tracking-wider">
+        <a href="index.html" class="hover:text-accent">Home</a>
+        <a href="behandelingen.html" class="hover:text-accent">Behandelingen</a>
+        <a href="over-ons.html" class="hover:text-accent">Over&nbsp;ons</a>
+        <a href="afspraak.html" class="hover:text-accent">Afspraak</a>
+      </nav>
+      <p class="text-xs text-gray-400">© 2026 Glamour by Tink. Alle rechten voorbehouden.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

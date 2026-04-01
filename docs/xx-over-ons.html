@@ -1,0 +1,117 @@
+<!--
+  About page for the Glamour by Tink site.
+  Presents the story behind the studio, its founder and the
+  philosophy that drives the business.  Includes a metrics
+  section and call‑to‑action.  All styling uses TailwindCSS.
+-->
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Over ons – Glamour by Tink</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body class="bg-black text-white font-sans">
+  <!-- Navigation -->
+  <header class="fixed top-0 inset-x-0 bg-black bg-opacity-80 backdrop-blur z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-3">
+      <a href="index.html" class="flex items-center space-x-2">
+        <img src="assets/logo.png" alt="Glamour by Tink" class="h-8 w-auto">
+      </a>
+      <button id="navToggle" class="sm:hidden text-white focus:outline-none" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <nav id="navMenu" class="hidden sm:flex space-x-6 uppercase tracking-wider text-sm font-semibold">
+        <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+        <a href="behandelingen.html" class="hover:text-accent transition-colors">Behandelingen</a>
+        <a href="over-ons.html" class="hover:text-accent transition-colors">Over&nbsp;ons</a>
+        <a href="afspraak.html" class="hover:text-accent transition-colors">Afspraak</a>
+      </nav>
+    </div>
+    <nav id="mobileMenu" class="sm:hidden hidden bg-black bg-opacity-90 backdrop-blur p-4">
+      <ul class="space-y-2 text-center uppercase tracking-wider text-sm font-semibold">
+        <li><a href="index.html" class="block py-2 hover:text-accent transition-colors">Home</a></li>
+        <li><a href="behandelingen.html" class="block py-2 hover:text-accent transition-colors">Behandelingen</a></li>
+        <li><a href="over-ons.html" class="block py-2 hover:text-accent transition-colors">Over&nbsp;ons</a></li>
+        <li><a href="afspraak.html" class="block py-2 hover:text-accent transition-colors">Afspraak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pt-24 pb-16">
+    <!-- Intro section -->
+    <section class="px-4 md:px-8 py-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Over ons</h1>
+      <p class="max-w-3xl mx-auto text-lg">PMU & Beyond – Even voorstellen… Ik ben Zoë, oprichter van Glamour by Tink en gepassioneerd PMU‑artiest. Mijn doel is om vrouwen (en mannen!) te helpen hun natuurlijke schoonheid naar voren te brengen met behandelingen die duurzaam, natuurlijk en volledig op maat zijn. Met een scherp oog voor detail creëren we looks die perfect bij jou passen.</p>
+    </section>
+
+    <!-- Founder section -->
+    <section class="px-4 md:px-8 py-12">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-5/12">
+          <img src="assets/neon.jpg" alt="Zoë de Kok" class="w-full h-80 object-cover rounded-lg">
+        </div>
+        <div class="md:w-7/12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Jouw schoonheid, onze passie</h2>
+          <p class="mb-4">Met jarenlange ervaring in permanente make‑up en een warm hart voor het vak creëren we bij Glamour by Tink meer dan alleen een behandeling. We nemen de tijd voor een persoonlijke intake, bespreken jouw wensen en adviseren welke techniek het beste bij jou past.</p>
+          <p class="mb-4">Ons team investeert continu in trainingen en innovaties zodat we jou de hoogste kwaliteit kunnen garanderen. Van subtiele wenkbrauwen tot opvallende lippen: we streven naar een natuurlijk resultaat waarmee jij elke dag straalt.</p>
+          <p class="italic mb-4">“Omdat jouw uitstraling de aandacht verdient.”</p>
+          <a href="behandelingen.html" class="btn-secondary">Bekijk onze behandelingen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics section -->
+    <section class="py-12 bg-white/5">
+      <div class="max-w-6xl mx-auto px-4 md:px-8 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+        <div>
+          <h3 class="text-5xl font-bold text-accent">400+</h3>
+          <p class="mt-2 text-sm">Tevreden klanten</p>
+        </div>
+        <div>
+          <h3 class="text-5xl font-bold text-accent">100%</h3>
+          <p class="mt-2 text-sm">Persoonlijke aandacht</p>
+        </div>
+        <div>
+          <h3 class="text-5xl font-bold text-accent">5+</h3>
+          <p class="mt-2 text-sm">Jaren ervaring</p>
+        </div>
+        <div>
+          <h3 class="text-5xl font-bold text-accent">4,9/5</h3>
+          <p class="mt-2 text-sm">Klantwaardering</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="py-16 px-4 md:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Benieuwd wat wij voor jou kunnen betekenen?</h2>
+        <p class="mb-6">Neem vandaag nog contact op of plan direct jouw afspraak. We kijken ernaar uit om samen met jou te werken aan een look die jouw persoonlijkheid onderstreept.</p>
+        <a href="afspraak.html" class="btn-secondary">Plan je afspraak</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-black border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+      <img src="assets/logo.png" alt="Glamour by Tink" class="h-8 w-auto">
+      <nav class="flex space-x-6 uppercase text-sm tracking-wider">
+        <a href="index.html" class="hover:text-accent">Home</a>
+        <a href="behandelingen.html" class="hover:text-accent">Behandelingen</a>
+        <a href="over-ons.html" class="hover:text-accent">Over&nbsp;ons</a>
+        <a href="afspraak.html" class="hover:text-accent">Afspraak</a>
+      </nav>
+      <p class="text-xs text-gray-400">© 2026 Glamour by Tink. Alle rechten voorbehouden.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
