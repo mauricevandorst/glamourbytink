@@ -513,7 +513,7 @@ body.is-ready .scroll-indicator__inner {
   overflow: hidden;
   min-height: 3rem;
   padding: 0.7rem 1.2rem;
-  border-radius: 0px;
+  border-radius: 9999px;
   border: 1px solid transparent;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transform: translateY(0);
