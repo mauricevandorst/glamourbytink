@@ -54,8 +54,8 @@
         <nav class="hidden sm:flex items-center gap-6">
           <a href="index.html" class="site-link">Home</a>
           <a href="behandelingen.html" class="site-link">Behandelingen</a>
-          <a href="over-ons.html" class="site-link">Over ons</a>
-          <a href="#contact" class="site-link">Afspraak</a>
+          <a href="./#footer" class="site-link">Contact</a>
+          <a href="#afspraak" class="site-link">Afspraak</a>
         </nav>
       </div>
 
@@ -63,13 +63,13 @@
         <ul class="space-y-3 text-center">
           <li><a href="index.html" class="site-link">Home</a></li>
           <li><a href="behandelingen.html" class="site-link">Behandelingen</a></li>
-          <li><a href="over-ons.html" class="site-link">Over ons</a></li>
-          <li><a href="#contact" class="site-link">Afspraak</a></li>
+          <li><a href="./#footer" class="site-link">Contact</a></li>
+          <li><a href="#afspraak" class="site-link">Afspraak</a></li>
         </ul>
       </nav>
     </header>
 
-    <main id="main" class="panel-scroll" aria-label="Homepage panel layout">
+    <main id="main" class="panel-scroll scroll-mt-24 md:scroll-mt-28" aria-label="Homepage panel layout">
       <div class="hero-panel-stack">
         <!-- HERO: cinematic opening with layered type and parallax media -->
         <section class="scene panel-section hero-scene">
@@ -90,14 +90,15 @@
                 voor een stralend resultaat.</p>
               <div class="hero-actions">
                 <a href="behandelingen.html" class="site-button site-button--solid"><span>Behandelingen</span></a>
-                <a href="#contact" class="site-button site-button--ghost"><span>Afspraak maken</span></a>
+                <a href="#afspraak" class="site-button site-button--ghost"><span>Afspraak maken</span></a>
               </div>
             </div>
           </div>
         </section>
 
         <!-- PINNED PANEL SECTION: full-screen storytelling with snap transitions -->
-        <section class="scene panel-section story-section relative border-t-[1px] border-[--site-line]" id="story">
+        <section id="behandelingen"
+          class="scene panel-section story-section relative border-t-[1px] border-[--site-line]" id="story">
           <div class="pointer-events-none absolute left-1/2 top-5 z-20 -translate-x-1/2 md:top-7" aria-hidden="true">
             <div class="brand-lockup mt-6 scale-95 opacity-80" data-story-brand-lockup>
               <span class="brand-meta items-center text-center">
@@ -110,7 +111,7 @@
             <div class="mx-auto mb-6 w-full max-w-3xl px-4 text-center md:mb-8 md:px-6">
               <h2 class="section-title">Behandelingen</h2>
               <p class="section-intro mt-4">Dit zijn de PMU-behandelingen die wij aanbieden, uitgevoerd met bekende
-                technieken voor prachtig resultaat.</p>
+                technieken voor prachtig, en ook bewezen resultaat.</p>
             </div>
             <div class="story-panels snap-mandatory">
               <article class="story-panel">
@@ -188,6 +189,15 @@
                 </div>
               </article>
             </div>
+            <div class="hero-actions justify-center mt-8 md:mt-10">
+              <a href="#afspraak" class="site-button site-button--ghost w-full sm:w-max rounded-[10px_0px_10px_0px]">
+                <span>Afspraak maken</span>
+              </a>
+              <a href="behandelingen.html"
+                class="site-button site-button--solid w-full sm:w-max rounded-[0px_10px_0px_10px]">
+                <span>Alle behandelingen</span>
+              </a>
+            </div>
           </div>
         </section>
       </div>
@@ -246,10 +256,11 @@
 
           <div class="split-copy">
             <p class="eyebrow">Je gevoel is belangrijk</p>
-            <h2 class="split-heading">Wat je voelt, is net zo zorgvuldig als wat je ziet.</h2>
-            <p class="section-intro mt-5 mb-8">Elke behandeling heeft een eigen ritme. Daarom verschuift de visuele
-              focus
-              mee: van brows naar lips tot blik, zonder dat het in herhaling valt.</p>
+            <h2 class="split-heading">Wat je voelt, is net zo belangrijk als wat je ziet.</h2>
+            <!-- TODO: Pas deze section-intro tekst aan -->
+            <p class="section-intro mt-5 mb-8">Geen standaard behandeling, maar een verfijnde aanpak die past bij jouw
+              gezicht, stijl en comfort. Zo voelt het traject persoonlijk en blijft het resultaat langdurig in balans.
+            </p>
 
             <article class="service-step depth-card" data-visual="brows">
               <span class="service-index">01 / Brows</span>
@@ -479,14 +490,14 @@
                   Bekijk alle reviews
                 </span>
               </a>
-              <a href="#contact" class="site-button site-button--solid w-full"><span>Plan je afspraak</span></a>
+              <a href="#afspraak" class="site-button site-button--solid w-full"><span>Plan je afspraak</span></a>
             </div>
           </div>
         </div>
       </section>
 
       <!-- CTA SECTION: high-impact ending with contact direction -->
-      <section class="scene panel-section cta-section !min-h-0 !py-0 px-0" id="contact">
+      <section class="scene panel-section cta-section !min-h-0 !py-0 px-0 scroll-mt-24 md:scroll-mt-28" id="afspraak">
         <div class="relative items-center h-[clamp(19rem,65svh,34rem)] w-full overflow-hidden">
           <img src="./assets/images/banner-1.jpg" alt="Elegante PMU behandeling in de salon"
             class="h-full w-full object-cover object-center" loading="lazy" decoding="async">
@@ -521,7 +532,7 @@
     </main>
 
     <!-- SITE FOOTER: premium closing experience -->
-    <footer class="site-footer" aria-label="Site footer">
+    <footer id="footer" class="site-footer scroll-mt-24 md:scroll-mt-28" aria-label="Site footer">
       <div class="footer-wrap">
         <!-- Warm ambient glow overlay -->
         <div class="footer-ambient" aria-hidden="true"></div>
@@ -536,26 +547,22 @@
               <span class="footer-logotype__sub">BY TINK</span>
             </a>
             <p class="footer-tagline">PMU artist in Assendelft. Verfijnde permanente make-up, volledig in afstemming met
-              jouw
-              uitstraling en wensen.</p>
+              jouw uitstraling en wensen.</p>
             <div class="footer-socials">
-              <a href="https://www.instagram.com/glamourbytink/" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
                 class="footer-social" aria-label="Volg ons op Instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                  aria-hidden="true">
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                </svg>
+                <img src="./assets/icons/instagram-light.svg" alt="" class="h-4 w-4 object-contain" loading="lazy"
+                  decoding="async" aria-hidden="true">
               </a>
-              <a href="https://www.facebook.com/glamourbytink/" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.facebook.com/people/Glamour-by-Tink/61553052976165/" target="_blank" rel="noopener noreferrer"
                 class="footer-social" aria-label="Volg ons op Facebook">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                  aria-hidden="true">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg>
+                <img src="./assets/icons/facebook-light.svg" alt="" class="h-4 w-4 object-contain" loading="lazy"
+                  decoding="async" aria-hidden="true">
+              </a>
+              <a href="https://www.tiktok.com/@glamour.by.tink" target="_blank" rel="noopener noreferrer"
+                class="footer-social" aria-label="Volg ons op TikTok">
+                <img src="./assets/icons/tiktok-light.svg" alt="" class="h-4 w-4 object-contain" loading="lazy"
+                  decoding="async" aria-hidden="true">
               </a>
             </div>
           </div>
@@ -576,23 +583,29 @@
           <div class="footer-col footer-col--nav">
             <p class="footer-col-label">Salon</p>
             <ul class="footer-nav">
-              <li><a href="over-ons.html" class="footer-nav-link">Over Tink</a></li>
-              <li><a href="over-ons.html" class="footer-nav-link">Academy</a></li>
-              <li><a href="https://www.google.com/search?q=Glamour+by+Tink" target="_blank" rel="noopener noreferrer"
-                  class="footer-nav-link">Reviews</a></li>
-              <li><a href="afspraak.html" class="footer-nav-link">Afspraak boeken</a></li>
               <li><a href="index.html" class="footer-nav-link">Home</a></li>
+              <li><a href="./#footer" class="footer-nav-link">Over Ons</a></li>
+              <li><a href="https://www.google.com/search?q=Glamour+by+Tink" target="_blank" rel="noopener noreferrer"
+                  class="footer-nav-link">Google Reviews</a></li>
+              <li><a href="afspraak.html" class="footer-nav-link">Afspraak boeken</a></li>
             </ul>
           </div>
 
           <!-- Column 4: Location + booking CTA pill -->
           <div class="footer-col footer-col--contact">
-            <p class="footer-col-label">Bezoek</p>
+            <p class="footer-col-label">Contact</p>
             <address class="footer-addr">
-              <span>Salon Assendelft</span>
-              <span>Noord-Holland</span>
+              <a href="tel:+31623262640" class="footer-nav-link md:hidden">Telefoon: 06 232 626 40</a>
+              <a href="https://wa.me/31623262640" target="_blank" rel="noopener noreferrer"
+                class="footer-nav-link hidden md:inline-block">Telefoon: 06 232 626 40</a>
+              <a href="mailto:glamourbytink@gmail.com" class="footer-nav-link">E-mail: glamourbytink@gmail.com</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Norbertijnenstraat+1%2C+1566LK+Assendelft"
+                target="_blank" rel="noopener noreferrer" class="footer-nav-link">Adres: Norbertijnenstraat 1,
+                1566LK Assendelft</a>
+              <span>KvK: 69985545</span>
+              <span>BTW: NL000000000B00</span>
             </address>
-            <a href="afspraak.html" class="footer-pill">Boek een afspraak →</a>
+            <a href="afspraak.html" class="site-button site-button--ghost py-[4px] min-h-0 text-sm">Boek een afspraak</a>
           </div>
 
         </div>

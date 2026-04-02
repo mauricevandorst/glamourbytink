@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStoryBrandFade(reducedMotion);
   initPanelVisibilityObserver();
   initStoryPanelProgress();
+  initStoryPanelReveal(reducedMotion);
   initStoryPanelCopyEqualHeight();
   initSplitVisualSync();
   initShowcaseActivation();
@@ -224,7 +225,7 @@ function initStoryBrandFade(reducedMotion) {
     framePending = false;
 
     const rect = storySection.getBoundingClientRect();
-    const fadeStart = window.innerHeight * 0.45;
+    const fadeStart = window.innerHeight * 0.65;
     const fadeDistance = Math.max(180, window.innerHeight * 0.38);
     const progress = Math.max(0, Math.min(1, (fadeStart - rect.top) / fadeDistance));
 
@@ -297,6 +298,69 @@ function initStoryPanelProgress() {
   updateLabel();
   storyRail.addEventListener('scroll', updateLabel, { passive: true });
   window.addEventListener('resize', updateLabel);
+}
+
+function initStoryPanelReveal(reducedMotion) {
+  const storyRail = document.querySelector('.story-panels');
+  const storyPanels = Array.from(document.querySelectorAll('.story-panel'));
+
+  if (!storyRail || !storyPanels.length) {
+    return;
+  }
+
+  storyRail.classList.add('has-story-anim');
+
+  storyPanels.forEach((panel, index) => {
+    panel.style.setProperty('--story-panel-delay', `${(index * 0.09).toFixed(2)}s`);
+  });
+
+  if (reducedMotion || !('IntersectionObserver' in window)) {
+    storyPanels.forEach((panel) => panel.classList.add('is-entered'));
+    return;
+  }
+
+  let cascadeStarted = false;
+
+  const markEntered = (panel) => {
+    if (!panel || panel.classList.contains('is-entered')) {
+      return;
+    }
+
+    panel.classList.add('is-entered');
+    observer.unobserve(panel);
+  };
+
+  const markRemainingPanels = (startIndex) => {
+    for (let index = startIndex; index < storyPanels.length; index += 1) {
+      markEntered(storyPanels[index]);
+    }
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.36) {
+          const currentPanel = entry.target;
+          markEntered(currentPanel);
+
+          const currentIndex = storyPanels.indexOf(currentPanel);
+          const nextIndex = currentIndex + 1;
+
+          if (!cascadeStarted && nextIndex < storyPanels.length) {
+            cascadeStarted = true;
+            markRemainingPanels(nextIndex);
+          }
+        }
+      });
+    },
+    {
+      root: storyRail,
+      threshold: [0.2, 0.36, 0.6],
+      rootMargin: '0px'
+    }
+  );
+
+  storyPanels.forEach((panel) => observer.observe(panel));
 }
 
 function initStoryPanelCopyEqualHeight() {
@@ -499,8 +563,8 @@ function initScrollIndicatorMotion({ reducedMotion }) {
   indicator.style.willChange = 'transform, opacity';
 
   let widgetVisible = false;
-  const widgetShowThreshold = 205;
-  const widgetHideThreshold = 165;
+  const widgetShowThreshold = 775;
+  const widgetHideThreshold = 800;
 
   const resolveSalonizedWidget = () => {
     if (salonizedWidget && document.body.contains(salonizedWidget)) {
@@ -616,12 +680,12 @@ function initScrollIndicatorMotion({ reducedMotion }) {
     const heroRect = heroSection.getBoundingClientRect();
     const heroTravel = Math.max(1, heroRect.height * 0.9);
     const heroProgress = Math.max(0, Math.min(1, -heroRect.top / heroTravel));
-    const fadeStart = 100;
-    const fadeEnd = 340;
+    const fadeStart = 50;
+    const fadeEnd = 290;
     const fadeProgress = Math.max(0, Math.min(1, (window.scrollY - fadeStart) / (fadeEnd - fadeStart)));
     const opacity = 1 - fadeProgress;
-    const fadeDropOffset = fadeProgress * 10;
-    const offsetY = heroProgress * 24 + fadeDropOffset;
+    const fadeLiftOffset = fadeProgress * 28;
+    const offsetY = heroProgress * 24 - fadeLiftOffset;
 
     indicator.style.transform = `translate3d(0, ${offsetY.toFixed(2)}px, 0)`;
     indicator.style.opacity = opacity.toFixed(3);
@@ -683,6 +747,10 @@ function initReducedMotion() {
 
   document.querySelectorAll('.reveal-on-scroll').forEach((element) => {
     element.classList.add('is-revealed');
+  });
+
+  document.querySelectorAll('.story-panel').forEach((panel) => {
+    panel.classList.add('is-entered');
   });
 
   document.querySelectorAll('.visual-item').forEach((visual, index) => {

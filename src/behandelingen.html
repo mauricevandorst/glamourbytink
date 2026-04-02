@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Behandelingen | Glamour by Tink</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/behandelingen.css">
+  <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
+</head>
+
+<body class="text-white">
+  <div class="site-shell treatments-shell">
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="max-w-[88rem] mx-auto px-6 py-6 md:px-8 nav-shell">
+        <a href="index.html" class="brand-lockup" aria-label="Glamour by Tink home">
+          <span class="brand-meta">
+            <strong class="brand-title">GLAMOUR</strong>
+            <span class="brand-tagline">BY TINK • PMU ARTIST</span>
+          </span>
+        </a>
+
+        <button id="navToggle" class="nav-toggle sm:hidden focus:outline-none" aria-label="Open menu"
+          aria-expanded="false" aria-controls="mobileMenu">
+          <span class="nav-toggle__icon" aria-hidden="true">
+            <span class="nav-toggle__line"></span>
+            <span class="nav-toggle__line"></span>
+            <span class="nav-toggle__line"></span>
+          </span>
+        </button>
+
+        <nav class="hidden sm:flex items-center gap-6">
+          <a href="index.html" class="site-link">Home</a>
+          <a href="behandelingen.html" class="site-link" aria-current="page">Behandelingen</a>
+          <a href="./#footer" class="site-link">Contact</a>
+          <a href="afspraak.html" class="site-link">Afspraak</a>
+        </nav>
+      </div>
+
+      <nav id="mobileMenu" class="mobile-nav sm:hidden" aria-hidden="true">
+        <ul class="space-y-3 text-center">
+          <li><a href="index.html" class="site-link">Home</a></li>
+          <li><a href="behandelingen.html" class="site-link" aria-current="page">Behandelingen</a></li>
+          <li><a href="./#footer" class="site-link">Contact</a></li>
+          <li><a href="afspraak.html" class="site-link">Afspraak</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="treatments-main scroll-mt-24 md:scroll-mt-28">
+      <!-- HERO SECTION -->
+      <section class="treatments-hero section-edge" aria-labelledby="treatments-hero-title">
+        <div class="treatments-hero__media">
+          <img src="./assets/images/hero.jpg" alt="Luxueuze PMU behandeling in de salon" loading="eager"
+            decoding="async" fetchpriority="high">
+        </div>
+        <div class="treatments-hero__veil" aria-hidden="true"></div>
+
+        <div class="scene-frame relative max-w-[88rem] mx-auto px-4 md:px-8 h-full flex items-end pt-10">
+          <div class="w-full lg:max-w-3xl mt-16 treatments-hero__content">
+            <p class="eyebrow treatments-reveal">Behandelingen</p>
+            <h1 id="treatments-hero-title" class="treatments-hero__title treatments-reveal" style="--delay: 0.08s;">
+              Behandelingen die je uitstraling
+              <span class="!inline">verfijnen.</span>
+            </h1>
+            <p class="treatments-hero__intro treatments-reveal" style="--delay: 0.16s;">
+              Elke behandeling wordt afgestemd op jouw looks, huid en persoonlijke wensen.</p>
+            <div class="flex flex-wrap gap-2 treatments-reveal" style="--delay: 0.22s;">
+              <div class="treatments-hero__actions" style="--delay: 0.24s;">
+                <a href="#treatments-overview" class="site-button site-button--solid"><span>Behandelingen</span></a>
+              </div>
+              <div class="treatments-hero__actions" style="--delay: 0.24s;">
+                <a href="afspraak.html" class="site-button site-button--ghost"><span>Plan een intake</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TREATMENTS OVERVIEW SECTION -->
+      <section id="treatments-overview" class="treatments-overview section-edge" aria-labelledby="overview-title">
+        <div class="max-w-[88rem] mx-auto px-4 md:px-8">
+          <div class="treatments-heading treatments-reveal">
+            <p class="eyebrow">Complete aanbod</p>
+            <h2 id="overview-title" class="section-title">Onze behandelingen, elk met een eigen beleving.</h2>
+            <p class="section-intro mt-4">De onderstaande blokken moeten nog worden aangepast. De titel, beschrijving,
+              duur en prijs
+              moeten nog afgestemd worden.</p>
+          </div>
+
+          <div class="treatments-grid auto-rows-fr" aria-label="Overzicht van alle behandelingen">
+            <!-- Behandeling 1: vervang titel, duur, prijs en tekst -->
+            <article
+              class="treatments-reveal col-span-12 md:col-span-6 xl:col-span-4 flex h-full flex-col border-t border-white/20 pt-6"
+              style="--delay: 0.02s;">
+              <div class="h-56 overflow-hidden rounded-[1.2rem] sm:h-60">
+                <img src="./assets/images/ombre-brows.jpg" alt="Powder brows behandeling" loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover transition duration-700 ease-out hover:scale-[1.04]">
+              </div>
+              <div class="flex grow flex-col gap-4 pt-5">
+                <p class="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[color:var(--site-accent-light)]">
+                  Brows</p>
+                <h3 class="text-[clamp(2rem,4vw,3rem)] leading-[0.92] text-[color:var(--site-ink)]">Powder Brows</h3>
+                <p class="grow text-[0.98rem] leading-[1.62] text-white/75">Zachte schaduwopbouw voor strakke vorm en
+                  een
+                  rustige, verzorgde
+                  uitstraling met natuurlijke diepte.</p>
+                <dl class="mt-auto flex flex-wrap items-end justify-between gap-5" aria-label="Behandelingsinformatie">
+                  <div>
+                    <dt class="text-[0.63rem] uppercase tracking-[0.17em] text-white/55">Duur</dt>
+                    <dd class="mt-1 text-[1.02rem] text-[color:var(--site-ink)]">2,5 uur</dd>
+                  </div>
+                  <a href="afspraak.html" class="site-button site-button--ghost w-max me-5">
+                    Kies behandeling →
+                  </a>
+                </dl>
+              </div>
+            </article>
+
+            <!-- Behandeling 2: vervang titel, duur, prijs en tekst -->
+            <article
+              class="treatments-reveal col-span-12 md:col-span-6 xl:col-span-4 flex h-full flex-col border-t border-white/20 pt-6"
+              style="--delay: 0.1s;">
+              <div class="h-56 overflow-hidden rounded-[1.2rem] sm:h-60">
+                <img src="./assets/images/banner-2.jpg" alt="Nano combi brows behandeling" loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover transition duration-700 ease-out hover:scale-[1.04]">
+              </div>
+              <div class="flex grow flex-col gap-4 pt-5">
+                <p class="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[color:var(--site-accent-light)]">
+                  Brows</p>
+                <h3 class="text-[clamp(1.8rem,3.4vw,2.45rem)] leading-[0.95] text-[color:var(--site-ink)]">Nano Combi
+                  Brows</h3>
+                <p class="grow text-[0.95rem] leading-[1.6] text-white/75">Fijne hairstrokes gecombineerd met powder
+                  shading
+                  voor een vol en
+                  realistisch resultaat.</p>
+                <dl class="mt-auto flex flex-wrap items-end justify-between gap-5" aria-label="Behandelingsinformatie">
+                  <div>
+                    <dt class="text-[0.63rem] uppercase tracking-[0.17em] text-white/55">Duur</dt>
+                    <dd class="mt-1 text-[0.98rem] text-[color:var(--site-ink)]">3 uur</dd>
+                  </div>
+                  <a href="afspraak.html" class="site-button site-button--ghost w-max me-5">
+                    Kies behandeling →
+                  </a>
+                </dl>
+              </div>
+            </article>
+
+            <!-- Behandeling 3: vervang titel, duur, prijs en tekst -->
+            <article
+              class="treatments-reveal col-span-12 md:col-span-6 xl:col-span-4 flex h-full flex-col border-t border-white/20 pt-6"
+              style="--delay: 0.16s;">
+              <div class="h-56 overflow-hidden rounded-[1.2rem] sm:h-60">
+                <img src="./assets/images/eyeliner.jpg" alt="Infralash eyeliner behandeling" loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover transition duration-700 ease-out hover:scale-[1.04]">
+              </div>
+              <div class="flex grow flex-col gap-4 pt-5">
+                <p class="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[color:var(--site-accent-light)]">
+                  Eyes</p>
+                <h3 class="text-[clamp(1.8rem,3.4vw,2.45rem)] leading-[0.95] text-[color:var(--site-ink)]">Infralash
+                  Eyeliner</h3>
+                <p class="grow text-[0.95rem] leading-[1.6] text-white/75">Subtiele pigmentatie tussen de wimperrand
+                  voor
+                  meer definitie zonder
+                  zichtbaar make-up effect.</p>
+                <dl class="mt-auto flex flex-wrap items-end justify-between gap-5" aria-label="Behandelingsinformatie">
+                  <div>
+                    <dt class="text-[0.63rem] uppercase tracking-[0.17em] text-white/55">Duur</dt>
+                    <dd class="mt-1 text-[0.98rem] text-[color:var(--site-ink)]">2 uur</dd>
+                  </div>
+                  <a href="afspraak.html" class="site-button site-button--ghost w-max me-5">
+                    Kies behandeling →
+                  </a>
+                </dl>
+              </div>
+            </article>
+
+            <!-- Behandeling 4: vervang titel, duur, prijs en tekst -->
+            <article
+              class="treatments-reveal col-span-12 md:col-span-6 xl:col-span-4 flex h-full flex-col border-t border-white/20 pt-6"
+              style="--delay: 0.22s;">
+              <div class="h-56 overflow-hidden rounded-[1.2rem] sm:h-60">
+                <img src="./assets/images/lips.jpg" alt="Lip blush behandeling" loading="lazy" decoding="async"
+                  class="h-full w-full object-cover transition duration-700 ease-out hover:scale-[1.04]">
+              </div>
+              <div class="flex grow flex-col gap-4 pt-5">
+                <p class="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[color:var(--site-accent-light)]">
+                  Lips</p>
+                <h3 class="text-[clamp(1.9rem,3.8vw,2.7rem)] leading-[0.95] text-[color:var(--site-ink)]">Lip Blush</h3>
+                <p class="grow text-[0.95rem] leading-[1.62] text-white/75">Herstelt toon en contour voor frissere
+                  lippen met
+                  een zachte,
+                  elegante kleurintensiteit die dagelijks mooi blijft.</p>
+                <dl class="mt-auto flex flex-wrap items-end justify-between gap-5" aria-label="Behandelingsinformatie">
+                  <div>
+                    <dt class="text-[0.63rem] uppercase tracking-[0.17em] text-white/55">Duur</dt>
+                    <dd class="mt-1 text-[0.98rem] text-[color:var(--site-ink)]">2,5 uur</dd>
+                  </div>
+                  <a href="afspraak.html" class="site-button site-button--ghost w-max me-5">
+                    Kies behandeling →
+                  </a>
+                </dl>
+              </div>
+            </article>
+
+            <!-- Behandeling 5: vervang titel, duur, prijs en tekst -->
+            <article
+              class="treatments-reveal col-span-12 md:col-span-6 xl:col-span-4 flex h-full flex-col border-t border-white/20 pt-6"
+              style="--delay: 0.28s;">
+              <div class="h-56 overflow-hidden rounded-[1.2rem] sm:h-60">
+                <img src="./assets/images/portfolio-2.jpg" alt="Lip blush behandeling" loading="lazy" decoding="async"
+                  class="h-full w-full object-cover transition duration-700 ease-out hover:scale-[1.04]">
+              </div>
+              <div class="flex grow flex-col pt-5">
+                <p class="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[color:var(--site-accent-light)]">
+                  Nazorg</p>
+                <h3 class="mt-3 text-[clamp(1.75rem,3vw,2.2rem)] leading-[1.02] text-[color:var(--site-ink)]">Touch-up
+                  afspraken</h3>
+                <!-- TODO: Herschrijf de tekst van dit p-element -->
+                <p class="mt-3 grow text-[0.95rem] leading-[1.6] text-white/75">Voor wie eerder powder brows, nano brows,
+                  infralash of lip blush heeft gehad. Met een touch-up frissen we vorm en pigment subtiel op, zodat
+                  jouw resultaat langdurig zacht en in balans blijft.</p>
+                <dl class="mt-auto flex flex-wrap items-end justify-between gap-5 pt-5"
+                  aria-label="Behandelingsinformatie">
+                  <div>
+                    <dt class="text-[0.63rem] uppercase tracking-[0.17em] text-white/55">Duur</dt>
+                    <dd class="mt-1 text-[0.98rem] text-[color:var(--site-ink)]">1,5 - 2 uur</dd>
+                  </div>
+                  <a href="afspraak.html" class="site-button site-button--ghost w-max me-5">
+                    Kies nazorg →
+                  </a>
+                </dl>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED TREATMENT SECTION -->
+      <section class="featured-treatment section-edge" aria-labelledby="featured-title">
+        <div class="max-w-[88rem] mx-auto px-4 md:px-8">
+          <article class="featured-treatment__shell glass-card treatments-reveal">
+            <div class="featured-treatment__media media-lift">
+              <img src="./assets/images/banner-1.jpg" alt="Uitgelichte powder brows behandeling in de studio"
+                loading="lazy" decoding="async">
+            </div>
+            <div class="featured-treatment__copy">
+              <p class="eyebrow">Uitgelicht</p>
+              <h2 id="featured-title">Powder Brows Signature</h2>
+              <p>Deze behandeling is geliefd om de balans tussen zachtheid en definitie. We ontwerpen eerst de vorm op
+                maat, kiezen vervolgens de juiste pigmenttoon en bouwen de schaduw gecontroleerd op in meerdere lagen.
+              </p>
+              <p>Resultaat: voller ogende brows die je gezicht direct meer structuur geven, zonder zwaar of hard te
+                ogen.</p>
+              <a href="afspraak.html" class="site-button site-button--solid"><span>Reserveer jouw intake</span></a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section section-edge" aria-labelledby="faq-title">
+        <div class="max-w-[72rem] mx-auto px-4 md:px-8">
+          <div class="treatments-heading treatments-reveal">
+            <p class="eyebrow">FAQ</p>
+            <h2 id="faq-title" class="section-title">Veelgestelde vragen over behandelingen.</h2>
+          </div>
+
+          <div class="faq-list" data-faq-list>
+            <article class="faq-item treatments-reveal" style="--delay: 0.02s;">
+              <h3>
+                <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-1"
+                  id="faq-trigger-1">
+                  Doet een PMU-behandeling pijn?
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1" hidden>
+                <p>Gevoeligheid verschilt per persoon, maar de behandeling is meestal goed te verdragen. We werken
+                  rustig en afgestemd op jouw comfort.</p>
+              </div>
+            </article>
+
+            <article class="faq-item treatments-reveal" style="--delay: 0.08s;">
+              <h3>
+                <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-2"
+                  id="faq-trigger-2">
+                  Hoe lang blijft het resultaat zichtbaar?
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2" hidden>
+                <p>Gemiddeld 1 tot 2 jaar, afhankelijk van huidtype, lifestyle en nazorg. Een touch-up houdt het
+                  resultaat fris en in balans.</p>
+              </div>
+            </article>
+
+            <article class="faq-item treatments-reveal" style="--delay: 0.14s;">
+              <h3>
+                <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-3"
+                  id="faq-trigger-3">
+                  Welke nazorg moet ik volgen?
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3" hidden>
+                <p>Na de behandeling ontvang je duidelijke nazorginstructies. Vooral de eerste dagen zijn belangrijk
+                  voor een mooie genezing en kleurretentie.</p>
+              </div>
+            </article>
+
+            <article class="faq-item treatments-reveal" style="--delay: 0.2s;">
+              <h3>
+                <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-4"
+                  id="faq-trigger-4">
+                  Kan ik eerst advies krijgen voordat ik boek?
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4" hidden>
+                <p>Ja. Je kunt altijd starten met een intake of adviesmoment om techniek, vorm en kleur samen te
+                  bepalen.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="salonized-booking hidden" data-company="glamour-by-tink" data-color="#FF6575" data-language="nl"
+        data-position="right"></div>
+    </main>
+
+    <!-- SITE FOOTER: premium closing experience -->
+    <footer id="footer" class="site-footer scroll-mt-24 md:scroll-mt-28" aria-label="Site footer">
+      <div class="footer-wrap">
+        <div class="footer-ambient" aria-hidden="true"></div>
+
+        <div class="footer-body">
+          <div class="footer-col footer-col--brand">
+            <a href="#main" class="footer-logotype" aria-label="Glamour by Tink — terug naar boven">
+              <strong class="footer-logotype__title">GLAMOUR</strong>
+              <span class="footer-logotype__sub">BY TINK</span>
+            </a>
+            <p class="footer-tagline">PMU artist in Assendelft. Verfijnde permanente make-up, volledig in afstemming met
+              jouw uitstraling en wensen.</p>
+            <div class="footer-socials">
+              <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
+                class="footer-social" aria-label="Volg ons op Instagram">
+                <img src="./assets/icons/instagram-light.svg" alt="" class="h-4 w-4 object-contain" loading="lazy"
+                  decoding="async" aria-hidden="true">
+              </a>
+              <a href="https://www.facebook.com/people/Glamour-by-Tink/61553052976165/" target="_blank" rel="noopener noreferrer"
+                class="footer-social" aria-label="Volg ons op Facebook">
+                <img src="./assets/icons/facebook-light.svg" alt="" class="h-4 w-4 object-contain" loading="lazy"
+                  decoding="async" aria-hidden="true">
+              </a>
+              <a href="https://www.tiktok.com/@glamour.by.tink" target="_blank" rel="noopener noreferrer"
+                class="footer-social" aria-label="Volg ons op TikTok">
+                <img src="./assets/icons/tiktok-light.svg" alt="" class="h-4 w-4 object-contain" loading="lazy"
+                  decoding="async" aria-hidden="true">
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col footer-col--nav">
+            <p class="footer-col-label">Behandelingen</p>
+            <ul class="footer-nav">
+              <li><a href="#treatments-overview" class="footer-nav-link">Powder Brows</a></li>
+              <li><a href="#treatments-overview" class="footer-nav-link">Nano Combi Brows</a></li>
+              <li><a href="#treatments-overview" class="footer-nav-link">Infralash Eyeliner</a></li>
+              <li><a href="#treatments-overview" class="footer-nav-link">Lip Blush</a></li>
+              <li><a href="#treatments-overview" class="footer-nav-link">Touch-up</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col footer-col--nav">
+            <p class="footer-col-label">Salon</p>
+            <ul class="footer-nav">
+              <li><a href="index.html" class="footer-nav-link">Home</a></li>
+              <li><a href="./#footer" class="footer-nav-link">Over Ons</a></li>
+              <li><a href="https://www.google.com/search?q=Glamour+by+Tink" target="_blank" rel="noopener noreferrer"
+                  class="footer-nav-link">Google Reviews</a></li>
+              <li><a href="afspraak.html" class="footer-nav-link">Afspraak boeken</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col footer-col--contact">
+            <p class="footer-col-label">Contact</p>
+            <address class="footer-addr">
+              <a href="tel:+31623262640" class="footer-nav-link md:hidden">Telefoon: 06 232 626 40</a>
+              <a href="https://wa.me/31623262640" target="_blank" rel="noopener noreferrer"
+                class="footer-nav-link hidden md:inline-block">Telefoon: 06 232 626 40</a>
+              <a href="mailto:glamourbytink@gmail.com" class="footer-nav-link">E-mail: glamourbytink@gmail.com</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Norbertijnenstraat+1%2C+1566LK+Assendelft"
+                target="_blank" rel="noopener noreferrer" class="footer-nav-link">Adres: Norbertijnenstraat 1,
+                1566LK Assendelft</a>
+              <span>KvK: 69985545</span>
+              <span>BTW: NL000000000B00</span>
+            </address>
+            <a href="afspraak.html" class="site-button site-button--ghost py-[4px] min-h-0 text-sm">Boek een afspraak</a>
+          </div>
+        </div>
+
+        <div class="footer-rule-wrap">
+          <div class="footer-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copy">© <span data-current-year>2026</span> Glamour by Tink. Alle rechten voorbehouden.</p>
+          <nav class="footer-legal" aria-label="Juridisch">
+            <a href="privacy.html" class="footer-legal-link">Privacybeleid</a>
+            <span aria-hidden="true">·</span>
+            <a href="algemene-voorwaarden.html" class="footer-legal-link">Algemene voorwaarden</a>
+          </nav>
+          <p class="footer-credit">Design by <a href="https://www.mauricevandorst.com" target="_blank"
+              rel="noopener noreferrer" class="footer-credit-link">van Dorst</a></p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://widget.salonized.com/loader.js" defer></script>
+  <script src="./js/script.js" defer></script>
+  <script src="./js/behandelingen.js" defer></script>
+</body>
+
+</html>
