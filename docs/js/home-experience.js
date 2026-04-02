@@ -224,7 +224,7 @@ function initStoryBrandFade(reducedMotion) {
     framePending = false;
 
     const rect = storySection.getBoundingClientRect();
-    const fadeStart = window.innerHeight * 0.40;
+    const fadeStart = window.innerHeight * 0.45;
     const fadeDistance = Math.max(180, window.innerHeight * 0.38);
     const progress = Math.max(0, Math.min(1, (fadeStart - rect.top) / fadeDistance));
 

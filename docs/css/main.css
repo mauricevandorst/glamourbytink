@@ -970,6 +970,8 @@ body.is-ready .scroll-indicator__inner {
 }
 
 .service-step {
+  scale: 0.98;
+  opacity: 0.50;
   position: relative;
   z-index: 1;
   padding: 1.6rem;
@@ -980,6 +982,7 @@ body.is-ready .scroll-indicator__inner {
   transition:
     transform var(--motion-normal) var(--ease-out),
     border-color var(--motion-normal) var(--ease-out),
+    opacity var(--motion-normal) var(--ease-out),
     box-shadow var(--motion-normal) var(--ease-out);
 }
 
@@ -988,9 +991,10 @@ body.is-ready .scroll-indicator__inner {
 }
 
 .service-step.is-active {
-  transform: translateX(0.7rem) scale(1.01);
+  transform: scale(1.01);
   border-color: rgba(202, 161, 124, 0.34);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  opacity: 1;
 }
 
 .service-index {
