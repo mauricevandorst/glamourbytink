@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroReadyState(reducedMotion);
   initRevealObserver(reducedMotion);
   initParallaxSystem({ reducedMotion, tabletQuery, desktopQuery });
-  initStorySectionFade({ reducedMotion });
   initCursorGlow(reducedMotion);
   initScrollIndicatorMotion({ reducedMotion });
 
@@ -309,6 +308,8 @@ function initStoryPanelCopyEqualHeight() {
 function initSplitVisualSync() {
   const steps = document.querySelectorAll('.service-step');
   const visuals = document.querySelectorAll('.visual-item');
+  const splitCopy = document.querySelector('.split-copy');
+  const splitSection = document.querySelector('.split-section');
 
   if (!steps.length || !visuals.length) {
     return;
@@ -316,6 +317,7 @@ function initSplitVisualSync() {
 
   const lastStep = steps[steps.length - 1];
   let currentVisualId = null;
+  const switchLineRatio = 0.8;
 
   const setActive = (visualId) => {
     if (visualId === currentVisualId) {
@@ -336,42 +338,38 @@ function initSplitVisualSync() {
   setActive(steps[0].dataset.visual);
 
   const sync = () => {
-    const vh = window.innerHeight;
-    const mid = vh / 2;
+    const triggerLine = window.innerHeight * switchLineRatio;
+    let activeIndex = 0;
 
-    let bestStep = null;
-    let bestDist = Infinity;
-
-    steps.forEach((step) => {
+    steps.forEach((step, index) => {
       const rect = step.getBoundingClientRect();
 
-      // Skip steps fully outside the viewport.
-      if (rect.bottom < 0 || rect.top > vh) {
-        return;
-      }
-
-      const dist = Math.abs(rect.top + rect.height / 2 - mid);
-
-      if (dist < bestDist) {
-        bestDist = dist;
-        bestStep = step;
+      // Switch early: once an item reaches the lower 10% trigger zone,
+      // it becomes the active visual.
+      if (rect.top <= triggerLine) {
+        activeIndex = index;
       }
     });
 
-    if (bestStep) {
-      setActive(bestStep.dataset.visual);
+    const clampedIndex = Math.max(0, Math.min(activeIndex, steps.length - 1));
+
+    if (splitSection && splitSection.getBoundingClientRect().bottom < 0) {
+      setActive(null);
       return;
     }
 
-    // No step visible: if the section is above the viewport, lock to last item.
     if (lastStep.getBoundingClientRect().bottom < 0) {
       setActive(lastStep.dataset.visual);
+      return;
     }
+
+    setActive(steps[clampedIndex].dataset.visual);
   };
 
   sync();
   window.addEventListener('scroll', sync, { passive: true });
   window.addEventListener('resize', sync, { passive: true });
+  splitCopy?.addEventListener('scroll', sync, { passive: true });
 
   steps.forEach((step) => {
     step.addEventListener('mouseenter', () => setActive(step.dataset.visual));
@@ -397,44 +395,6 @@ function initShowcaseActivation() {
   );
 
   items.forEach((item) => observer.observe(item));
-}
-
-function initStorySectionFade({ reducedMotion }) {
-  const storySection = document.querySelector('.story-section');
-  if (!storySection) {
-    return;
-  }
-
-  let framePending = false;
-
-  const update = () => {
-    framePending = false;
-
-    if (reducedMotion) {
-      storySection.style.setProperty('--story-fade-progress', '1');
-      return;
-    }
-
-    const rect = storySection.getBoundingClientRect();
-    const fadeStart = window.innerHeight * 0.4;
-    const fadeTravel = Math.max(140, Math.min(window.innerHeight * 0.36, 320));
-    const progress = Math.max(0, Math.min(1, (fadeStart - rect.top) / fadeTravel));
-    storySection.style.setProperty('--story-fade-progress', progress.toFixed(3));
-  };
-
-  const scheduleUpdate = () => {
-    if (framePending) {
-      return;
-    }
-
-    framePending = true;
-    requestAnimationFrame(update);
-  };
-
-  window.addEventListener('scroll', scheduleUpdate, { passive: true });
-  window.addEventListener('resize', scheduleUpdate, { passive: true });
-  window.addEventListener('orientationchange', scheduleUpdate, { passive: true });
-  scheduleUpdate();
 }
 
 function initCursorGlow(reducedMotion) {
