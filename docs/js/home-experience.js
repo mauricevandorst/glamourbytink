@@ -40,7 +40,6 @@ function initRevealObserver(reducedMotion) {
     '.hero-note',
     '.separator-copy',
     '.visual-stage',
-    '.split-heading',
     '.section-intro',
     '.service-step',
     '.showcase-heading',

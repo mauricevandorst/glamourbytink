@@ -17,14 +17,17 @@
 <body class="text-white" data-experience-home="true">
   <div class="site-shell">
     <div data-scroll-indicator
-      class="pointer-events-none fixed inset-x-0 bottom-5 z-[35] flex flex-col items-center gap-2" aria-hidden="true">
-      <p class="text-[0.62rem] font-semibold tracking-[0.2em] uppercase text-white/90">Scroll omhoog</p>
-      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="20" viewBox="0 0 14 28" fill="none"
-        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-white/70"
-        aria-hidden="true">
-        <polyline points="2,16 7,10 12,16" />
-        <polyline points="2,24 7,18 12,24" />
-      </svg>
+      class="scroll-indicator pointer-events-none fixed inset-x-0 bottom-3 z-[35] flex flex-col items-center gap-1"
+      aria-hidden="true">
+      <div class="scroll-indicator__inner flex flex-col items-center gap-1">
+        <p class="text-[0.62rem] font-semibold tracking-[0.2em] uppercase text-white/90">Scroll omhoog</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="20" viewBox="0 0 14 28" fill="none"
+          stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-white/70"
+          aria-hidden="true">
+          <polyline points="2,16 7,10 12,16" />
+          <polyline points="2,24 7,18 12,24" />
+        </svg>
+      </div>
     </div>
     <div class="noise-overlay" data-parallax-layer data-parallax-speed="-0.02" data-parallax-tablet="-0.01"
       data-parallax-max="24" aria-hidden="true"></div>
@@ -73,7 +76,8 @@
               decoding="async">
           </div>
 
-          <div class="scene-frame relative max-w-7xl mx-auto px-4 md:px-8 h-full flex items-end pt-10 pb-[6rem]">
+          <div
+            class="scene-frame relative max-w-7xl mx-auto px-4 md:px-8 h-full flex items-end pt-10 pb-[4rem] sm:pb-[6rem]">
             <div class="w-full lg:max-w-3xl mt-16">
               <h1 class="hero-title">
                 <span class="hero-line"><span>Jouw glow-up begint</span></span>
@@ -193,7 +197,9 @@
                 </div>
                 <div class="visual-overlay">
                   <strong>Ombré Brows</strong>
-                  <span>Natuurlijk volume, zachte structuur, lange houdbaarheid.</span>
+                  <span class="sm:hidden">Natuurlijk volume, zachte structuur, lange houdbaarheid</span>
+                  <span class="hidden sm:block">Natuurlijk volume, zachte structuur, lange houdbaarheid. Je uitstraling
+                    blijft natuurlijk en verfijnd, zonder dat het kunstmatig aanvoelt.</span>
                 </div>
               </div>
 
@@ -204,7 +210,9 @@
                 </div>
                 <div class="visual-overlay">
                   <strong>Eyeliner PMU</strong>
-                  <span>Meer intensiteit in de blik, met een gecontroleerde, elegante lijn.</span>
+                  <span class="sm:hidden">Meer intensiteit in de blik, met een gecontroleerde, elegante lijn.</span>
+                  <span class="hidden sm:block">Subtiele eyeliner PMU geeft definitie waar mascara ophoudt. Geen harde
+                    make-up look, maar een blik die meer diepte en ritme krijgt.</span>
                 </div>
               </div>
 
@@ -216,7 +224,8 @@
                 <div class="visual-overlay">
                   <strong>Lip Blush</strong>
                   <span class="sm:hidden">Definitie en kleur die de mond optilt zonder te overheersen.</span>
-                  <span class="hidden sm:block">Lip blush brengt verfijning terug in de mondlijn en herstelt balans in kleur
+                  <span class="hidden sm:block">Lip blush brengt verfijning terug in de mondlijn en herstelt balans in
+                    kleur
                     en contour. Het resultaat voelt fris, niet zwaar.</span>
                 </div>
               </div>
@@ -225,7 +234,7 @@
 
           <div class="split-copy">
             <p class="eyebrow">Je gevoel is belangrijk</p>
-            <h2 class="split-heading">Wat je voelt, is net zo zorgvuldig gebouwd als wat je ziet.</h2>
+            <h2 class="split-heading">Wat je voelt, is net zo zorgvuldig als wat je ziet.</h2>
             <p class="section-intro mt-5 mb-8">Elke treatment heeft een eigen ritme. Daarom verschuift de visuele focus
               mee: van brows naar lips tot blik, zonder dat het in herhaling valt.</p>
 
@@ -330,10 +339,10 @@
             <h2 class="section-title !text-[clamp(1.95rem,4.8vw,3.2rem)] !leading-[0.96]">Wat klanten zeggen</h2>
             <p class="section-intro mt-3 text-sm md:text-[0.95rem] !leading-relaxed">Meer rust, meer vertrouwen, mooier
               resultaat.
-              Drie korte ervaringen uit de studio.</p>
+              Drie korte ervaringen uit mijn salon.</p>
           </div>
 
-          <div class="stack-stage md:grid-cols-2 gap-4 md:gap-5">
+          <div class="stack-stage lg:grid-cols-2 gap-4 lg:gap-5">
             <article class="stack-card depth-card !p-0 !overflow-hidden !rounded-[1.35rem] !min-h-[21rem] bg-[#120f0d]">
               <div class="relative px-5 pt-5 pb-6 md:px-6 md:pt-6">
                 <a href="https://www.google.com/search?q=Glamour+by+Tink" target="_blank" rel="noopener noreferrer"
@@ -400,6 +409,9 @@
                     Brows</span>
                 </div>
               </div>
+
+
+
             </article>
 
             <article class="stack-card depth-card !p-0 !overflow-hidden !rounded-[1.35rem] !min-h-[21rem] bg-[#120f0d]">
@@ -438,10 +450,26 @@
               </div>
             </article>
           </div>
+
+          <div class="mt-8 md:mt-10 md:col-span-2 text-center">
+            <p class="section-intro max-w-2xl mx-auto">Wil je meer ervaringen lezen of meteen je eigen behandeling
+              plannen?</p>
+            <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3 w-full max-w-2xl mx-auto">
+              <a href="https://www.google.com/search?q=Glamour+by+Tink" target="_blank" rel="noopener noreferrer"
+                class="site-button site-button--ghost w-full">
+                <span>
+                  <img src="./assets/icons/google-icon-white.jpg" alt="" class="h-4 w-4 object-contain" loading="lazy"
+                    decoding="async" aria-hidden="true">
+                  Bekijk alle reviews
+                </span>
+              </a>
+              <a href="#contact" class="site-button site-button--solid w-full"><span>Plan je afspraak</span></a>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="!hidden scene panel-section separator-section separator-section--compact"
+      <section class="scene panel-section separator-section separator-section--compact"
         aria-label="Parallax separator">
         <div class="separator-media" aria-hidden="true">
           <img src="./assets/images/neon.jpg" alt="" class="separator-image" data-parallax-layer
@@ -451,7 +479,7 @@
         </div>
         <div class="scene-frame max-w-7xl mx-auto px-4 md:px-8 separator-copy separator-copy--end">
           <p class="eyebrow">Final transition · Calm momentum</p>
-          <h2 class="separator-title">Elke scroll voelt bewust. Elke stap blijft leesbaar.</h2>
+          <h2 class="separator-title">PMU is bewust. Juist de kleine details zijn belangrijk.</h2>
         </div>
       </section>
 

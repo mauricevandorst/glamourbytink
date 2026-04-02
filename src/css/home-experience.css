@@ -326,6 +326,19 @@ body.is-ready .hero-scene .hero-rail>* {
   transform: translate3d(0, 0, 0);
 }
 
+.scroll-indicator__inner {
+  opacity: 0;
+  transform: translate3d(0, 1rem, 0);
+  transition:
+    opacity 0.8s var(--ease-out) 0.7s,
+    transform 0.8s var(--ease-out) 0.7s;
+}
+
+body.is-ready .scroll-indicator__inner {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
 /* Reusable scroll-reveal state for content blocks. */
 .reveal-on-scroll {
   opacity: 0;
@@ -405,7 +418,7 @@ body.is-ready .hero-scene .hero-rail>* {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   transition: transform var(--motion-fast) var(--ease-out);
@@ -710,7 +723,7 @@ body.is-ready .hero-scene .hero-rail>* {
 .section-title,
 .cta-title {
   margin: 0;
-  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-size: clamp(2rem, 6vw, 4rem);
   line-height: 0.94;
 }
 
@@ -1326,6 +1339,7 @@ body.is-ready .hero-scene .hero-rail>* {
   .hero-scene .hero-actions,
   .hero-scene .hero-marquee,
   .hero-scene .hero-rail>*,
+  .scroll-indicator__inner,
   .reveal-on-scroll {
     opacity: 1 !important;
     transform: none !important;
