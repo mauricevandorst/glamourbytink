@@ -34,7 +34,7 @@
     <div class="cursor-glow" aria-hidden="true"></div>
 
     <header class="site-header">
-      <div class="max-w-7xl mx-auto px-6 py-6 md:px-8 nav-shell">
+      <div class="max-w-[88rem] mx-auto px-6 py-6 md:px-8 nav-shell">
         <a href="#main" class="brand-lockup" aria-label="Glamour by Tink home">
           <span class="brand-meta">
             <strong class="brand-title">GLAMOUR</strong>
@@ -42,7 +42,8 @@
           </span>
         </a>
 
-        <button id="navToggle" class="nav-toggle sm:hidden focus:outline-none" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <button id="navToggle" class="nav-toggle sm:hidden focus:outline-none" aria-label="Open menu"
+          aria-expanded="false" aria-controls="mobileMenu">
           <span class="nav-toggle__icon" aria-hidden="true">
             <span class="nav-toggle__line"></span>
             <span class="nav-toggle__line"></span>
@@ -68,7 +69,7 @@
       </nav>
     </header>
 
-    <main id="main" class="panel-scroll pb-[40rem]" aria-label="Homepage panel layout">
+    <main id="main" class="panel-scroll" aria-label="Homepage panel layout">
       <div class="hero-panel-stack">
         <!-- HERO: cinematic opening with layered type and parallax media -->
         <section class="scene panel-section hero-scene">
@@ -79,13 +80,13 @@
           </div>
 
           <div
-            class="scene-frame relative max-w-7xl mx-auto px-4 md:px-8 h-full flex items-end pt-10 pb-[4rem] sm:pb-[6rem]">
+            class="scene-frame relative max-w-[88rem] mx-auto px-4 md:px-8 h-full flex items-end pt-10 pb-[4rem] sm:pb-[6rem]">
             <div class="w-full lg:max-w-3xl mt-16">
               <h1 class="hero-title">
                 <span class="hero-line"><span>Jouw glow-up begint</span></span>
                 <span class="hero-line"><span>met één behandeling</span></span>
               </h1>
-              <p class="hero-subcopy">Welkom bij mijn warme, elegante PMU-studio, waar verfijnde behandelingen zorgen
+              <p class="hero-subcopy">Welkom bij mijn warme, elegante PMU-salon, waar verfijnde behandelingen zorgen
                 voor een stralend resultaat.</p>
               <div class="hero-actions">
                 <a href="behandelingen.html" class="site-button site-button--solid"><span>Behandelingen</span></a>
@@ -98,7 +99,7 @@
         <!-- PINNED PANEL SECTION: full-screen storytelling with snap transitions -->
         <section class="scene panel-section story-section relative border-t-[1px] border-[--site-line]" id="story">
           <div class="pointer-events-none absolute left-1/2 top-5 z-20 -translate-x-1/2 md:top-7" aria-hidden="true">
-            <div class="brand-lockup mt-6 scale-95 opacity-80">
+            <div class="brand-lockup mt-6 scale-95 opacity-80" data-story-brand-lockup>
               <span class="brand-meta items-center text-center">
                 <strong class="brand-title">GLAMOUR</strong>
                 <span class="brand-tagline">BY TINK</span>
@@ -106,11 +107,16 @@
             </div>
           </div>
           <div class="panel-pin">
+            <div class="mx-auto mb-6 w-full max-w-3xl px-4 text-center md:mb-8 md:px-6">
+              <h2 class="section-title">Behandelingen</h2>
+              <p class="section-intro mt-4">Dit zijn de PMU-behandelingen die wij aanbieden, uitgevoerd met bekende
+                technieken voor prachtig resultaat.</p>
+            </div>
             <div class="story-panels snap-mandatory">
               <article class="story-panel">
                 <div class="panel-media media-lift" data-parallax-layer data-parallax-speed="-0.08"
                   data-parallax-tablet="-0.04" data-parallax-max="48">
-                  <img src="./assets/images/banner-1.jpg" alt="Signature brow work in de studio" loading="lazy"
+                  <img src="./assets/images/banner-1.jpg" alt="Signature brow work in de salon" loading="lazy"
                     decoding="async">
                 </div>
                 <div class="panel-copy depth-card" data-parallax-layer data-parallax-speed="0.022"
@@ -189,7 +195,7 @@
       <!-- STICKY SPLIT SECTION: sticky visual left, evolving service story right -->
       <section class="scene panel-section split-section bg-black">
         <div class="pointer-events-none absolute inset-x-0 top-0 z-30 h-px bg-[--site-line]" aria-hidden="true"></div>
-        <div class="scene-frame max-w-7xl mx-auto px-4 md:px-8 split-shell">
+        <div class="scene-frame max-w-[88rem] mx-auto px-4 md:px-8 split-shell">
           <div class="visual-stage-shell">
             <div class="visual-stage glass-card">
               <div class="visual-item is-active" data-visual="brows">
@@ -198,10 +204,11 @@
                     decoding="async">
                 </div>
                 <div class="visual-overlay">
-                  <strong>Ombré Brows</strong>
-                  <span class="sm:hidden">Natuurlijk volume, zachte structuur, lange houdbaarheid</span>
-                  <span class="hidden sm:block">Natuurlijk volume, zachte structuur, lange houdbaarheid. Je uitstraling
-                    blijft natuurlijk en verfijnd, zonder dat het kunstmatig aanvoelt.</span>
+                  <strong>Ombré / Powder Brows</strong>
+                  <span class="sm:hidden">Wenkbrauwen bepalen de basis van je gezicht.</span>
+                  <span class="hidden sm:block">Wenkbrauwen bepalen de basis van je gezicht. Met ombré of powder brows
+                    creëren we een zachte, egale schaduw die zorgt voor meer definitie en symmetrie. Het resultaat
+                    blijft natuurlijk, maar geeft direct meer rust en structuur.</span>
                 </div>
               </div>
 
@@ -211,10 +218,12 @@
                     loading="lazy" decoding="async">
                 </div>
                 <div class="visual-overlay">
-                  <strong>Eyeliner PMU</strong>
-                  <span class="sm:hidden">Meer intensiteit in de blik, met een gecontroleerde, elegante lijn.</span>
-                  <span class="hidden sm:block">Subtiele eyeliner PMU geeft definitie waar mascara ophoudt. Geen harde
-                    make-up look, maar een blik die meer diepte en ritme krijgt.</span>
+                  <strong>Infralash Eyeliner</strong>
+                  <span class="sm:hidden">Bij infralash eyeliner plaatsen we pigment subtiel tussen de
+                    wimperrand.</span>
+                  <span class="hidden sm:block">Bij infralash eyeliner plaatsen we pigment subtiel tussen de wimperrand.
+                    Hierdoor lijken je wimpers voller en je ogen sprekender, zonder zichtbare eyeliner. Ideaal voor een
+                    frisse, open blik. Elke dag.</span>
                 </div>
               </div>
 
@@ -225,10 +234,11 @@
                 </div>
                 <div class="visual-overlay">
                   <strong>Lip Blush</strong>
-                  <span class="sm:hidden">Definitie en kleur die de mond optilt zonder te overheersen.</span>
-                  <span class="hidden sm:block">Lip blush brengt verfijning terug in de mondlijn en herstelt balans in
-                    kleur
-                    en contour. Het resultaat voelt fris, niet zwaar.</span>
+                  <span class="sm:hidden">Lip blush herstelt de natuurlijke kleur van je lippen en verfijnt de
+                    contour.</span>
+                  <span class="hidden sm:block">Lip blush herstelt de natuurlijke kleur van je lippen en verfijnt de
+                    contour. De behandeling geeft een frisse, verzorgde uitstraling zonder lipstick-effect. Perfect als
+                    je lippen wat bleker of minder gedefinieerd zijn.</span>
                 </div>
               </div>
             </div>
@@ -237,28 +247,32 @@
           <div class="split-copy">
             <p class="eyebrow">Je gevoel is belangrijk</p>
             <h2 class="split-heading">Wat je voelt, is net zo zorgvuldig als wat je ziet.</h2>
-            <p class="section-intro mt-5 mb-8">Elke treatment heeft een eigen ritme. Daarom verschuift de visuele focus
+            <p class="section-intro mt-5 mb-8">Elke behandeling heeft een eigen ritme. Daarom verschuift de visuele
+              focus
               mee: van brows naar lips tot blik, zonder dat het in herhaling valt.</p>
 
             <article class="service-step depth-card" data-visual="brows">
               <span class="service-index">01 / Brows</span>
-              <h3>Ombré Brows</h3>
-              <p class="service-copy mt-4">Natuurlijk volume, zachte structuur, lange houdbaarheid. Je uitstraling
-                blijft natuurlijk en verfijnd, zonder dat het kunstmatig aanvoelt.</p>
+              <h3>Ombré / Powder Brows</h3>
+              <p class="service-copy mt-4">Wenkbrauwen bepalen de basis van je gezicht. Met ombré of powder brows
+                creëren we een zachte, egale schaduw die zorgt voor meer definitie en symmetrie. Het resultaat blijft
+                natuurlijk, maar geeft direct meer rust en structuur.</p>
             </article>
 
             <article class="service-step depth-card" data-visual="liner">
               <span class="service-index">02 / Eyes</span>
-              <h3>Eyeliner PMU</h3>
-              <p class="service-copy mt-4">Subtiele eyeliner PMU geeft definitie waar mascara ophoudt. Geen harde
-                make-up look, maar een blik die meer diepte en ritme krijgt.</p>
+              <h3>Infralash Eyeliner</h3>
+              <p class="service-copy mt-4">Bij infralash eyeliner plaatsen we pigment subtiel tussen de wimperrand.
+                Hierdoor lijken je wimpers voller en je ogen sprekender, zonder zichtbare eyeliner. Ideaal voor een
+                frisse, open blik. Elke dag.</p>
             </article>
 
             <article class="service-step depth-card" data-visual="lips">
               <span class="service-index">03 / Lips</span>
               <h3>Lip Blush</h3>
-              <p class="service-copy mt-4">Lip blush brengt verfijning terug in de mondlijn en herstelt balans in kleur
-                en contour. Het resultaat voelt fris, niet zwaar.</p>
+              <p class="service-copy mt-4">Lip blush herstelt de natuurlijke kleur van je lippen en verfijnt de contour.
+                De behandeling geeft een frisse, verzorgde uitstraling zonder lipstick-effect. Perfect als je lippen wat
+                bleker of minder gedefinieerd zijn.</p>
             </article>
           </div>
         </div>
@@ -266,7 +280,7 @@
 
       <!-- HORIZONTAL SCROLL SECTION: vertical scroll drives a premium showcase track -->
       <section class="!hidden scene panel-section showcase-section">
-        <div class="scene-frame max-w-7xl mx-auto px-4 md:px-8">
+        <div class="scene-frame max-w-[88rem] mx-auto px-4 md:px-8">
           <div class="showcase-heading">
             <p class="eyebrow">Horizontal showcase · Portfolio gevoel</p>
             <h2 class="section-title">Werk dat niet om aandacht vraagt, maar het wel krijgt.</h2>
@@ -307,10 +321,10 @@
             <article class="showcase-item depth-card">
               <div class="showcase-media media-lift" data-parallax-layer data-parallax-speed="-0.08"
                 data-parallax-tablet="-0.04" data-parallax-max="44">
-                <img src="./assets/images/hero.jpg" alt="Studio atmosphere and craft" loading="lazy" decoding="async">
+                <img src="./assets/images/hero.jpg" alt="Salon atmosphere and craft" loading="lazy" decoding="async">
               </div>
               <div class="showcase-copy-wrap">
-                <span class="showcase-meta">Studio rhythm</span>
+                <span class="showcase-meta">Salon rhythm</span>
                 <h3>De ervaring is onderdeel van het eindresultaat</h3>
                 <p class="showcase-copy mt-4">Licht, pacing, gesprek en nazorg vormen samen de kwaliteit van de
                   behandeling. Luxe zit hier in controle.</p>
@@ -320,7 +334,7 @@
             <article class="showcase-item depth-card">
               <div class="showcase-media media-lift" data-parallax-layer data-parallax-speed="-0.08"
                 data-parallax-tablet="-0.04" data-parallax-max="44">
-                <img src="./assets/images/neon.jpg" alt="Academy and studio showcase" loading="lazy" decoding="async">
+                <img src="./assets/images/neon.jpg" alt="Academy and salon showcase" loading="lazy" decoding="async">
               </div>
               <div class="showcase-copy-wrap">
                 <span class="showcase-meta">Artist growth</span>
@@ -335,8 +349,8 @@
 
       <!-- STACK / CARD SECTION: layered testimonials that peel away on scroll -->
       <section class="scene panel-section stack-section !pt-20 md:!pt-24 !pb-6">
-        <div class="scene-frame max-w-7xl mx-auto px-4 md:px-8 stack-shell">
-          <div class="max-w-xl">
+        <div class="scene-frame max-w-[88rem] mx-auto px-4 md:px-8 stack-shell">
+          <div class="stack-heading max-w-xl">
             <p class="eyebrow !mb-2">Testimonials</p>
             <h2 class="section-title !text-[clamp(1.95rem,4.8vw,3.2rem)] !leading-[0.96]">Wat klanten zeggen</h2>
             <p class="section-intro mt-3 text-sm md:text-[0.95rem] !leading-relaxed">Meer rust, meer vertrouwen, mooier
@@ -344,7 +358,7 @@
               Drie korte ervaringen uit mijn salon.</p>
           </div>
 
-          <div class="stack-stage lg:grid-cols-2 gap-4 lg:gap-5">
+          <div class="stack-stage lg:grid-cols-3 gap-4 lg:gap-5">
             <article class="stack-card depth-card !p-0 !overflow-hidden !rounded-[1.35rem] !min-h-[21rem] bg-[#120f0d]">
               <div class="relative px-5 pt-5 pb-6 md:px-6 md:pt-6">
                 <a href="https://www.google.com/search?q=Glamour+by+Tink" target="_blank" rel="noopener noreferrer"
@@ -352,7 +366,7 @@
                   <img src="./assets/icons/google-icon.jpg" alt="Google" class="h-6 w-6 object-contain" loading="lazy"
                     decoding="async">
                 </a>
-                <p class="text-[#c99571] text-4xl leading-none">&ldquo;</p>
+                <p class="text-[var(--site-accent-light)] text-4xl leading-none">&ldquo;</p>
                 <p class="mt-3 text-base md:text-[0.92rem] leading-relaxed text-[#ede3da]/80">Lieve meid die de tijd
                   voor je neemt. En vertelt wat ze gaat doen. Ik voelde me enorm welkom en ben ontzettend blij met mijn
                   wenkbrauwen. Tot volgend jaar bij de touch op 😃
@@ -385,7 +399,7 @@
                   <img src="./assets/icons/google-icon.jpg" alt="Google" class="h-6 w-6 object-contain" loading="lazy"
                     decoding="async">
                 </a>
-                <p class="text-[#c99571] text-4xl leading-none">&ldquo;</p>
+                <p class="text-[var(--site-accent-light)] text-4xl leading-none">&ldquo;</p>
                 <p class="mt-3 text-base md:text-[0.92rem] leading-relaxed text-[#ede3da]/80">Ben hier erg vriendelijk
                   ontvangen in een prachtige salon door Marissa. Vooraf alles goed besproken en het resultaat…….
                   Geweldig! Heel erg bedankt voor m’n mooie wenkbrauwen. Ik ben er erg blij mee. Dus dames bij
@@ -423,7 +437,7 @@
                   <img src="./assets/icons/google-icon.jpg" alt="Google" class="h-6 w-6 object-contain" loading="lazy"
                     decoding="async">
                 </a>
-                <p class="text-[#c99571] text-4xl leading-none">&ldquo;</p>
+                <p class="text-[var(--site-accent-light)] text-4xl leading-none">&ldquo;</p>
                 <p class="mt-3 text-base md:text-[0.92rem] leading-relaxed text-[#ede3da]/80">Vandaag weer bij Marissa
                   geweest voor de touch-up. Even de puntje op de i zetten, waar ze zeker de tijd voor neemt. Vooraf goed
                   advies gehad over de kleur. Ze wil echt het beste en het mooiste voor je wenkbrauwen. Een fijne sfeer
@@ -453,7 +467,7 @@
             </article>
           </div>
 
-          <div class="mt-8 md:mt-10 md:col-span-2 text-center">
+          <div class="my-8 md:my-10 text-center">
             <p class="section-intro max-w-2xl mx-auto">Wil je meer ervaringen lezen of meteen je eigen behandeling
               plannen?</p>
             <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3 w-full max-w-2xl mx-auto">
@@ -471,82 +485,140 @@
         </div>
       </section>
 
-      <section class="scene panel-section separator-section separator-section--compact"
-        aria-label="Parallax separator">
-        <div class="separator-media" aria-hidden="true">
-          <img src="./assets/images/neon.jpg" alt="" class="separator-image" data-parallax-layer
-            data-parallax-speed="-0.1" data-parallax-tablet="-0.04" data-parallax-max="64" loading="lazy"
-            decoding="async">
-          <div class="separator-wash"></div>
-        </div>
-        <div class="scene-frame max-w-7xl mx-auto px-4 md:px-8 separator-copy separator-copy--end">
-          <p class="eyebrow">Final transition · Calm momentum</p>
-          <h2 class="separator-title">PMU is bewust. Juist de kleine details zijn belangrijk.</h2>
-        </div>
-      </section>
-
       <!-- CTA SECTION: high-impact ending with contact direction -->
-      <section class="!hidden scene panel-section cta-section" id="contact">
-        <div class="scene-frame max-w-7xl mx-auto px-4 md:px-8">
-          <div class="cta-shell">
-            <div class="cta-layout">
-              <div>
-                <p class="eyebrow">Final scene · Boek je moment</p>
-                <h2 class="cta-title">Klaar voor een look die stil binnenkomt en lang blijft hangen?</h2>
-                <p class="cta-copy mt-5 max-w-2xl">Of je nu komt voor brows, lips, eyeliner of een academy-traject: we
-                  bouwen samen aan een resultaat dat verfijnd voelt in plaats van overdreven. Start met een afspraak, of
-                  stel eerst je vraag.</p>
-                <div class="hero-actions mt-8">
-                  <a href="afspraak.html" class="site-button site-button--solid"><span>Plan direct</span></a>
-                  <a href="mailto:info@glamourbytink.nl" class="site-button site-button--ghost"><span>Mail
-                      ons</span></a>
+      <section class="scene panel-section cta-section !min-h-0 !py-0 px-0" id="contact">
+        <div class="relative items-center h-[clamp(19rem,65svh,34rem)] w-full overflow-hidden">
+          <img src="./assets/images/banner-1.jpg" alt="Elegante PMU behandeling in de salon"
+            class="h-full w-full object-cover object-center" loading="lazy" decoding="async">
+          <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(241,203,171,0.28)_0%,transparent_42%),linear-gradient(104deg,rgba(18,12,9,0.95)_0%,rgba(18,12,9,0.82)_42%,rgba(18,12,9,0.35)_72%,rgba(18,12,9,0.72)_100%)]">
+          </div>
+
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full max-w-[88rem] mx-auto px-4 md:px-10 lg:px-14">
+              <div class="max-w-2xl text-left">
+                <p class="text-[0.72rem] uppercase tracking-[0.22em] text-[#ead8c8]/85">Boek je moment</p>
+                <h2
+                  class="mt-3 font-['Cormorant_Garamond'] text-[clamp(2rem,6.2vw,5.2rem)] leading-[0.88] text-[#fff8f1]">
+                  Klaar voor jouw signature look?
+                </h2>
+                <p class="mt-5 max-w-xl text-sm leading-relaxed text-[#f1e4d8]/90 md:text-base">Subtiel, elegant en
+                  volledig afgestemd op jouw gezicht. Plan je behandeling in en ervaar hoe luxe PMU hoort te voelen.</p>
+                <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-start">
+                  <a href="afspraak.html" class="site-button site-button--solid"><span>Plan je afspraak</span></a>
+                  <a href="behandelingen.html" class="site-button site-button--ghost"><span>Bekijk
+                      behandelingen</span></a>
                 </div>
               </div>
-
-              <aside class="cta-card depth-card">
-                <h3>Studio contact</h3>
-                <p class="stack-body mt-4">Voor behandelingen, intakevragen en academy-informatie.</p>
-                <div class="cta-list">
-                  <a href="tel:+31612345678">06 123 456 78</a>
-                  <a href="mailto:info@glamourbytink.nl">info@glamourbytink.nl</a>
-                  <a href="https://glamourbytink.nl" target="_blank" rel="noreferrer">glamourbytink.nl</a>
-                  <span>Dorpsstraat 20, 1566 BA Assendelft</span>
-                </div>
-                <p class="stack-body mt-6">Liever eerst sfeer proeven? Lees meer <a href="over-ons.html"
-                    class="inline-link">over de studio</a> of bekijk het aanbod bij <a href="behandelingen.html"
-                    class="inline-link">behandelingen</a>.</p>
-              </aside>
             </div>
           </div>
         </div>
       </section>
 
-      <iframe id="salonized-widget"
-        src="https://widget.salonized.com/button?color=%23FF6575&amp;language=nl&amp;name=booking" frameborder="0"
-        allowtransparency="true" allow="geolocation"
-        style="box-sizing: content-box !important; position: fixed !important; z-index: 2147480999 !important; transition: transform 0.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.2s, box-shadow 0.2s linear !important; margin: 0px !important; padding: 0px !important; border: 0px !important; max-height: 45px !important; min-height: 45px !important; height: 45px !important; width: 190px !important; max-width: calc(100% - 44px) !important; border-radius: 6px !important; right: 22px !important; left: auto !important; bottom: 22px !important; box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 15px !important;"></iframe>
+      <div class="salonized-booking" data-company="glamour-by-tink" data-color="#FF6575" data-language="nl"
+        data-position="right"></div>
 
     </main>
 
-    <footer class="!hidden site-footer">
-      <div class="max-w-7xl mx-auto px-4 md:px-8 footer-bar">
-        <div class="brand-lockup">
-          <span class="brand-meta">
-            <strong class="brand-title">GLAMOUR BY TINK</strong>
-            <span class="brand-tagline">PMU ARTIST IN ASSENDELFT</span>
-          </span>
+    <!-- SITE FOOTER: premium closing experience -->
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="footer-wrap">
+        <!-- Warm ambient glow overlay -->
+        <div class="footer-ambient" aria-hidden="true"></div>
+
+        <!-- Main footer content: asymmetric grid -->
+        <div class="footer-body">
+
+          <!-- Column 1 (wide): brand identity + statement + socials -->
+          <div class="footer-col footer-col--brand">
+            <a href="#main" class="footer-logotype" aria-label="Glamour by Tink — terug naar boven">
+              <strong class="footer-logotype__title">GLAMOUR</strong>
+              <span class="footer-logotype__sub">BY TINK</span>
+            </a>
+            <p class="footer-tagline">PMU artist in Assendelft. Verfijnde permanente make-up, volledig in afstemming met
+              jouw
+              uitstraling en wensen.</p>
+            <div class="footer-socials">
+              <a href="https://www.instagram.com/glamourbytink/" target="_blank" rel="noopener noreferrer"
+                class="footer-social" aria-label="Volg ons op Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+              <a href="https://www.facebook.com/glamourbytink/" target="_blank" rel="noopener noreferrer"
+                class="footer-social" aria-label="Volg ons op Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Behandelingen nav group -->
+          <div class="footer-col footer-col--nav">
+            <p class="footer-col-label">Behandelingen</p>
+            <ul class="footer-nav">
+              <li><a href="behandelingen.html" class="footer-nav-link">Powder Brows</a></li>
+              <li><a href="behandelingen.html" class="footer-nav-link">Nano Combi Brows</a></li>
+              <li><a href="behandelingen.html" class="footer-nav-link">Infralash Eyeliner</a></li>
+              <li><a href="behandelingen.html" class="footer-nav-link">Lip Blush</a></li>
+              <li><a href="behandelingen.html" class="footer-nav-link">Touch-up</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Salon nav group -->
+          <div class="footer-col footer-col--nav">
+            <p class="footer-col-label">Salon</p>
+            <ul class="footer-nav">
+              <li><a href="over-ons.html" class="footer-nav-link">Over Tink</a></li>
+              <li><a href="over-ons.html" class="footer-nav-link">Academy</a></li>
+              <li><a href="https://www.google.com/search?q=Glamour+by+Tink" target="_blank" rel="noopener noreferrer"
+                  class="footer-nav-link">Reviews</a></li>
+              <li><a href="afspraak.html" class="footer-nav-link">Afspraak boeken</a></li>
+              <li><a href="index.html" class="footer-nav-link">Home</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Location + booking CTA pill -->
+          <div class="footer-col footer-col--contact">
+            <p class="footer-col-label">Bezoek</p>
+            <address class="footer-addr">
+              <span>Salon Assendelft</span>
+              <span>Noord-Holland</span>
+            </address>
+            <a href="afspraak.html" class="footer-pill">Boek een afspraak →</a>
+          </div>
+
         </div>
 
-        <nav class="flex flex-wrap gap-5">
-          <a href="index.html" class="site-link">Home</a>
-          <a href="behandelingen.html" class="site-link">Behandelingen</a>
-          <a href="over-ons.html" class="site-link">Over ons</a>
-          <a href="#contact" class="site-link">Contact</a>
-        </nav>
+        <!-- Animated divider line -->
+        <div class="footer-rule-wrap">
+          <div class="footer-rule" aria-hidden="true"></div>
+        </div>
+
+        <!-- Bottom bar: copyright · legal · design credit -->
+        <div class="footer-bottom">
+          <p class="footer-copy">© <span data-current-year>2026</span> Glamour by Tink. Alle rechten voorbehouden.</p>
+          <nav class="footer-legal" aria-label="Juridisch">
+            <a href="privacy.html" class="footer-legal-link">Privacybeleid</a>
+            <span aria-hidden="true">·</span>
+            <a href="algemene-voorwaarden.html" class="footer-legal-link">Algemene voorwaarden</a>
+          </nav>
+          <p class="footer-credit">Design by <a href="https://www.mauricevandorst.com" target="_blank"
+              rel="noopener noreferrer" class="footer-credit-link">van Dorst</a></p>
+        </div>
+
       </div>
     </footer>
   </div>
 
+  <script src="https://widget.salonized.com/loader.js" defer></script>
   <script src="./js/script.js" defer></script>
   <script src="./js/home-experience.js" defer></script>
 </body>

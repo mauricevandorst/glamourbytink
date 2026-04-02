@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const reducedMotion = reducedMotionQuery.matches;
 
   initHeaderState();
+  initStoryBrandFade(reducedMotion);
   initPanelVisibilityObserver();
   initStoryPanelProgress();
   initStoryPanelCopyEqualHeight();
@@ -201,6 +202,51 @@ function initHeaderState() {
   window.addEventListener('scroll', syncHeader, { passive: true });
 }
 
+function initStoryBrandFade(reducedMotion) {
+  const storySection = document.querySelector('.story-section');
+  const storyBrandLockup = document.querySelector('[data-story-brand-lockup]');
+
+  if (!storySection || !storyBrandLockup) {
+    return;
+  }
+
+  storyBrandLockup.style.willChange = 'opacity';
+
+  if (reducedMotion) {
+    storyBrandLockup.style.opacity = '';
+    return;
+  }
+
+  let framePending = false;
+  const baseOpacity = Number.parseFloat(window.getComputedStyle(storyBrandLockup).opacity) || 1;
+
+  const update = () => {
+    framePending = false;
+
+    const rect = storySection.getBoundingClientRect();
+    const fadeStart = window.innerHeight * 0.60;
+    const fadeDistance = Math.max(180, window.innerHeight * 0.38);
+    const progress = Math.max(0, Math.min(1, (fadeStart - rect.top) / fadeDistance));
+
+    storyBrandLockup.style.opacity = (baseOpacity * (1 - progress)).toFixed(3);
+  };
+
+  const scheduleUpdate = () => {
+    if (framePending) {
+      return;
+    }
+
+    framePending = true;
+    requestAnimationFrame(update);
+  };
+
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate, { passive: true });
+  window.addEventListener('orientationchange', scheduleUpdate, { passive: true });
+
+  scheduleUpdate();
+}
+
 function initPanelVisibilityObserver() {
   const panels = document.querySelectorAll('.panel-section');
   if (!panels.length) {
@@ -316,7 +362,7 @@ function initSplitVisualSync() {
 
   const lastStep = steps[steps.length - 1];
   let currentVisualId = null;
-  const switchLineRatio = 0.8;
+  const switchLineRatio = 0.7;
 
   const setActive = (visualId) => {
     if (visualId === currentVisualId) {
@@ -442,7 +488,7 @@ function initCursorGlow(reducedMotion) {
 function initScrollIndicatorMotion({ reducedMotion }) {
   const indicator = document.querySelector('[data-scroll-indicator]');
   const heroSection = document.querySelector('.hero-scene');
-  const salonizedWidget = document.getElementById('salonized-widget');
+  let salonizedWidget = document.getElementById('salonized-widget');
   const indicatorLabel = indicator?.querySelector('p');
   const indicatorIcon = indicator?.querySelector('svg');
 
@@ -456,11 +502,26 @@ function initScrollIndicatorMotion({ reducedMotion }) {
   const widgetShowThreshold = 205;
   const widgetHideThreshold = 165;
 
-  if (salonizedWidget) {
-    salonizedWidget.style.setProperty('opacity', '0', 'important');
-    salonizedWidget.style.setProperty('pointer-events', 'none', 'important');
-    salonizedWidget.style.setProperty('transform', 'translate3d(22px, 0, 0)', 'important');
-    salonizedWidget.style.setProperty(
+  const resolveSalonizedWidget = () => {
+    if (salonizedWidget && document.body.contains(salonizedWidget)) {
+      return salonizedWidget;
+    }
+
+    salonizedWidget = document.querySelector('iframe[src*="widget.salonized.com/button"]');
+    return salonizedWidget;
+  };
+
+  const applyWidgetVisibility = (targetWidget, isVisible) => {
+    targetWidget.style.setProperty('opacity', isVisible ? '1' : '0', 'important');
+    targetWidget.style.setProperty('pointer-events', isVisible ? 'auto' : 'none', 'important');
+    targetWidget.style.setProperty('transform', isVisible ? 'translate3d(0, 0, 0)' : 'translate3d(22px, 0, 0)', 'important');
+  };
+
+  const initialWidget = resolveSalonizedWidget();
+
+  if (initialWidget) {
+    applyWidgetVisibility(initialWidget, false);
+    initialWidget.style.setProperty(
       'transition',
       'transform 0.72s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s linear',
       'important'
@@ -534,16 +595,26 @@ function initScrollIndicatorMotion({ reducedMotion }) {
     indicator.style.transform = `translate3d(0, ${offsetY.toFixed(2)}px, 0)`;
     indicator.style.opacity = opacity.toFixed(3);
 
-    if (salonizedWidget) {
+    const activeWidget = resolveSalonizedWidget();
+
+    if (activeWidget) {
+      if (!activeWidget.dataset.gbtWidgetInitialized) {
+        applyWidgetVisibility(activeWidget, false);
+        activeWidget.style.setProperty(
+          'transition',
+          'transform 0.72s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s linear',
+          'important'
+        );
+        activeWidget.dataset.gbtWidgetInitialized = 'true';
+      }
+
       const shouldShowWidget = widgetVisible
         ? window.scrollY > widgetHideThreshold
         : window.scrollY > widgetShowThreshold;
 
       if (shouldShowWidget !== widgetVisible) {
         widgetVisible = shouldShowWidget;
-        salonizedWidget.style.setProperty('opacity', widgetVisible ? '1' : '0', 'important');
-        salonizedWidget.style.setProperty('pointer-events', widgetVisible ? 'auto' : 'none', 'important');
-        salonizedWidget.style.setProperty('transform', widgetVisible ? 'translate3d(0, 0, 0)' : 'translate3d(22px, 0, 0)', 'important');
+        applyWidgetVisibility(activeWidget, widgetVisible);
       }
     }
   };
