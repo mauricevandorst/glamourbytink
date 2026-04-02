@@ -517,16 +517,47 @@ function initScrollIndicatorMotion({ reducedMotion }) {
     targetWidget.style.setProperty('transform', isVisible ? 'translate3d(0, 0, 0)' : 'translate3d(22px, 0, 0)', 'important');
   };
 
-  const initialWidget = resolveSalonizedWidget();
+  const initializeWidget = (targetWidget) => {
+    if (!targetWidget || targetWidget.dataset.gbtWidgetInitialized) {
+      return;
+    }
 
-  if (initialWidget) {
-    applyWidgetVisibility(initialWidget, false);
-    initialWidget.style.setProperty(
+    applyWidgetVisibility(targetWidget, widgetVisible);
+    targetWidget.style.setProperty(
       'transition',
       'transform 0.72s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s linear',
       'important'
     );
+    targetWidget.dataset.gbtWidgetInitialized = 'true';
+  };
+
+  const initialWidget = resolveSalonizedWidget();
+
+  if (initialWidget) {
+    initializeWidget(initialWidget);
   }
+
+  const widgetObserver = new MutationObserver((mutations) => {
+    for (const mutation of mutations) {
+      for (const node of mutation.addedNodes) {
+        if (!(node instanceof Element)) {
+          continue;
+        }
+
+        const iframe = node.matches('iframe[src*="widget.salonized.com/button"]')
+          ? node
+          : node.querySelector('iframe[src*="widget.salonized.com/button"]');
+
+        if (iframe) {
+          salonizedWidget = iframe;
+          initializeWidget(iframe);
+          return;
+        }
+      }
+    }
+  });
+
+  widgetObserver.observe(document.body, { childList: true, subtree: true });
 
   if (reducedMotion) {
     indicator.style.transform = 'translate3d(0, 0, 0)';
@@ -598,15 +629,7 @@ function initScrollIndicatorMotion({ reducedMotion }) {
     const activeWidget = resolveSalonizedWidget();
 
     if (activeWidget) {
-      if (!activeWidget.dataset.gbtWidgetInitialized) {
-        applyWidgetVisibility(activeWidget, false);
-        activeWidget.style.setProperty(
-          'transition',
-          'transform 0.72s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s linear',
-          'important'
-        );
-        activeWidget.dataset.gbtWidgetInitialized = 'true';
-      }
+      initializeWidget(activeWidget);
 
       const shouldShowWidget = widgetVisible
         ? window.scrollY > widgetHideThreshold
