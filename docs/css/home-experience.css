@@ -1059,6 +1059,8 @@ body.is-ready .scroll-indicator__inner {
 
 .showcase-section {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .showcase-heading {

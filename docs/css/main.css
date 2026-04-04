@@ -1064,6 +1064,8 @@ body.is-ready .scroll-indicator__inner {
 
 .showcase-section {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .showcase-heading {
@@ -2835,12 +2837,12 @@ video {
   display: grid;
 }
 
-.\!hidden {
-  display: none !important;
-}
-
 .hidden {
   display: none;
+}
+
+.\!hidden {
+  display: none !important;
 }
 
 .h-10 {
@@ -3810,11 +3812,6 @@ input[type="radio"] {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .md\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
   }
 }
 
