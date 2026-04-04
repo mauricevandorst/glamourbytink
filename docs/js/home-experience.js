@@ -225,7 +225,7 @@ function initStoryBrandFade(reducedMotion) {
     framePending = false;
 
     const rect = storySection.getBoundingClientRect();
-    const fadeStart = window.innerHeight * 0.65;
+    const fadeStart = window.innerHeight * 0.43;
     const fadeDistance = Math.max(180, window.innerHeight * 0.38);
     const progress = Math.max(0, Math.min(1, (fadeStart - rect.top) / fadeDistance));
 
@@ -426,7 +426,7 @@ function initSplitVisualSync() {
 
   const lastStep = steps[steps.length - 1];
   let currentVisualId = null;
-  const switchLineRatio = 0.7;
+  const switchLineRatio = 0.5;
 
   const setActive = (visualId) => {
     if (visualId === currentVisualId) {
