@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder afbeelding lippen</title>
+  <desc id="desc">Decoratieve placeholder voor behandelingen binnen de categorie lippen.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#31171d" />
+      <stop offset="100%" stop-color="#c06d7a" />
+    </linearGradient>
+    <radialGradient id="glow" cx="32%" cy="22%" r="42%">
+      <stop offset="0%" stop-color="#ffd7df" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#ffd7df" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)" />
+  <rect width="1600" height="1000" fill="url(#glow)" />
+  <g fill="none" stroke="#fff0f3" stroke-opacity="0.34">
+    <path d="M380 560c120-80 235-120 420-120s300 40 420 120c-120 95-235 140-420 140S500 655 380 560Z" stroke-width="10" />
+    <path d="M500 560c85 28 178 42 300 42s215-14 300-42" stroke-width="7" />
+  </g>
+  <text x="120" y="770" fill="#fff8fa" font-family="Cormorant Garamond, Georgia, serif" font-size="120">Lippen</text>
+  <text x="126" y="840" fill="#ffe6eb" font-family="Arial, sans-serif" font-size="34" letter-spacing="10">PLACEHOLDER AFBEELDING</text>
+</svg>

@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     element.textContent = currentYear;
   });
 
+  initAnchorNavigation();
+
   const navToggle = document.getElementById('navToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   const header = document.querySelector('.site-header');
@@ -33,6 +35,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setMenuState(false);
     navToggle.addEventListener('click', toggleMenu);
+
+    document.addEventListener('click', (event) => {
+      const isMenuOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      if (!isMenuOpen) {
+        return;
+      }
+
+      const target = event.target;
+      if (!(target instanceof Node)) {
+        return;
+      }
+
+      if (navToggle.contains(target) || mobileMenu.contains(target)) {
+        return;
+      }
+
+      setMenuState(false);
+    });
 
     mobileLinks.forEach((link) => {
       link.addEventListener('click', () => {
@@ -86,6 +106,102 @@ document.addEventListener('DOMContentLoaded', () => {
 //   · Footer columns  → staggered entry via .is-visible
 //   · Divider lines   → draw animation via .is-drawn
 // ─────────────────────────────────────────────────────────────
+function initAnchorNavigation() {
+  const header = document.querySelector('.site-header');
+  const snapContainer = document.querySelector('.panel-scroll');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let snapResetTimer = 0;
+
+  const updateAnchorOffset = () => {
+    const headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 0;
+    document.documentElement.style.setProperty('--site-header-offset', `${headerHeight + 16}px`);
+  };
+
+  const temporarilyDisableSnap = () => {
+    if (!snapContainer) {
+      return;
+    }
+
+    snapContainer.classList.add('is-anchor-scrolling');
+    window.clearTimeout(snapResetTimer);
+    snapResetTimer = window.setTimeout(() => {
+      snapContainer.classList.remove('is-anchor-scrolling');
+    }, reducedMotion ? 80 : 700);
+  };
+
+  const scrollToHash = (hash, behavior = 'smooth') => {
+    if (!hash || hash === '#') {
+      return false;
+    }
+
+    const targetId = decodeURIComponent(hash.slice(1));
+    if (!targetId) {
+      return false;
+    }
+
+    const target = document.getElementById(targetId);
+    if (!target) {
+      return false;
+    }
+
+    updateAnchorOffset();
+    temporarilyDisableSnap();
+
+    const headerOffset = header ? Math.ceil(header.getBoundingClientRect().height) + 12 : 12;
+    const targetTop = window.scrollY + target.getBoundingClientRect().top - headerOffset;
+
+    window.scrollTo({
+      top: Math.max(0, targetTop),
+      behavior: reducedMotion ? 'auto' : behavior
+    });
+
+    return true;
+  };
+
+  updateAnchorOffset();
+  window.addEventListener('resize', updateAnchorOffset, { passive: true });
+  window.addEventListener('load', updateAnchorOffset);
+
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(updateAnchorOffset).catch(() => {});
+  }
+
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href*="#"]');
+    if (!(link instanceof HTMLAnchorElement)) {
+      return;
+    }
+
+    const url = new URL(link.href, window.location.href);
+    const isSamePage = url.origin === window.location.origin
+      && url.pathname === window.location.pathname
+      && url.hash;
+
+    if (!isSamePage) {
+      return;
+    }
+
+    event.preventDefault();
+    if (window.location.hash !== url.hash) {
+      history.pushState(null, '', url.hash);
+    }
+
+    scrollToHash(url.hash);
+  });
+
+  if (window.location.hash) {
+    window.requestAnimationFrame(() => {
+      window.setTimeout(() => {
+        scrollToHash(window.location.hash, 'auto');
+      }, 40);
+    });
+  }
+
+  window.addEventListener('hashchange', () => {
+    scrollToHash(window.location.hash);
+  });
+}
+
 function initFooterReveal() {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

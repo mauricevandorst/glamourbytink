@@ -166,7 +166,8 @@
     color: var(--site-accent-light);
 }
 
-.treatment-card h3 {
+.treatment-card h3,
+.treatment-card h4 {
     margin: 0;
     font-size: clamp(1.7rem, 3vw, 2.4rem);
     line-height: 0.95;

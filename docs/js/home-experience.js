@@ -225,8 +225,8 @@ function initStoryBrandFade(reducedMotion) {
     framePending = false;
 
     const rect = storySection.getBoundingClientRect();
-    const fadeStart = window.innerHeight * 0.43;
-    const fadeDistance = Math.max(180, window.innerHeight * 0.38);
+    const fadeStart = window.innerHeight * 0.25;
+    const fadeDistance = Math.max(180, window.innerHeight * 0.22);
     const progress = Math.max(0, Math.min(1, (fadeStart - rect.top) / fadeDistance));
 
     storyBrandLockup.style.opacity = (baseOpacity * (1 - progress)).toFixed(3);
