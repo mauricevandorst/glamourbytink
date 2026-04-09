@@ -86,18 +86,85 @@ img {
 }
 
 .cursor-glow {
+  --cursor-scale: 1;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 5;
-  width: 10rem;
-  height: 10rem;
+  width: 4.1rem;
+  height: 4.1rem;
   border-radius: 9999px;
   pointer-events: none;
   opacity: 0;
-  background: radial-gradient(circle, rgba(202, 161, 124, 0.2) 0%, rgba(202, 161, 124, 0.08) 38%, transparent 72%);
-  filter: blur(10px);
-  transform: translate3d(-50%, -50%, 0);
+  background: radial-gradient(circle at center,
+      rgba(255, 248, 239, 0.44) 0%,
+      rgba(244, 221, 184, 0.14) 28%,
+      rgba(219, 179, 114, 0.06) 48%,
+      transparent 72%);
+  box-shadow: 0 0 12px rgba(232, 196, 137, 0.04);
+  filter: blur(4px);
+  mix-blend-mode: screen;
+  transform: translate3d(-50%, -50%, 0) scale(var(--cursor-scale));
+  transition: opacity 220ms ease;
+  will-change: transform, opacity;
+}
+
+.cursor-trail-particle {
+  --x: 0px;
+  --y: 0px;
+  --drift-x: 0px;
+  --drift-y: -16px;
+  --particle-size: 10px;
+  --particle-duration: 900ms;
+  --twinkle-rotate: 0deg;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: var(--particle-size);
+  height: var(--particle-size);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(var(--x), var(--y), 0) translate(-50%, -50%) scale(0.35) rotate(var(--twinkle-rotate));
+  animation: cursorTrailFloat var(--particle-duration) cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.cursor-trail-particle--spark {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.86) 0%, rgba(247, 225, 179, 0.36) 32%, transparent 72%);
+  filter: drop-shadow(0 0 6px rgba(247, 218, 165, 0.18));
+}
+
+.cursor-trail-particle--spark::before,
+.cursor-trail-particle--spark::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  top: calc(50% - 0.65px);
+  height: 1.3px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 244, 221, 0.06) 18%, rgba(255, 244, 221, 0.9) 50%, rgba(255, 244, 221, 0.06) 82%, transparent 100%);
+}
+
+.cursor-trail-particle--spark::after {
+  transform: rotate(90deg);
+}
+
+@keyframes cursorTrailFloat {
+  0% {
+    opacity: 0;
+    transform: translate3d(var(--x), var(--y), 0) translate(-50%, -50%) scale(0.35) rotate(var(--twinkle-rotate));
+  }
+
+  18% {
+    opacity: 0.78;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(calc(var(--x) + var(--drift-x)), calc(var(--y) + var(--drift-y)), 0) translate(-50%, -50%) scale(1.22) rotate(calc(var(--twinkle-rotate) + 14deg));
+  }
 }
 
 .site-header {
@@ -306,7 +373,7 @@ img {
 
 .mobile-nav.is-open {
   padding-top: 0.5rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   opacity: 1;
   max-height: 22rem;
   transform: translateY(0);
@@ -497,7 +564,7 @@ body.is-ready .scroll-indicator__inner {
   display: block;
 }
 
-.hero-line span {
+.hero-line span, .subtle-hero-title {
     display: block;
     color: var(--site-accent-light);
     font-style: italic;
@@ -1093,17 +1160,6 @@ body.is-ready .scroll-indicator__inner {
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   padding-bottom: 0.8rem;
-}
-
-.story-panels::-webkit-scrollbar,
-.showcase-viewport::-webkit-scrollbar {
-  display: none;
-}
-
-.story-panels,
-.showcase-viewport {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 .showcase-track {

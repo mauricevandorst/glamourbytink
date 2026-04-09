@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="nl">
 
 <head>
@@ -25,7 +25,7 @@
         <a href="index.html" class="brand-lockup" aria-label="Glamour by Tink home">
           <span class="brand-meta">
             <strong class="brand-title text-2xl md:text-[1.78rem]">GLAMOUR</strong>
-            <span class="brand-tagline text-[0.55rem] md:text-[0.58rem]">BY TINK • PMU SALON</span>
+            <span class="brand-tagline text-[0.55rem] md:text-[0.58rem]">BY TINK â€¢ PMU SALON</span>
           </span>
         </a>
 
@@ -38,21 +38,22 @@
           </span>
         </button>
 
-        <nav class="hidden sm:flex items-center gap-6">
+        <nav class="hidden sm:flex items-center gap-4 md:gap-6">
           <a href="index.html" class="site-link text-xs md:text-[0.82rem]">Home</a>
           <a href="behandelingen.html" class="site-link text-xs md:text-[0.82rem]" aria-current="page">Behandelingen</a>
+          <a href="#prijzen" class="site-link text-xs md:text-[0.82rem]">Prijzen</a>
+          <a href="academie.html" class="site-link text-xs md:text-[0.82rem]">Academy</a>
           <a href="./#contact" class="site-link text-xs md:text-[0.82rem]">Contact</a>
-          <a href="./#afspraak" class="site-link text-xs md:text-[0.82rem]">Afspraak</a>
         </nav>
       </div>
 
       <nav id="mobileMenu" class="mobile-nav sm:hidden" aria-hidden="true">
         <ul class="space-y-3 text-center">
           <li><a href="index.html" class="site-link text-sm md:text-base">Home</a></li>
-          <li><a href="behandelingen.html" class="site-link text-sm md:text-base" aria-current="page">Behandelingen</a>
-          </li>
+          <li><a href="behandelingen.html" class="site-link text-sm md:text-base" aria-current="page">Behandelingen</a></li>
+          <li><a href="#prijzen" class="site-link text-sm md:text-base">Prijzen</a></li>
+          <li><a href="academie.html" class="site-link text-sm md:text-base">Academy</a></li>
           <li><a href="./#contact" class="site-link text-sm md:text-base">Contact</a></li>
-          <li><a href="./#afspraak" class="site-link text-sm md:text-base">Afspraak</a></li>
         </ul>
       </nav>
     </header>
@@ -80,10 +81,10 @@
               Elke behandeling wordt afgestemd op jouw looks, huid en persoonlijke wensen.</p>
             <div class="flex flex-wrap gap-2 treatments-reveal" style="--delay: 0.22s;">
               <div class="treatments-hero__actions" style="--delay: 0.24s;">
-                <a href="./#afspraak" class="site-button site-button--ghost"><span>Plan een intake</span></a>
+                <a href="#" data-booking-open class="site-button site-button--ghost"><span>Plan een intake</span></a>
               </div>
               <div class="treatments-hero__actions" style="--delay: 0.24s;">
-                <a href="#treatments-overview" class="site-button site-button--solid"><span>Behandelingen</span></a>
+                <a href="./academie.html" class="site-button site-button--solid"><span>Academy</span></a>
               </div>
             </div>
           </div>
@@ -91,7 +92,7 @@
       </section>
 
       <!-- HIGHLIGHTED TREATMENTS OVERVIEW SECTION -->
-      <section id="treatments-overview" class="treatments-overview section-edge" aria-labelledby="overview-title">
+      <section id="signature-treatments" class="treatments-overview section-edge" aria-labelledby="overview-title">
         <div class="max-w-[88rem] mx-auto px-4 md:px-8">
           <div class="treatments-heading treatments-reveal">
             <p class="eyebrow text-xs md:text-[0.76rem] tracking-[0.18em]">Uitgelicht</p>
@@ -105,7 +106,7 @@
 
           <div class="treatments-grid auto-rows-fr" aria-label="Overzicht van alle behandelingen">
             <!-- Behandeling 1: vervang titel, duur, prijs en tekst -->
-            <article
+            <article id="powder-brows"
               class="treatments-reveal col-span-12 md:col-span-6 xl:col-span-4 flex h-full flex-col border-t border-white/20 pt-6"
               style="--delay: 0.02s;">
               <div class="h-56 overflow-hidden rounded-[1.2rem] sm:h-60">
@@ -127,15 +128,15 @@
                     <dt class="text-[0.63rem] uppercase tracking-[0.17em] text-white/55">Duur</dt>
                     <dd class="mt-1 text-[1.02rem] text-[color:var(--site-ink)]">2,5 uur</dd>
                   </div>
-                  <a href="./#afspraak" class="site-button site-button--ghost w-max me-5">
-                    <span>Kies behandeling →</span>
+                  <a href="#" data-booking-open class="site-button site-button--ghost w-max me-5">
+                    <span>Kies behandeling â†’</span>
                   </a>
                 </dl>
               </div>
             </article>
 
             <!-- Behandeling 2: vervang titel, duur, prijs en tekst -->
-            <article
+            <article id="nano-combi-brows"
               class="treatments-reveal col-span-12 md:col-span-6 xl:col-span-4 flex h-full flex-col border-t border-white/20 pt-6"
               style="--delay: 0.1s;">
               <div class="h-56 overflow-hidden rounded-[1.2rem] sm:h-60">
@@ -158,15 +159,15 @@
                     <dt class="text-[0.63rem] uppercase tracking-[0.17em] text-white/55">Duur</dt>
                     <dd class="mt-1 text-[0.98rem] text-[color:var(--site-ink)]">3 uur</dd>
                   </div>
-                  <a href="./#afspraak" class="site-button site-button--ghost w-max me-5">
-                    <span>Kies behandeling →</span>
+                  <a href="#" data-booking-open class="site-button site-button--ghost w-max me-5">
+                    <span>Kies behandeling â†’</span>
                   </a>
                 </dl>
               </div>
             </article>
 
             <!-- Behandeling 3: vervang titel, duur, prijs en tekst -->
-            <article
+            <article id="infralash-eyeliner"
               class="treatments-reveal col-span-12 md:col-span-6 xl:col-span-4 flex h-full flex-col border-t border-white/20 pt-6"
               style="--delay: 0.16s;">
               <div class="h-56 overflow-hidden rounded-[1.2rem] sm:h-60">
@@ -189,15 +190,15 @@
                     <dt class="text-[0.63rem] uppercase tracking-[0.17em] text-white/55">Duur</dt>
                     <dd class="mt-1 text-[0.98rem] text-[color:var(--site-ink)]">2 uur</dd>
                   </div>
-                  <a href="./#afspraak" class="site-button site-button--ghost w-max me-5">
-                    <span>Kies behandeling →</span>
+                  <a href="#" data-booking-open class="site-button site-button--ghost w-max me-5">
+                    <span>Kies behandeling â†’</span>
                   </a>
                 </dl>
               </div>
             </article>
 
             <!-- Behandeling 4: vervang titel, duur, prijs en tekst -->
-            <article
+            <article id="lip-blush"
               class="treatments-reveal col-span-12 md:col-span-6 xl:col-span-4 flex h-full flex-col border-t border-white/20 pt-6"
               style="--delay: 0.22s;">
               <div class="h-56 overflow-hidden rounded-[1.2rem] sm:h-60">
@@ -218,15 +219,15 @@
                     <dt class="text-[0.63rem] uppercase tracking-[0.17em] text-white/55">Duur</dt>
                     <dd class="mt-1 text-[0.98rem] text-[color:var(--site-ink)]">2,5 uur</dd>
                   </div>
-                  <a href="./#afspraak" class="site-button site-button--ghost w-max me-5">
-                    <span>Kies behandeling →</span>
+                  <a href="#" data-booking-open class="site-button site-button--ghost w-max me-5">
+                    <span>Kies behandeling â†’</span>
                   </a>
                 </dl>
               </div>
             </article>
 
             <!-- Behandeling 5: vervang titel, duur, prijs en tekst -->
-            <article
+            <article id="touch-up"
               class="treatments-reveal col-span-12 md:col-span-6 xl:col-span-4 flex h-full flex-col border-t border-white/20 pt-6"
               style="--delay: 0.28s;">
               <div class="h-56 overflow-hidden rounded-[1.2rem] sm:h-60">
@@ -249,8 +250,8 @@
                     <dt class="text-[0.63rem] uppercase tracking-[0.17em] text-white/55">Duur</dt>
                     <dd class="mt-1 text-[0.98rem] text-[color:var(--site-ink)]">1,5 - 2 uur</dd>
                   </div>
-                  <a href="./#afspraak" class="site-button site-button--ghost w-max me-5">
-                    <span>Kies nazorg →</span>
+                  <a href="#" data-booking-open class="site-button site-button--ghost w-max me-5">
+                    <span>Kies nazorg â†’</span>
                   </a>
                 </dl>
               </div>
@@ -259,93 +260,29 @@
         </div>
       </section>
 
-      <!-- ALL TREATMENTS SECTION -->
-      <section id="treatments-overview" class="treatments-overview section-edge" aria-labelledby="overview-title">
-        <div class="pointer-events-none absolute inset-x-0 top-0 z-30 h-px bg-[--site-line] opacity-50 mx-4 md:mx-8"
-          aria-hidden="true"></div>
-        <div class="max-w-[88rem] mx-auto px-4 md:px-8">
+      <!-- PRICING SECTION -->
+      <section class="treatments-overview section-edge" aria-labelledby="overview-title">
+        <div class="pointer-events-none absolute inset-x-0 top-0 z-30 flex justify-center px-4 md:px-8"
+          aria-hidden="true">
+          <div class="footer-rule !h-px !mt-0 w-full max-w-[90%] opacity-80"></div>
+        </div>
+        <div id="prijzen" class="max-w-[88rem] mx-auto px-4 md:px-8">
           <div class="treatments-reveal" style="--delay: 0.34s;" aria-labelledby="all-treatments-list-title">
-            <p class="eyebrow text-xs md:text-[0.76rem] tracking-[0.18em]">Totaaloverzicht</p>
+            <p class="eyebrow text-xs md:text-[0.76rem] tracking-[0.18em]">Prijsoverzicht</p>
             <h3 id="all-treatments-list-title"
               class="text-3xl sm:text-4xl lg:text-[2.6rem] leading-[0.96] text-[color:var(--site-ink)]">
-              Alle beschikbare behandelingen
+              Bekijk ons prijsoverzicht
             </h3>
             <p class="mt-3 max-w-3xl text-base md:text-lg xl:text-xl leading-[1.65] text-white/75">
-              Hieronder vind je een compleet overzicht van alle behandelingen en de gemiddelde behandeltijd.
+              Bekijk hieronder de actuele prijslijst van onze behandelingen met tijdsduur.
             </p>
 
-            <div class="mt-6 grid gap-4 md:gap-8 lg:gap-12">
-              <div class="border-b border-white/10 bg-black/20 py-4 md:py-5">
-                <h4 class="text-xl md:text-[1.55rem] text-[color:var(--site-ink)]">Wenkbrauwen</h4>
-                <ul class="mt-3 space-y-2 text-base md:text-lg text-white/85">
-                  <li class="flex items-center justify-between gap-4"><span>Powder Brows</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">2,5 uur</span></li>
-                  <li class="flex items-center justify-between gap-4"><span>Nano Combi Brows</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">3 uur</span></li>
-                  <li class="flex items-center justify-between gap-4"><span>Ombre</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">2,5 uur</span></li>
-                  <li class="flex items-center justify-between gap-4"><span>Hairstrokes</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">3 uur</span></li>
-                </ul>
-              </div>
-
-              <div class="border-b border-white/10 bg-black/20 py-4 md:py-5">
-                <h4 class="text-xl md:text-[1.55rem] text-[color:var(--site-ink)]">Ogen</h4>
-                <ul class="mt-3 space-y-2 text-base md:text-lg text-white/85">
-                  <li class="flex items-center justify-between gap-4"><span>Infralash boven</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">2 uur</span></li>
-                  <li class="flex items-center justify-between gap-4"><span>Infralash boven + onder</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">2,5 uur</span></li>
-                  <li class="flex items-center justify-between gap-4"><span>Eyeliner boven</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">2 uur</span></li>
-                  <li class="flex items-center justify-between gap-4"><span>Eyeliner onder</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">1,5 uur</span></li>
-                  <li class="flex items-center justify-between gap-4"><span>Eyeliner boven + onder</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">2,5 uur</span></li>
-                  <li class="flex items-center justify-between gap-4"><span>Eyeliner extra breed</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">2,5 uur</span></li>
-                  <li class="flex items-center justify-between gap-4"><span>Extra breed boven + onder</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">3 uur</span></li>
-                </ul>
-              </div>
-
-              <div class="border-b border-white/10 bg-black/20 py-4 md:py-5">
-                <h4 class="text-xl md:text-[1.55rem] text-[color:var(--site-ink)]">Lippen</h4>
-                <ul class="mt-3 space-y-2 text-base md:text-lg text-white/85">
-                  <li class="flex items-center justify-between gap-4"><span>Lip Blush</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">2,5 uur</span></li>
-                  <li class="flex items-center justify-between gap-4"><span>Lipliner</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">2 uur</span></li>
-                  <li class="flex items-center justify-between gap-4"><span>Lip schaduwlijn</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">2 uur</span></li>
-                  <li class="flex items-center justify-between gap-4"><span>Full-lips</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">3 uur</span></li>
-                </ul>
-              </div>
-
-              <div class="border-b border-white/10 bg-black/20 py-4 md:py-5">
-                <h4 class="text-xl md:text-[1.55rem] text-[color:var(--site-ink)]">Medische pigmentatie</h4>
-                <ul class="mt-3 space-y-2 text-base md:text-lg text-white/85">
-                  <li class="flex items-center justify-between gap-4"><span>Areola unilateraal</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">2,5 uur</span></li>
-                  <li class="flex items-center justify-between gap-4"><span>Areola bilateraal</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">3,5 uur</span></li>
-                  <li class="flex items-center justify-between gap-4"><span>Overige littekens</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">2 - 3 uur</span></li>
-                </ul>
-              </div>
-
-              <div class="md:col-span-2 xl:col-span-2 pt-4 md:pt-5">
-                <h4 class="text-xl md:text-[1.55rem] text-[color:var(--site-ink)]">Overige behandelingen</h4>
-                <ul class="mt-3 grid gap-2 text-base md:text-lg text-white/85">
-                  <li class="flex items-center justify-between gap-4"><span>Touch-up afspraken</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">1,5 - 2 uur</span></li>
-                  <li class="flex items-center justify-between gap-4"><span>Wenkbrauw styling</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">45 min</span></li>
-                  <li class="flex items-center justify-between gap-4"><span>Wenkbrauwen waxen</span><span
-                      class="whitespace-nowrap text-[color:var(--site-accent-light)]">30 min</span></li>
-                </ul>
-              </div>
+            <div
+              class="mt-6 overflow-hidden bg-black/20 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.65)]">
+              <iframe src="https://glamour-by-tink.salonized.com/services?layout=embed"
+                title="Salonized prijslijst van Glamour by Tink" loading="lazy"
+                class="w-full max-h-[85svh] h-[1376px] sm:h-[1244px] md:h-[1300px] lg:h-[1244px] rounded-xl bg-white"
+                style="border:0;" referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
           </div>
         </div>
@@ -370,7 +307,7 @@
               <p class="text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Resultaat: voller ogende brows die je
                 gezicht direct meer structuur geven, zonder zwaar of hard te
                 ogen.</p>
-              <a href="./#afspraak" class="site-button site-button--solid"><span>Reserveer jouw intake</span></a>
+              <a href="#" data-booking-open class="site-button site-button--solid"><span>Reserveer jouw intake</span></a>
             </div>
           </article>
         </div>
@@ -442,12 +379,85 @@
                   adviesmoment om techniek, vorm en kleur samen te bepalen.</p>
               </div>
             </article>
+
+            <article class="faq-item treatments-reveal" style="--delay: 0.26s;">
+              <h3>
+                <button class="faq-trigger text-lg md:text-xl xl:text-[1.35rem] leading-[1.15]" type="button"
+                  aria-expanded="false" aria-controls="faq-panel-5" id="faq-trigger-5">
+                  Hoe lang duurt een behandeling gemiddeld?
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="faq-panel" id="faq-panel-5" role="region" aria-labelledby="faq-trigger-5" hidden>
+                <p class="text-sm md:text-base leading-[1.62]">Reken gemiddeld op 2 tot 2,5 uur, inclusief intake,
+                  voortekenen en de behandeling zelf. Zo nemen we genoeg tijd voor precisie en comfort.</p>
+              </div>
+            </article>
+
+            <article class="faq-item treatments-reveal" style="--delay: 0.32s;">
+              <h3>
+                <button class="faq-trigger text-lg md:text-xl xl:text-[1.35rem] leading-[1.15]" type="button"
+                  aria-expanded="false" aria-controls="faq-panel-6" id="faq-trigger-6">
+                  Is een nabehandeling nodig?
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="faq-panel" id="faq-panel-6" role="region" aria-labelledby="faq-trigger-6" hidden>
+                <p class="text-sm md:text-base leading-[1.62]">In veel gevallen wel. Een nabehandeling na de
+                  genezingsfase helpt om kleur en vorm te verfijnen voor een stabiel en langdurig resultaat.</p>
+              </div>
+            </article>
+
+            <article class="faq-item treatments-reveal" style="--delay: 0.38s;">
+              <h3>
+                <button class="faq-trigger text-lg md:text-xl xl:text-[1.35rem] leading-[1.15]" type="button"
+                  aria-expanded="false" aria-controls="faq-panel-7" id="faq-trigger-7">
+                  Wanneer kan ik weer sporten of make-up dragen?
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="faq-panel" id="faq-panel-7" role="region" aria-labelledby="faq-trigger-7" hidden>
+                <p class="text-sm md:text-base leading-[1.62]">Vermijd intensief sporten en make-up op het behandelde
+                  gebied in de eerste dagen. Tijdens je afspraak krijg je een duidelijk nazorgschema mee.</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <div class="salonized-booking hidden" data-company="glamour-by-tink" data-color="#FF6575" data-language="nl"
-        data-position="right"></div>
+      <div data-booking-fab class="fixed bottom-5 right-5 z-[2147483550] flex flex-col items-end sm:bottom-6 sm:right-6">
+        <button type="button" data-booking-open
+          class="group site-button site-button--solid rounded-full text-[#ff1d1d] gap-[5px] bg-[radial-gradient(circle_at_top_left,_#ffffff_0%,_#d9d9d9_100%)]">
+          <img src="./assets/images/salonized-icon.png" alt="" aria-hidden="true"
+            class="h-6 w-6 object-contain shrink-0">
+          Afspraak
+        </button>
+      </div>
+
+      <div data-booking-overlay
+        class="pointer-events-none fixed inset-0 z-[2147483549] bg-black/65 opacity-0 backdrop-blur-[1px] transition duration-200"></div>
+
+      <div data-booking-modal
+        class="pointer-events-none fixed bottom-[22px] right-[22px] z-[2147483551] w-[488px] max-w-[calc(100%-44px)] max-h-[calc(100vh-44px)] overflow-hidden rounded-[16px] border border-[color:var(--site-line)] bg-[color:rgba(10,8,8,0.92)] opacity-0 shadow-[0_30px_90px_-36px_rgba(0,0,0,0.85)] backdrop-blur-xl transition duration-200 translate-y-2">
+        <div class="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#7b533d]/45 via-[#5a3c2b]/25 to-transparent"
+          aria-hidden="true"></div>
+        <div class="pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-[color:var(--site-accent-light)]/60"
+          aria-hidden="true"></div>
+        <button type="button" data-booking-close
+          class="absolute right-3 top-1 z-20 rounded-[0_10px_0_10px] border border-[color:var(--site-line)] bg-black/35 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-[color:var(--site-ink)] transition hover:bg-black/55 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--site-accent-light)]">
+          Sluiten
+        </button>
+        <div class="relative z-10 flex items-center justify-between gap-3 px-4 pt-3 pb-2">
+          <p class="text-[0.63rem] font-semibold uppercase tracking-[0.18em] text-[color:var(--site-accent-light)]">
+            Boekingsvenster
+          </p>
+        </div>
+        <iframe
+          src="https://widget.salonized.com/widget?color=%23FF6575&amp;language=nl&amp;company=aN9GJytSPxkVewbFheHoF2bo"
+          title="Salonized booking widget van Glamour by Tink" loading="lazy" frameborder="0" allowtransparency="true"
+          allow="geolocation" referrerpolicy="strict-origin-when-cross-origin"
+          class="relative z-10 block h-[744px] max-h-[calc(100vh-84px)] w-full border-0 bg-white"></iframe>
+      </div>
     </main>
 
     <!-- SITE FOOTER: premium closing experience -->
@@ -471,17 +481,17 @@
             <div class="footer-socials">
               <a href="https://www.instagram.com/glamourbytink_pmu" target="_blank" rel="noopener noreferrer"
                 class="footer-social" aria-label="Volg ons op Instagram">
-                <img src="./assets/icons/instagram-light.svg" alt="" class="h-4 w-4 object-contain" loading="lazy"
+                <img src="./assets/icons/instagram-light.svg" alt="" class="h-5 w-5 object-contain" loading="lazy"
                   decoding="async" aria-hidden="true">
               </a>
               <a href="https://www.facebook.com/people/Glamour-by-Tink/61553052976165/" target="_blank"
                 rel="noopener noreferrer" class="footer-social" aria-label="Volg ons op Facebook">
-                <img src="./assets/icons/facebook-light.svg" alt="" class="h-4 w-4 object-contain" loading="lazy"
+                <img src="./assets/icons/facebook-light.svg" alt="" class="h-5 w-5 object-contain" loading="lazy"
                   decoding="async" aria-hidden="true">
               </a>
               <a href="https://www.tiktok.com/@glamour.by.tink" target="_blank" rel="noopener noreferrer"
                 class="footer-social" aria-label="Volg ons op TikTok">
-                <img src="./assets/icons/tiktok-light.svg" alt="" class="h-4 w-4 object-contain" loading="lazy"
+                <img src="./assets/icons/tiktok-light.svg" alt="" class="h-5 w-5 object-contain" loading="lazy"
                   decoding="async" aria-hidden="true">
               </a>
             </div>
@@ -491,31 +501,35 @@
           <div class="footer-col footer-col--nav">
             <p class="footer-col-label text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Behandelingen</p>
             <ul class="footer-nav">
-              <li><a href="behandelingen.html"
+              <li><a href="behandelingen.html#powder-brows"
                   class="footer-nav-link text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Powder Brows</a></li>
-              <li><a href="behandelingen.html"
+              <li><a href="behandelingen.html#nano-combi-brows"
                   class="footer-nav-link text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Nano Combi Brows</a></li>
-              <li><a href="behandelingen.html"
+              <li><a href="behandelingen.html#infralash-eyeliner"
                   class="footer-nav-link text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Infralash Eyeliner</a>
               </li>
-              <li><a href="behandelingen.html"
+              <li><a href="behandelingen.html#lip-blush"
                   class="footer-nav-link text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Lip Blush</a></li>
-              <li><a href="behandelingen.html"
+              <li><a href="behandelingen.html#touch-up"
                   class="footer-nav-link text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Touch-up</a></li>
             </ul>
           </div>
 
-          <!-- Column 3: Salon nav group -->
+          <!-- Column 3: Site nav group -->
           <div class="footer-col footer-col--nav">
-            <p class="footer-col-label text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Salon</p>
+            <p class="footer-col-label text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Navigatie</p>
             <ul class="footer-nav">
               <li><a href="index.html"
                   class="footer-nav-link text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Home</a></li>
-              <li><a href="./#contact" class="footer-nav-link text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Over
-                  Ons</a></li>
+              <li><a href="behandelingen.html"
+                  class="footer-nav-link text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Behandelingen</a></li>
+              <li><a href="behandelingen.html#prijzen"
+                  class="footer-nav-link text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Prijzen</a></li>
+              <li><a href="academie.html"
+                  class="footer-nav-link text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Academy</a></li>
               <li><a href="https://www.google.com/search?q=Glamour+by+Tink" target="_blank" rel="noopener noreferrer"
                   class="footer-nav-link text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Google Reviews</a></li>
-              <li><a href="./#afspraak"
+              <li><a href="#" data-booking-open
                   class="footer-nav-link text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Afspraak boeken</a></li>
             </ul>
           </div>
@@ -541,7 +555,7 @@
               <span class="text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">KvK: 69985545</span>
               <span class="text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">BTW: NL000000000B00</span>
             </address>
-            <a href="./#afspraak" class="site-button site-button--ghost py-[4px] min-h-0 text-xs"><span>Boek een
+            <a href="#" data-booking-open class="site-button site-button--ghost py-[4px] min-h-0 text-xs"><span>Boek een
                 afspraak</span></a>
           </div>
 
@@ -554,24 +568,27 @@
 
         <!-- Bottom bar: copyright · legal · design credit -->
         <div class="footer-bottom">
-          <p class="footer-copy text-xs md:text-[0.76rem]">© <span data-current-year>2026</span> Glamour by Tink.
-            Alle rechten voorbehouden.</p>
-          <nav class="footer-legal text-xs md:text-[0.76rem]" aria-label="Juridisch">
+          <p class="footer-copy text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">© <span
+              data-current-year>2026</span> Glamour by Tink
+            <br>Alle rechten voorbehouden.
+          </p>
+          <nav class="hidden footer-legal text-base md:text-lg xl:text-[1.2rem] leading-[1.65]" aria-label="Juridisch">
             <a href="privacy.html" class="footer-legal-link">Privacybeleid</a>
             <span aria-hidden="true">·</span>
             <a href="algemene-voorwaarden.html" class="footer-legal-link">Algemene voorwaarden</a>
           </nav>
-          <p class="footer-credit text-sm md:text-[0.84rem]">Design by <a href="https://www.mauricevandorst.com"
-              target="_blank" rel="noopener noreferrer" class="footer-credit-link">van Dorst</a></p>
+          <p class="footer-credit text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Design by <a
+              href="https://www.mauricevandorst.com" target="_blank" rel="noopener noreferrer"
+              class="footer-credit-link">van Dorst</a></p>
         </div>
 
       </div>
     </footer>
   </div>
 
-  <script src="https://widget.salonized.com/loader.js" defer></script>
   <script src="./js/script.js" defer></script>
   <script src="./js/behandelingen.js" defer></script>
 </body>
 
 </html>
+

@@ -73,8 +73,8 @@ function initRevealObserver(reducedMotion) {
       });
     },
     {
-      threshold: 0.2,
-      rootMargin: '0px 0px -10% 0px'
+      threshold: 0.12,
+      rootMargin: '0px 0px 6% 0px'
     }
   );
 
@@ -514,20 +514,73 @@ function initCursorGlow(reducedMotion) {
     return;
   }
 
+  const particleLimit = 18;
+  const particleSpawnInterval = 36;
+  const activeParticles = new Set();
+
   let currentX = window.innerWidth / 2;
   let currentY = window.innerHeight / 2;
   let targetX = currentX;
   let targetY = currentY;
+  let previousX = currentX;
+  let previousY = currentY;
   let frameId = null;
+  let lastParticleTime = 0;
+
+  const spawnParticle = (x, y, velocityX, velocityY) => {
+    const particle = document.createElement('span');
+    const size = 6 + Math.random() * 4.5;
+    const driftX = (Math.random() - 0.5) * 16 - velocityX * 0.06;
+    const driftY = -10 - Math.random() * 14 - Math.min(8, Math.abs(velocityY) * 0.05);
+
+    particle.className = 'cursor-trail-particle cursor-trail-particle--spark';
+    particle.style.setProperty('--x', `${x}px`);
+    particle.style.setProperty('--y', `${y}px`);
+    particle.style.setProperty('--drift-x', `${driftX.toFixed(2)}px`);
+    particle.style.setProperty('--drift-y', `${driftY.toFixed(2)}px`);
+    particle.style.setProperty('--particle-size', `${size.toFixed(2)}px`);
+    particle.style.setProperty('--particle-duration', `${(760 + Math.random() * 420).toFixed(0)}ms`);
+    particle.style.setProperty('--twinkle-rotate', `${(Math.random() * 70 - 35).toFixed(2)}deg`);
+
+    document.body.appendChild(particle);
+    activeParticles.add(particle);
+
+    particle.addEventListener(
+      'animationend',
+      () => {
+        activeParticles.delete(particle);
+        particle.remove();
+      },
+      { once: true }
+    );
+
+    if (activeParticles.size > particleLimit) {
+      const oldestParticle = activeParticles.values().next().value;
+      if (oldestParticle) {
+        activeParticles.delete(oldestParticle);
+        oldestParticle.remove();
+      }
+    }
+  };
 
   const render = () => {
-    currentX += (targetX - currentX) * 0.14;
-    currentY += (targetY - currentY) * 0.14;
+    currentX += (targetX - currentX) * 0.16;
+    currentY += (targetY - currentY) * 0.16;
+
+    const deltaX = currentX - previousX;
+    const deltaY = currentY - previousY;
+    const distance = Math.hypot(targetX - currentX, targetY - currentY);
+    const rotation = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
 
     cursor.style.opacity = '1';
-    cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate3d(-50%, -50%, 0)`;
+    cursor.style.setProperty('--cursor-rotation', `${rotation.toFixed(2)}deg`);
+    cursor.style.setProperty('--cursor-scale', `${(1 + Math.min(0.05, distance / 520)).toFixed(3)}`);
+    cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate3d(-50%, -50%, 0) scale(var(--cursor-scale))`;
 
-    if (Math.abs(targetX - currentX) > 0.2 || Math.abs(targetY - currentY) > 0.2) {
+    previousX = currentX;
+    previousY = currentY;
+
+    if (distance > 0.18) {
       frameId = requestAnimationFrame(render);
       return;
     }
@@ -536,8 +589,28 @@ function initCursorGlow(reducedMotion) {
   };
 
   window.addEventListener('pointermove', (event) => {
+    const velocityX = event.clientX - targetX;
+    const velocityY = event.clientY - targetY;
+    const movement = Math.abs(velocityX) + Math.abs(velocityY);
+    const now = performance.now();
+
     targetX = event.clientX;
     targetY = event.clientY;
+
+    if (movement > 2.5 && now - lastParticleTime >= particleSpawnInterval) {
+      spawnParticle(event.clientX - velocityX * 0.18, event.clientY - velocityY * 0.18, velocityX, velocityY);
+
+      if (movement > 26) {
+        spawnParticle(
+          event.clientX + (Math.random() - 0.5) * 5,
+          event.clientY + (Math.random() - 0.5) * 5,
+          velocityX * 0.6,
+          velocityY * 0.6
+        );
+      }
+
+      lastParticleTime = now;
+    }
 
     if (!frameId) {
       frameId = requestAnimationFrame(render);
@@ -546,13 +619,14 @@ function initCursorGlow(reducedMotion) {
 
   window.addEventListener('pointerleave', () => {
     cursor.style.opacity = '0';
+    cursor.style.setProperty('--cursor-scale', '1');
   });
 }
 
 function initScrollIndicatorMotion({ reducedMotion }) {
   const indicator = document.querySelector('[data-scroll-indicator]');
   const heroSection = document.querySelector('.hero-scene');
-  let salonizedWidget = document.getElementById('salonized-widget');
+  let bookingWidget = document.querySelector('[data-booking-fab]');
   const indicatorLabel = indicator?.querySelector('p');
   const indicatorIcon = indicator?.querySelector('svg');
 
@@ -563,16 +637,17 @@ function initScrollIndicatorMotion({ reducedMotion }) {
   indicator.style.willChange = 'transform, opacity';
 
   let widgetVisible = false;
-  const widgetShowThreshold = 775;
-  const widgetHideThreshold = 800;
+  const widgetShowThreshold = 200;
+  const widgetHideThreshold = 225;
 
-  const resolveSalonizedWidget = () => {
-    if (salonizedWidget && document.body.contains(salonizedWidget)) {
-      return salonizedWidget;
+  const resolveBookingWidget = () => {
+    if (bookingWidget && document.body.contains(bookingWidget)) {
+      return bookingWidget;
     }
 
-    salonizedWidget = document.querySelector('iframe[src*="widget.salonized.com/button"]');
-    return salonizedWidget;
+    bookingWidget = document.querySelector('[data-booking-fab]')
+      || document.querySelector('iframe[src*="widget.salonized.com/button"]');
+    return bookingWidget;
   };
 
   const applyWidgetVisibility = (targetWidget, isVisible) => {
@@ -595,7 +670,7 @@ function initScrollIndicatorMotion({ reducedMotion }) {
     targetWidget.dataset.gbtWidgetInitialized = 'true';
   };
 
-  const initialWidget = resolveSalonizedWidget();
+  const initialWidget = resolveBookingWidget();
 
   if (initialWidget) {
     initializeWidget(initialWidget);
@@ -608,13 +683,13 @@ function initScrollIndicatorMotion({ reducedMotion }) {
           continue;
         }
 
-        const iframe = node.matches('iframe[src*="widget.salonized.com/button"]')
+        const widget = node.matches('[data-booking-fab], iframe[src*="widget.salonized.com/button"]')
           ? node
-          : node.querySelector('iframe[src*="widget.salonized.com/button"]');
+          : node.querySelector('[data-booking-fab], iframe[src*="widget.salonized.com/button"]');
 
-        if (iframe) {
-          salonizedWidget = iframe;
-          initializeWidget(iframe);
+        if (widget) {
+          bookingWidget = widget;
+          initializeWidget(widget);
           return;
         }
       }
@@ -690,7 +765,7 @@ function initScrollIndicatorMotion({ reducedMotion }) {
     indicator.style.transform = `translate3d(0, ${offsetY.toFixed(2)}px, 0)`;
     indicator.style.opacity = opacity.toFixed(3);
 
-    const activeWidget = resolveSalonizedWidget();
+    const activeWidget = resolveBookingWidget();
 
     if (activeWidget) {
       initializeWidget(activeWidget);

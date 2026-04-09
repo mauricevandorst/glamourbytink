@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   initAnchorNavigation();
+  initBookingWidget();
+  initHeaderScrollState();
 
   const navToggle = document.getElementById('navToggle');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -100,6 +102,25 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ─────────────────────────────────────────────────────────────
+// Shared header glass effect on scroll
+// Keeps the navbar behavior consistent across pages.
+// ─────────────────────────────────────────────────────────────
+function initHeaderScrollState() {
+  const header = document.querySelector('.site-header');
+  if (!header) {
+    return;
+  }
+
+  const updateHeaderState = () => {
+    header.classList.toggle('is-scrolled', window.scrollY > 24);
+  };
+
+  updateHeaderState();
+  window.addEventListener('scroll', updateHeaderState, { passive: true });
+  window.addEventListener('load', updateHeaderState);
+}
+
+// ─────────────────────────────────────────────────────────────
 // Footer scroll-reveal
 // Uses IntersectionObserver to trigger CSS-driven animations:
 //   · Pre-footer CTA  → cascaded entry via .is-revealed
@@ -169,6 +190,9 @@ function initAnchorNavigation() {
   document.addEventListener('click', (event) => {
     const link = event.target.closest('a[href*="#"]');
     if (!(link instanceof HTMLAnchorElement)) {
+      return;
+    }
+    if (link.hasAttribute('data-booking-open')) {
       return;
     }
 
@@ -268,3 +292,53 @@ function initFooterReveal() {
     }
   }
 }
+
+function initBookingWidget() {
+  const openTriggers = Array.from(document.querySelectorAll('[data-booking-open]'));
+  const closeTrigger = document.querySelector('[data-booking-close]');
+  const overlay = document.querySelector('[data-booking-overlay]');
+  const modal = document.querySelector('[data-booking-modal]');
+
+  if (!openTriggers.length || !closeTrigger || !overlay || !modal) {
+    return;
+  }
+
+  const setWidgetState = (isOpen) => {
+    overlay.classList.toggle('pointer-events-auto', isOpen);
+    overlay.classList.toggle('opacity-100', isOpen);
+    overlay.classList.toggle('opacity-0', !isOpen);
+
+    modal.classList.toggle('pointer-events-auto', isOpen);
+    modal.classList.toggle('opacity-100', isOpen);
+    modal.classList.toggle('opacity-0', !isOpen);
+    modal.classList.toggle('translate-y-0', isOpen);
+    modal.classList.toggle('translate-y-2', !isOpen);
+
+    document.body.classList.toggle('overflow-hidden', isOpen);
+  };
+
+  openTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', (event) => {
+      if (trigger.tagName === 'A') {
+        event.preventDefault();
+      }
+
+      setWidgetState(true);
+    });
+  });
+
+  closeTrigger.addEventListener('click', () => {
+    setWidgetState(false);
+  });
+
+  overlay.addEventListener('click', () => {
+    setWidgetState(false);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      setWidgetState(false);
+    }
+  });
+}
+

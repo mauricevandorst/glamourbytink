@@ -63,12 +63,3 @@
 input[type="radio"] {
   accent-color: var(--accent);
 }
-
-/* Hide scrollbars in testimonial slider */
-#reviewsInner::-webkit-scrollbar {
-  display: none;
-}
-#reviewsInner {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
