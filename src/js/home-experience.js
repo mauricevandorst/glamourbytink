@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStoryBrandFade(reducedMotion);
   initPanelVisibilityObserver();
   initStoryPanelProgress();
+  initStoryPanelDrag();
   initStoryPanelReveal(reducedMotion);
   initStoryPanelCopyEqualHeight();
   initSplitVisualSync();
@@ -298,6 +299,208 @@ function initStoryPanelProgress() {
   updateLabel();
   storyRail.addEventListener('scroll', updateLabel, { passive: true });
   window.addEventListener('resize', updateLabel);
+}
+
+function initStoryPanelDrag() {
+  const storyRail = document.querySelector('.story-panels');
+  const finePointer = window.matchMedia('(pointer: fine)').matches;
+
+  if (!storyRail || !finePointer) {
+    return;
+  }
+
+  let isDragging = false;
+  let hasDragged = false;
+  let pointerId = null;
+  let startX = 0;
+  let startScrollLeft = 0;
+  let lastPointerX = 0;
+  let lastPointerTime = 0;
+  let dragVelocity = 0;
+  let targetScrollLeft = storyRail.scrollLeft;
+  let smoothScrollFrame = null;
+  let inertiaFrame = null;
+  const maxScroll = () => Math.max(0, storyRail.scrollWidth - storyRail.clientWidth);
+
+  const clampScroll = (value) => Math.max(0, Math.min(value, maxScroll()));
+
+  const stopInertia = () => {
+    if (!inertiaFrame) {
+      return;
+    }
+
+    cancelAnimationFrame(inertiaFrame);
+    inertiaFrame = null;
+  };
+
+  const runSmoothDrag = () => {
+    if (!isDragging) {
+      smoothScrollFrame = null;
+      return;
+    }
+
+    const current = storyRail.scrollLeft;
+    const next = current + (targetScrollLeft - current) * 0.3;
+    storyRail.scrollLeft = clampScroll(next);
+
+    if (Math.abs(targetScrollLeft - storyRail.scrollLeft) > 0.35) {
+      smoothScrollFrame = requestAnimationFrame(runSmoothDrag);
+      return;
+    }
+
+    storyRail.scrollLeft = clampScroll(targetScrollLeft);
+    smoothScrollFrame = null;
+  };
+
+  const startSmoothDrag = () => {
+    if (smoothScrollFrame) {
+      return;
+    }
+
+    smoothScrollFrame = requestAnimationFrame(runSmoothDrag);
+  };
+
+  const runInertia = () => {
+    if (isDragging) {
+      inertiaFrame = null;
+      return;
+    }
+
+    dragVelocity *= 0.92;
+
+    if (Math.abs(dragVelocity) < 0.08) {
+      storyRail.style.scrollSnapType = '';
+      inertiaFrame = null;
+      return;
+    }
+
+    const previous = storyRail.scrollLeft;
+    const next = clampScroll(previous + dragVelocity);
+    storyRail.scrollLeft = next;
+
+    if (next === 0 || next === maxScroll()) {
+      dragVelocity = 0;
+      storyRail.style.scrollSnapType = '';
+      inertiaFrame = null;
+      return;
+    }
+
+    inertiaFrame = requestAnimationFrame(runInertia);
+  };
+
+  const startInertia = () => {
+    if (inertiaFrame || Math.abs(dragVelocity) < 0.12) {
+      storyRail.style.scrollSnapType = '';
+      return;
+    }
+
+    inertiaFrame = requestAnimationFrame(runInertia);
+  };
+
+  const resetDragState = () => {
+    isDragging = false;
+    pointerId = null;
+    startX = 0;
+    startScrollLeft = 0;
+    targetScrollLeft = storyRail.scrollLeft;
+    if (smoothScrollFrame) {
+      cancelAnimationFrame(smoothScrollFrame);
+      smoothScrollFrame = null;
+    }
+    storyRail.style.cursor = 'grab';
+    storyRail.style.userSelect = '';
+  };
+
+  storyRail.style.cursor = 'grab';
+
+  storyRail.addEventListener('pointerdown', (event) => {
+    if (event.button !== 0) {
+      return;
+    }
+
+    if (event.target.closest('a, button, input, textarea, select, label')) {
+      return;
+    }
+
+    stopInertia();
+    isDragging = true;
+    hasDragged = false;
+    pointerId = event.pointerId;
+    startX = event.clientX;
+    startScrollLeft = storyRail.scrollLeft;
+    targetScrollLeft = storyRail.scrollLeft;
+    lastPointerX = event.clientX;
+    lastPointerTime = event.timeStamp;
+    dragVelocity = 0;
+    storyRail.style.cursor = 'grabbing';
+    storyRail.style.userSelect = 'none';
+    storyRail.style.scrollSnapType = 'none';
+    storyRail.setPointerCapture(event.pointerId);
+  });
+
+  storyRail.addEventListener('pointermove', (event) => {
+    if (!isDragging || event.pointerId !== pointerId) {
+      return;
+    }
+
+    const deltaX = event.clientX - startX;
+    if (Math.abs(deltaX) > 4) {
+      hasDragged = true;
+    }
+
+    if (hasDragged) {
+      event.preventDefault();
+      targetScrollLeft = clampScroll(startScrollLeft - deltaX);
+      startSmoothDrag();
+
+      const moveDelta = event.clientX - lastPointerX;
+      const elapsed = Math.max(1, event.timeStamp - lastPointerTime);
+      dragVelocity = -(moveDelta / elapsed) * 16.67;
+      lastPointerX = event.clientX;
+      lastPointerTime = event.timeStamp;
+    }
+  });
+
+  storyRail.addEventListener('pointerup', (event) => {
+    if (event.pointerId !== pointerId) {
+      return;
+    }
+
+    if (storyRail.hasPointerCapture(event.pointerId)) {
+      storyRail.releasePointerCapture(event.pointerId);
+    }
+
+    const shouldStartInertia = hasDragged;
+    resetDragState();
+    if (shouldStartInertia) {
+      startInertia();
+    }
+  });
+
+  storyRail.addEventListener('pointercancel', () => {
+    dragVelocity = 0;
+    resetDragState();
+    storyRail.style.scrollSnapType = '';
+  });
+  storyRail.addEventListener('mouseleave', () => {
+    if (!isDragging) {
+      storyRail.style.cursor = 'grab';
+    }
+  });
+
+  storyRail.addEventListener(
+    'click',
+    (event) => {
+      if (!hasDragged) {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+      hasDragged = false;
+    },
+    true
+  );
 }
 
 function initStoryPanelReveal(reducedMotion) {
