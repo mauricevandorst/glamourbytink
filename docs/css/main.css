@@ -4127,6 +4127,14 @@ video {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
+.bg-\[linear-gradient\(0deg\2c rgba\(0\2c 0\2c 0\2c 0\.5\)_0\%\2c rgba\(0\2c 0\2c 0\2c 0\.22\)_36\%\2c rgba\(0\2c 0\2c 0\2c 0\)_72\%\)\] {
+  background-image: linear-gradient(0deg,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.22) 36%,rgba(0,0,0,0) 72%);
+}
+
+.bg-\[linear-gradient\(0deg\2c rgba\(0\2c 0\2c 0\2c 1\)_0\%\2c rgba\(0\2c 0\2c 0\2c 0\.5\)_50\%\2c rgba\(0\2c 0\2c 0\2c 0\)_100\%\)\] {
+  background-image: linear-gradient(0deg,rgba(0,0,0,1) 0%,rgba(0,0,0,0.5) 50%,rgba(0,0,0,0) 100%);
+}
+
 .from-\[\#7b533d\]\/45 {
   --tw-gradient-from: rgb(123 83 61 / 0.45) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(123 83 61 / 0) var(--tw-gradient-to-position);
