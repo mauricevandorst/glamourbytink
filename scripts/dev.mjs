@@ -30,14 +30,43 @@ function removePath(p) {
   if (existsSync(p)) rmSync(p, { recursive: true, force: true });
 }
 
+function isRootStaticFile(file) {
+  const ext = path.extname(file).toLowerCase();
+  return ROOT_STATIC_EXTENSIONS.has(ext);
+}
+
+function syncRootStaticFile(file) {
+  if (!isRootStaticFile(file)) return;
+
+  const srcFile = path.join(SRC, file);
+  const ext = path.extname(file).toLowerCase();
+
+  copyFile(srcFile, path.join(DOCS, file));
+
+  // GitHub Pages supports clean routes when a folder has an index.html file.
+  if (ext === ".html" && file !== "index.html") {
+    const slug = file.slice(0, -5);
+    copyFile(srcFile, path.join(DOCS, slug, "index.html"));
+  }
+}
+
+function removeRootStaticFile(file) {
+  if (!isRootStaticFile(file)) return;
+
+  const ext = path.extname(file).toLowerCase();
+  removePath(path.join(DOCS, file));
+
+  if (ext === ".html" && file !== "index.html") {
+    const slug = file.slice(0, -5);
+    removePath(path.join(DOCS, slug));
+  }
+}
+
 function initialSync() {
   ensureDirs();
 
   for (const file of readdirSync(SRC)) {
-    const ext = path.extname(file).toLowerCase();
-    if (ROOT_STATIC_EXTENSIONS.has(ext)) {
-      copyFile(path.join(SRC, file), path.join(DOCS, file));
-    }
+    syncRootStaticFile(file);
   }
 
   copyDir(path.join(SRC, "js"), path.join(DOCS, "js"));
@@ -88,26 +117,32 @@ function isRootHtml(p) {
     path.dirname(p) === SRC;
 }
 
+function syncChangedPath(p) {
+  if (isRootHtml(p)) {
+    syncRootStaticFile(path.basename(p));
+    return;
+  }
+
+  if (p.includes(`${path.sep}js${path.sep}`) ||
+    p.includes(`${path.sep}assets${path.sep}`)) {
+    copyFile(p, toDocsPath(p));
+  }
+}
+
 watcher
   .on("add", (p) => {
-    const dest = toDocsPath(p);
-    copyFile(p, dest);
+    syncChangedPath(p);
   })
   .on("change", (p) => {
-    if (isRootHtml(p) ||
-      p.includes(`${path.sep}js${path.sep}`) ||
-      p.includes(`${path.sep}assets${path.sep}`)) {
-      const dest = toDocsPath(p);
-      copyFile(p, dest);
-    }
-  })
-  .on("change", (p) => {
-    const dest = toDocsPath(p);
-    copyFile(p, dest);
+    syncChangedPath(p);
   })
   .on("unlink", (p) => {
-    const dest = toDocsPath(p);
-    removePath(dest);
+    if (isRootHtml(p)) {
+      removeRootStaticFile(path.basename(p));
+      return;
+    }
+
+    removePath(toDocsPath(p));
   })
   .on("addDir", (p) => {
     const dest = toDocsPath(p);

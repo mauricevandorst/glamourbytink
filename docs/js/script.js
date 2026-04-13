@@ -3,12 +3,17 @@
 // Handles responsive navigation toggling and a simple
 // testimonial slider on the home page.
 
+const LOADER_TAB_FLAG = '__gbt_loader_seen__';
+
+initImmersiveLoader();
+
 document.addEventListener('DOMContentLoaded', () => {
   const currentYear = String(new Date().getFullYear());
   document.querySelectorAll('[data-current-year]').forEach((element) => {
     element.textContent = currentYear;
   });
 
+  initPageTransitions();
   initAnchorNavigation();
   initFooterItemIcons();
   initBookingWidget();
@@ -102,6 +107,336 @@ document.addEventListener('DOMContentLoaded', () => {
   initFooterReveal();
 });
 
+function initPageTransitions() {
+  const body = document.body;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const transitionMs = prefersReducedMotion ? 25 : 160;
+  let isNavigating = false;
+
+  if (!body) {
+    return;
+  }
+
+  body.classList.remove('opacity-0');
+  body.classList.add('opacity-100');
+
+  if (!prefersReducedMotion) {
+    body.classList.add('transition-opacity', 'duration-200', 'ease-out');
+  }
+
+  // Browsers can restore pages from bfcache with old classes still applied.
+  window.addEventListener('pageshow', () => {
+    body.classList.remove('opacity-0');
+    body.classList.add('opacity-100');
+  });
+
+  document.addEventListener('click', (event) => {
+    if (event.defaultPrevented || isNavigating) {
+      return;
+    }
+
+    const link = event.target.closest('a');
+    if (!(link instanceof HTMLAnchorElement)) {
+      return;
+    }
+
+    if (!link.href || link.target === '_blank' || link.hasAttribute('download')) {
+      return;
+    }
+
+    const href = link.getAttribute('href') || '';
+    if (
+      href.startsWith('#')
+      || href.startsWith('mailto:')
+      || href.startsWith('tel:')
+      || href.startsWith('javascript:')
+    ) {
+      return;
+    }
+
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) {
+      return;
+    }
+
+    const destination = new URL(link.href, window.location.href);
+    if (destination.origin !== window.location.origin) {
+      return;
+    }
+
+    const samePath = destination.pathname === window.location.pathname;
+    const hashOnlyChange = samePath && destination.search === window.location.search && destination.hash;
+    if (hashOnlyChange) {
+      return;
+    }
+
+    event.preventDefault();
+    isNavigating = true;
+    body.classList.remove('opacity-100');
+    body.classList.add('opacity-0');
+
+    window.setTimeout(() => {
+      window.location.assign(destination.href);
+    }, transitionMs);
+  });
+}
+
+function initImmersiveLoader() {
+  const body = document.body;
+  if (!body || body.dataset.loaderDisabled === 'true') {
+    return;
+  }
+
+  if (hasSeenLoaderInCurrentTab()) {
+    return;
+  }
+
+  markLoaderAsSeenInCurrentTab();
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const minVisibleMs = 900;
+  const simEstimateMs = 2400;
+  const exitDurationMs = prefersReducedMotion ? 100 : 420;
+
+  const animatedGlyph = `
+    <svg viewBox="0 0 120 120" class="h-24 w-24" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="appLoaderBarsGradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#9e846c"></stop>
+          <stop offset="55%" stop-color="#8b7056"></stop>
+          <stop offset="100%" stop-color="#7e7267"></stop>
+        </linearGradient>
+      </defs>
+
+      <g fill="url(#appLoaderBarsGradient)">
+        <rect x="14" y="48" width="8" height="24" rx="4">
+          <animate attributeName="y" values="56;34;56" dur="1.2s" begin="0s" repeatCount="indefinite"></animate>
+          <animate attributeName="height" values="16;38;16" dur="1.2s" begin="0s" repeatCount="indefinite"></animate>
+        </rect>
+        <rect x="30" y="40" width="8" height="40" rx="4">
+          <animate attributeName="y" values="50;22;50" dur="1.2s" begin="0.08s" repeatCount="indefinite"></animate>
+          <animate attributeName="height" values="20;54;20" dur="1.2s" begin="0.08s" repeatCount="indefinite"></animate>
+        </rect>
+        <rect x="46" y="34" width="8" height="52" rx="4">
+          <animate attributeName="y" values="44;14;44" dur="1.2s" begin="0.16s" repeatCount="indefinite"></animate>
+          <animate attributeName="height" values="28;62;28" dur="1.2s" begin="0.16s" repeatCount="indefinite"></animate>
+        </rect>
+        <rect x="62" y="28" width="8" height="60" rx="4">
+          <animate attributeName="y" values="36;8;36" dur="1.2s" begin="0.24s" repeatCount="indefinite"></animate>
+          <animate attributeName="height" values="36;72;36" dur="1.2s" begin="0.24s" repeatCount="indefinite"></animate>
+        </rect>
+        <rect x="78" y="34" width="8" height="52" rx="4">
+          <animate attributeName="y" values="44;14;44" dur="1.2s" begin="0.32s" repeatCount="indefinite"></animate>
+          <animate attributeName="height" values="28;62;28" dur="1.2s" begin="0.32s" repeatCount="indefinite"></animate>
+        </rect>
+        <rect x="94" y="40" width="8" height="40" rx="4">
+          <animate attributeName="y" values="50;22;50" dur="1.2s" begin="0.4s" repeatCount="indefinite"></animate>
+          <animate attributeName="height" values="20;54;20" dur="1.2s" begin="0.4s" repeatCount="indefinite"></animate>
+        </rect>
+      </g>
+    </svg>
+  `;
+
+  const staticGlyph = `
+    <svg viewBox="0 0 120 120" class="h-24 w-24" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="appLoaderBarsGradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#d6bf8a"></stop>
+          <stop offset="55%" stop-color="#c6a45a"></stop>
+          <stop offset="100%" stop-color="#a6855e"></stop>
+        </linearGradient>
+      </defs>
+      <g fill="url(#appLoaderBarsGradient)">
+        <rect x="14" y="56" width="8" height="16" rx="4"></rect>
+        <rect x="30" y="50" width="8" height="20" rx="4"></rect>
+        <rect x="46" y="44" width="8" height="28" rx="4"></rect>
+        <rect x="62" y="36" width="8" height="36" rx="4"></rect>
+        <rect x="78" y="44" width="8" height="28" rx="4"></rect>
+        <rect x="94" y="50" width="8" height="20" rx="4"></rect>
+      </g>
+    </svg>
+  `;
+
+  const loader = document.createElement('div');
+  loader.id = 'appLoader';
+  loader.className = [
+    'fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden',
+    'bg-[linear-gradient(135deg,#000000_0%,#080808_42%,#1b150d_100%)] text-white',
+    'transition-opacity duration-500 ease-out motion-reduce:transition-none'
+  ].join(' ');
+  loader.setAttribute('role', 'dialog');
+  loader.setAttribute('aria-modal', 'true');
+  loader.setAttribute('aria-label', 'Pagina wordt geladen');
+
+  loader.innerHTML = `
+    <div class="pointer-events-none absolute -left-28 top-[-6rem] h-72 w-72 rounded-full bg-amber-200/10 blur-3xl" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute -right-24 bottom-[-5rem] h-64 w-64 rounded-full bg-amber-600/20 blur-3xl" aria-hidden="true"></div>
+
+    <div id="appLoaderPanel" class="relative w-full max-w-sm px-8 text-center transition-all duration-500 ease-out motion-reduce:transition-none outline-none focus:outline-none focus-visible:outline-none" tabindex="-1">
+      <div class="relative mx-auto w-fit">
+        <div class="pointer-events-none absolute inset-0 rounded-full bg-amber-400/20 blur-2xl" aria-hidden="true"></div>
+        <div id="appLoaderGlyph" class="relative">${prefersReducedMotion ? staticGlyph : animatedGlyph}</div>
+      </div>
+
+      <p class="mt-5 text-[0.82rem] font-medium uppercase tracking-[0.34em] text-[#e8dcc2]/85">Glamour by tink</p>
+      <div id="appLoaderProgress" class="sr-only" role="progressbar" aria-label="Laadvoortgang" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+      <p id="appLoaderPercent" class="sr-only">0%</p>
+    </div>
+  `;
+
+  body.append(loader);
+
+  const panel = loader.querySelector('#appLoaderPanel');
+  const glyph = loader.querySelector('#appLoaderGlyph');
+  const progressNode = loader.querySelector('#appLoaderProgress');
+  const percentNode = loader.querySelector('#appLoaderPercent');
+
+  if (!panel || !glyph || !progressNode || !percentNode) {
+    loader.remove();
+    return;
+  }
+
+  const previousHtmlOverflow = document.documentElement.style.overflow;
+  const previousBodyOverflow = body.style.overflow;
+  document.documentElement.style.overflow = 'hidden';
+  body.style.overflow = 'hidden';
+  body.setAttribute('aria-busy', 'true');
+
+  const inertTargets = Array.from(body.children).filter((node) => node !== loader);
+  inertTargets.forEach((node) => {
+    if (node instanceof HTMLElement) {
+      node.inert = true;
+    }
+  });
+
+  panel.focus({ preventScroll: true });
+
+  const startedAt = performance.now();
+  let progress = 0;
+  let displayed = -1;
+  let readyToFinish = false;
+  let isClosed = false;
+  let rafId = 0;
+
+  const easeOutExpo = (value) => {
+    if (value >= 1) {
+      return 1;
+    }
+    return 1 - Math.pow(2, -10 * value);
+  };
+
+  const render = (value) => {
+    const clamped = Math.max(0, Math.min(100, value));
+    progressNode.setAttribute('aria-valuenow', String(Math.round(clamped)));
+
+    const rounded = Math.round(clamped);
+
+    if (!prefersReducedMotion) {
+      const pulse = 1 + (Math.sin(clamped / 11) * 0.02);
+      glyph.style.transform = `scale(${pulse.toFixed(3)})`;
+    }
+
+    if (rounded !== displayed) {
+      displayed = rounded;
+      percentNode.textContent = `${rounded}%`;
+    }
+  };
+
+  const unlock = () => {
+    if (isClosed) {
+      return;
+    }
+    isClosed = true;
+
+    inertTargets.forEach((node) => {
+      if (node instanceof HTMLElement) {
+        node.inert = false;
+      }
+    });
+
+    document.documentElement.style.overflow = previousHtmlOverflow;
+    body.style.overflow = previousBodyOverflow;
+    body.setAttribute('aria-busy', 'false');
+  };
+
+  const close = () => {
+    loader.classList.add('opacity-0');
+    panel.classList.add('opacity-0', 'scale-95');
+
+    window.setTimeout(() => {
+      loader.remove();
+      unlock();
+    }, exitDurationMs);
+  };
+
+  const tick = (now) => {
+    const elapsed = now - startedAt;
+    const t = Math.min(1, elapsed / simEstimateMs);
+    const simulatedTarget = Math.min(95, 95 * easeOutExpo(t));
+    const target = readyToFinish ? 100 : simulatedTarget;
+    const blend = readyToFinish ? 0.24 : 0.085;
+
+    progress += (target - progress) * blend;
+    if (readyToFinish && 100 - progress < 0.3) {
+      progress = 100;
+    }
+
+    render(progress);
+
+    if (progress >= 100) {
+      close();
+      return;
+    }
+
+    rafId = window.requestAnimationFrame(tick);
+  };
+
+  const readyPromise = new Promise((resolve) => {
+    if (document.readyState === 'complete') {
+      resolve();
+      return;
+    }
+    window.addEventListener('load', resolve, { once: true });
+  });
+
+  const fontPromise = document.fonts?.ready
+    ? document.fonts.ready.catch(() => {})
+    : Promise.resolve();
+
+  const visiblePromise = new Promise((resolve) => {
+    window.setTimeout(resolve, minVisibleMs);
+  });
+
+  render(0);
+  rafId = window.requestAnimationFrame(tick);
+
+  Promise.all([readyPromise, fontPromise, visiblePromise]).then(() => {
+    readyToFinish = true;
+  });
+
+  // Guard against edge-cases where the page lifecycle aborts the animation.
+  window.addEventListener('pagehide', () => {
+    if (rafId) {
+      window.cancelAnimationFrame(rafId);
+    }
+    loader.remove();
+    unlock();
+  }, { once: true });
+}
+
+function hasSeenLoaderInCurrentTab() {
+  return typeof window.name === 'string' && window.name.includes(LOADER_TAB_FLAG);
+}
+
+function markLoaderAsSeenInCurrentTab() {
+  if (hasSeenLoaderInCurrentTab()) {
+    return;
+  }
+
+  const currentName = typeof window.name === 'string' ? window.name : '';
+  const separator = currentName ? '|' : '';
+  window.name = `${currentName}${separator}${LOADER_TAB_FLAG}`;
+}
+
 // ─────────────────────────────────────────────────────────────
 // Shared header glass effect on scroll
 // Keeps the navbar behavior consistent across pages.
@@ -127,7 +462,7 @@ function initFooterItemIcons() {
     return;
   }
 
-  const iconBasePath = './assets/icons/';
+  const iconBasePath = '/assets/icons/';
 
   const applyIcon = (element, iconFile, altText) => {
     if (!element || element.dataset.footerIconApplied === 'true') {
