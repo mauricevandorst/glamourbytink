@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   initAnchorNavigation();
+  initFooterItemIcons();
   initBookingWidget();
   initHeaderScrollState();
 
@@ -118,6 +119,36 @@ function initHeaderScrollState() {
   updateHeaderState();
   window.addEventListener('scroll', updateHeaderState, { passive: true });
   window.addEventListener('load', updateHeaderState);
+}
+
+function initFooterItemIcons() {
+  const footer = document.querySelector('.site-footer');
+  if (!footer) {
+    return;
+  }
+
+  const iconBasePath = './assets/icons/';
+
+  const applyIcon = (element, iconFile, altText) => {
+    if (!element || element.dataset.footerIconApplied === 'true') {
+      return;
+    }
+
+    const icon = document.createElement('img');
+    icon.src = `${iconBasePath}${iconFile}`;
+    icon.alt = altText;
+    icon.className = 'h-[0.95em] w-[0.95em] shrink-0 object-contain opacity-90';
+    icon.loading = 'lazy';
+    icon.decoding = 'async';
+
+    element.classList.add('inline-flex', 'items-center', 'gap-2', 'align-top');
+    element.prepend(icon);
+    element.dataset.footerIconApplied = 'true';
+  };
+
+  footer.querySelectorAll('.footer-col--nav .footer-nav-link').forEach((link) => {
+    applyIcon(link, 'chevron-right.svg', 'Link');
+  });
 }
 
 // ─────────────────────────────────────────────────────────────

@@ -76,13 +76,19 @@
         <!-- HERO: cinematic opening with layered type and parallax media -->
         <section class="scene panel-section hero-scene">
           <div class="hero-media" aria-hidden="true">
-            <img src="./assets/images/hero.jpg" alt="" class="hero-image" data-parallax-layer
-              data-parallax-speed="-0.08" data-parallax-tablet="-0.04" data-parallax-max="44" fetchpriority="high"
-              decoding="async">
+            <picture>
+              <source media="(min-width: 768px)" srcset="./assets/images/hero-desktop-2.jpg">
+              <img src="./assets/images/hero-mobile-2.jpg" alt="" class="hero-image" data-parallax-layer
+                data-parallax-speed="-0.08" data-parallax-tablet="-0.04" data-parallax-max="44" fetchpriority="high"
+                decoding="async">
+            </picture>
+            <div
+              class="absolute inset-0 bg-[linear-gradient(110deg,rgba(15,10,10,0.45)_0%,rgba(15,10,10,0.45)_42%,rgba(15,10,10,0.45)_72%,rgba(15,10,10,0.8)_100%)]">
+            </div>
           </div>
 
           <div
-            class="scene-frame relative max-w-[88rem] mx-auto px-4 md:px-8 h-full flex items-end pt-10 pb-[4rem] sm:pb-[6rem]">
+            class="scene-frame relative max-w-[88rem] mx-auto px-4 md:px-8 h-full flex items-end pt-10 pb-[5rem] sm:pb-[6rem]">
             <div class="w-full lg:max-w-3xl mt-16">
               <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl xl:text-[4.4rem] leading-[0.98]">
                 <span class="hero-line">Permanente make-up met een
@@ -122,7 +128,7 @@
               <article class="story-panel">
                 <div class="panel-media media-lift" data-parallax-layer data-parallax-speed="-0.08"
                   data-parallax-tablet="-0.04" data-parallax-max="48">
-                  <img src="./assets/images/banner-1.jpg" alt="Signature brow work in de salon" loading="lazy"
+                  <img src="./assets/images/portfolio-1.jpg" alt="Signature brow work in de salon" loading="lazy"
                     decoding="async">
                 </div>
                 <div class="panel-copy depth-card" data-parallax-layer data-parallax-speed="0.022"
@@ -156,7 +162,7 @@
               <article class="story-panel">
                 <div class="panel-media media-lift" data-parallax-layer data-parallax-speed="-0.08"
                   data-parallax-tablet="-0.04" data-parallax-max="48">
-                  <img src="./assets/images/lips.jpg" alt="Lipblush met natuurlijke kleur en zachte contour"
+                  <img src="./assets/images/lip-blush-before-after.jpg" alt="Lipblush met natuurlijke kleur en zachte contour"
                     loading="lazy" decoding="async">
                 </div>
                 <div class="panel-copy depth-card" data-parallax-layer data-parallax-speed="0.022"
@@ -196,19 +202,35 @@
                 <div class="panel-copy depth-card" data-parallax-layer data-parallax-speed="0.022"
                   data-parallax-tablet="0.012" data-parallax-max="18">
                   <p class="kicker text-[0.65rem] sm:text-xs tracking-[0.18em]">Biotek</p>
-                  <h2 class="!text-[1.6rem] md:!text-3xl xl:!text-[2rem] !leading-[1.02]">Kwaliteit waar wij achter
+                  <h2 class="!text-[1.6rem] md:!text-3xl xl:!text-[2rem] !leading-[1.02]">Producten waar wij achter
                     staan.</h2>
                   <p class="!text-sm md:!text-[0.92rem] !leading-[1.62]">Voor onze behandelingen kiezen wij bewust voor
                     Biotek. Hun pigmenten staan wereldwijd bekend om hun stabiliteit, veiligheid en langdurige
-                    resultaat. Met meer dan 40 jaar expertise leveren zij een kwaliteit waarop wij én onze klanten
-                    kunnen vertrouwen.</p>
+                    resultaat, met meer dan 40 jaar expertise.</p>
                 </div>
               </article>
 
               <article class="story-panel">
                 <div class="panel-media media-lift" data-parallax-layer data-parallax-speed="-0.08"
                   data-parallax-tablet="-0.04" data-parallax-max="48">
-                  <img src="./assets/images/portfolio-1.jpg" alt="Academy training in permanente make-up technieken"
+                  <img src="./assets/images/eyeliner-up-and-down.jpg" alt="Touch-up behandeling voor brows of infralash"
+                    loading="lazy" decoding="async">
+                </div>
+                <div class="panel-copy depth-card" data-parallax-layer data-parallax-speed="0.022"
+                  data-parallax-tablet="0.012" data-parallax-max="18">
+                  <p class="kicker text-[0.65rem] sm:text-xs tracking-[0.18em]">Touch-up</p>
+                  <h2 class="!text-[1.6rem] md:!text-3xl xl:!text-[2rem] !leading-[1.02]">Voor blijvend mooi
+                    resultaat.</h2>
+                  <p class="!text-sm md:!text-[0.92rem] !leading-[1.62]">Touch-up voor powder brows, infralash en
+                    nano brows. Zo frissen we kleur en vorm subtiel op, zodat jouw behandeling er langdurig verzorgd en
+                    in balans uit blijft zien.</p>
+                </div>
+              </article>
+
+              <article class="story-panel">
+                <div class="panel-media media-lift" data-parallax-layer data-parallax-speed="-0.08"
+                  data-parallax-tablet="-0.04" data-parallax-max="48">
+                  <img src="./assets/images/portfolio-2.jpg" alt="Academy training in permanente make-up technieken"
                     loading="lazy" decoding="async">
                 </div>
                 <div class="panel-copy depth-card" data-parallax-layer data-parallax-speed="0.022"
@@ -222,22 +244,6 @@
                 </div>
               </article>
 
-              <article class="story-panel">
-                <div class="panel-media media-lift" data-parallax-layer data-parallax-speed="-0.08"
-                  data-parallax-tablet="-0.04" data-parallax-max="48">
-                  <img src="./assets/images/hero.jpg" alt="Touch-up behandeling voor brows of infralash" loading="lazy"
-                    decoding="async">
-                </div>
-                <div class="panel-copy depth-card" data-parallax-layer data-parallax-speed="0.022"
-                  data-parallax-tablet="0.012" data-parallax-max="18">
-                  <p class="kicker text-[0.65rem] sm:text-xs tracking-[0.18em]">Touch-up</p>
-                  <h2 class="!text-[1.6rem] md:!text-3xl xl:!text-[2rem] !leading-[1.02]">Voor blijvend mooi
-                    resultaat.</h2>
-                  <p class="!text-sm md:!text-[0.92rem] !leading-[1.62]">Touch-up voor powder brows, infralash en
-                    nano brows. Zo frissen we kleur en vorm subtiel op, zodat jouw behandeling er langdurig verzorgd en
-                    in balans uit blijft zien.</p>
-                </div>
-              </article>
             </div>
             <div class="hero-actions justify-center mt-8 md:mt-10">
               <a href="#" data-booking-open class="site-button site-button--ghost w-full sm:w-max">
@@ -282,8 +288,8 @@
 
               <div class="visual-item" data-visual="lip-blush">
                 <div class="visual-media media-lift">
-                  <img src="./assets/images/lips.jpg" alt="Lip blush behandeling met verfijnde kleur" loading="lazy"
-                    decoding="async">
+                  <img src="./assets/images/lip-blush.jpg" alt="Lip blush behandeling met verfijnde kleur"
+                    loading="lazy" decoding="async">
                 </div>
                 <div class="visual-overlay">
                   <strong class="text-xl md:text-2xl">Lip Blush</strong>
@@ -443,77 +449,6 @@
         </div>
       </section>
 
-      <!-- HORIZONTAL SCROLL SECTION: vertical scroll drives a premium showcase track -->
-      <section class="!hidden scene panel-section showcase-section">
-        <div class="scene-frame max-w-[88rem] mx-auto px-4 md:px-8">
-          <div class="showcase-heading">
-            <p class="eyebrow text-xs md:text-[0.76rem] tracking-[0.18em]">Horizontal showcase · Portfolio gevoel</p>
-            <h2 class="section-title text-4xl sm:text-5xl lg:text-[4rem] leading-[0.94]">Werk dat niet om aandacht
-              vraagt, maar het wel krijgt.</h2>
-            <p class="section-intro mt-5 text-sm md:text-base lg:text-[1.05rem] leading-[1.8]">De horizontale flow
-              vertraagt de pagina bewust. Niet om te imponeren met volume, maar om elk frame de ruimte te geven om een
-              eigen sfeer en materiaalgevoel neer te zetten.</p>
-          </div>
-        </div>
-
-        <div class="showcase-viewport">
-          <div class="showcase-track">
-            <article class="showcase-item depth-card">
-              <div class="showcase-media media-lift" data-parallax-layer data-parallax-speed="-0.08"
-                data-parallax-tablet="-0.04" data-parallax-max="44">
-                <img src="./assets/images/banner-2.jpg" alt="Soft powder brows showcase" loading="lazy"
-                  decoding="async">
-              </div>
-              <div class="showcase-copy-wrap">
-                <span class="showcase-meta text-[0.72rem] tracking-[0.15em]">Soft definition</span>
-                <h3 class="!text-3xl md:!text-[2rem] !leading-none">Powder brows met fluwelen rand</h3>
-                <p class="showcase-copy mt-4 text-sm md:text-base leading-relaxed">Opgebouwd voor diepte, afgewerkt
-                  voor rust. Het soort resultaat dat opvalt omdat het vanzelfsprekend oogt.</p>
-              </div>
-            </article>
-
-            <article class="showcase-item depth-card">
-              <div class="showcase-media media-lift" data-parallax-layer data-parallax-speed="-0.08"
-                data-parallax-tablet="-0.04" data-parallax-max="44">
-                <img src="./assets/images/lips.jpg" alt="Lip blush showcase" loading="lazy" decoding="async">
-              </div>
-              <div class="showcase-copy-wrap">
-                <span class="showcase-meta text-[0.72rem] tracking-[0.15em]">Tone balance</span>
-                <h3 class="!text-3xl md:!text-[2rem] !leading-none">Lips met gecontroleerde gloed</h3>
-                <p class="showcase-copy mt-4 text-sm md:text-base leading-relaxed">Subtiele kleurcorrectie en contour
-                  voor een mond die frisser, zachter en vollediger leest.</p>
-              </div>
-            </article>
-
-            <article class="showcase-item depth-card">
-              <div class="showcase-media media-lift" data-parallax-layer data-parallax-speed="-0.08"
-                data-parallax-tablet="-0.04" data-parallax-max="44">
-                <img src="./assets/images/hero.jpg" alt="Salon atmosphere and craft" loading="lazy" decoding="async">
-              </div>
-              <div class="showcase-copy-wrap">
-                <span class="showcase-meta text-[0.72rem] tracking-[0.15em]">Salon rhythm</span>
-                <h3 class="!text-3xl md:!text-[2rem] !leading-none">De ervaring is onderdeel van het eindresultaat</h3>
-                <p class="showcase-copy mt-4 text-sm md:text-base leading-relaxed">Licht, pacing, gesprek en nazorg
-                  vormen samen de kwaliteit van de behandeling. Luxe zit hier in controle.</p>
-              </div>
-            </article>
-
-            <article class="showcase-item depth-card">
-              <div class="showcase-media media-lift" data-parallax-layer data-parallax-speed="-0.08"
-                data-parallax-tablet="-0.04" data-parallax-max="44">
-                <img src="./assets/images/neon.jpg" alt="Salon showcase" loading="lazy" decoding="async">
-              </div>
-              <div class="showcase-copy-wrap">
-                <span class="showcase-meta text-[0.72rem] tracking-[0.15em]">Artist growth</span>
-                <h3 class="!text-3xl md:!text-[2rem] !leading-none">Academy trajecten met visie</h3>
-                <p class="showcase-copy mt-4 text-sm md:text-base leading-relaxed">Voor artiesten die hun hand willen
-                  verfijnen en hun stijl consistenter, rustiger en sterker willen maken.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <!-- STACK / CARD SECTION: layered testimonials that peel away on scroll -->
       <section class="scene panel-section stack-section !pt-20 md:!pt-24 !pb-6">
         <div class="pointer-events-none absolute inset-x-0 top-0 z-30 flex justify-center px-4 md:px-8"
@@ -658,10 +593,10 @@
       <!-- CTA SECTION: high-impact ending with contact direction -->
       <section class="scene panel-section cta-section !min-h-0 !py-0 px-0 scroll-mt-24 md:scroll-mt-28" id="afspraak">
         <div class="relative items-center h-[clamp(19rem,65svh,34rem)] w-full overflow-hidden">
-          <img src="./assets/images/banner-1.jpg" alt="Elegante PMU behandeling in de salon"
+          <img src="./assets/images/banner-2.jpg" alt="Elegante PMU behandeling in de salon"
             class="h-full w-full object-cover object-center" loading="lazy" decoding="async">
           <div
-            class="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(241,203,171,0.28)_0%,transparent_42%),linear-gradient(104deg,rgba(18,12,9,0.95)_0%,rgba(18,12,9,0.82)_42%,rgba(18,12,9,0.35)_72%,rgba(18,12,9,0.72)_100%)]">
+            class="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(241,203,171,0.28)_0%,transparent_42%),linear-gradient(0deg,rgba(18,12,9,0.95)_0%,rgba(18,12,9,0.65)_42%,rgba(18,12,9,0.35)_72%,rgba(18,12,9,0.72)_100%)]">
           </div>
 
           <div class="absolute inset-0 flex items-center">
@@ -818,7 +753,7 @@
                 1,
                 1566LK Assendelft</a>
               <span class="text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">KvK: 69985545</span>
-              <span class="text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">BTW: NL000000000B00</span>
+              <span class="text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">BTW: NL206423445B01</span>
             </address>
             <a href="#" data-booking-open class="site-button site-button--ghost py-[4px] min-h-0 text-xs"><span>Boek een
                 afspraak</span></a>

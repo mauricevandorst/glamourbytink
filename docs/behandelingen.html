@@ -11,7 +11,6 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="./css/behandelingen.css">
   <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
 </head>
 
@@ -50,7 +49,8 @@
       <nav id="mobileMenu" class="mobile-nav sm:hidden" aria-hidden="true">
         <ul class="space-y-3 text-center">
           <li><a href="index.html" class="site-link text-sm md:text-base">Home</a></li>
-          <li><a href="behandelingen.html" class="site-link text-sm md:text-base" aria-current="page">Behandelingen</a></li>
+          <li><a href="behandelingen.html" class="site-link text-sm md:text-base" aria-current="page">Behandelingen</a>
+          </li>
           <li><a href="#prijzen" class="site-link text-sm md:text-base">Prijzen</a></li>
           <li><a href="academie.html" class="site-link text-sm md:text-base">Academy</a></li>
           <li><a href="#contact" class="site-link text-sm md:text-base">Contact</a></li>
@@ -62,8 +62,14 @@
       <!-- HERO SECTION -->
       <section class="treatments-hero section-edge" aria-labelledby="treatments-hero-title">
         <div class="treatments-hero__media">
-          <img src="./assets/images/hero.jpg" alt="Luxueuze PMU behandeling in de salon" loading="eager"
-            decoding="async" fetchpriority="high">
+          <picture>
+            <source media="(min-width: 768px)" srcset="./assets/images/hero-desktop-2.jpg">
+            <img src="./assets/images/hero-mobile.jpg" alt="Luxueuze PMU behandeling in de salon" loading="eager"
+              decoding="async" fetchpriority="high">
+          </picture>
+          <div
+            class="absolute inset-0 bg-[linear-gradient(110deg,rgba(15,10,10,0.45)_0%,rgba(15,10,10,0.45)_42%,rgba(15,10,10,0.45)_72%,rgba(15,10,10,0.8)_100%)]">
+          </div>
         </div>
         <div class="treatments-hero__veil" aria-hidden="true"></div>
 
@@ -202,7 +208,7 @@
               class="treatments-reveal col-span-12 md:col-span-6 xl:col-span-4 flex h-full flex-col border-t border-white/20 pt-6"
               style="--delay: 0.22s;">
               <div class="h-56 overflow-hidden rounded-[1.2rem] sm:h-60">
-                <img src="./assets/images/lips.jpg" alt="Lip blush behandeling" loading="lazy" decoding="async"
+                <img src="./assets/images/lip-blush.jpg" alt="Lip blush behandeling" loading="lazy" decoding="async"
                   class="h-full w-full object-cover transition duration-700 ease-out hover:scale-[1.04]">
               </div>
               <div class="flex grow flex-col gap-4 pt-5">
@@ -277,8 +283,7 @@
               Bekijk hieronder de actuele prijslijst van onze behandelingen met tijdsduur.
             </p>
 
-            <div
-              class="mt-6 overflow-hidden bg-black/20 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.65)]">
+            <div class="mt-6 overflow-hidden bg-black/20 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.65)]">
               <iframe src="https://glamour-by-tink.salonized.com/services?layout=embed"
                 title="Salonized prijslijst van Glamour by Tink" loading="lazy"
                 class="w-full max-h-[85svh] h-[1376px] sm:h-[1244px] md:h-[1300px] lg:h-[1244px] rounded-xl bg-white"
@@ -307,7 +312,8 @@
               <p class="text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">Resultaat: voller ogende brows die je
                 gezicht direct meer structuur geven, zonder zwaar of hard te
                 ogen.</p>
-              <a href="#" data-booking-open class="site-button site-button--solid"><span>Reserveer jouw intake</span></a>
+              <a href="#" data-booking-open class="site-button site-button--solid"><span>Reserveer jouw
+                  intake</span></a>
             </div>
           </article>
         </div>
@@ -425,7 +431,8 @@
         </div>
       </section>
 
-      <div data-booking-fab class="fixed bottom-5 right-5 z-[2147483550] flex flex-col items-end sm:bottom-6 sm:right-6">
+      <div data-booking-fab
+        class="fixed bottom-5 right-5 z-[2147483550] flex flex-col items-end sm:bottom-6 sm:right-6">
         <button type="button" data-booking-open
           class="group site-button site-button--solid rounded-full text-[#ff1d1d] gap-[5px] bg-[radial-gradient(circle_at_top_left,_#ffffff_0%,_#d9d9d9_100%)]">
           <img src="./assets/images/salonized-icon.png" alt="" aria-hidden="true"
@@ -435,11 +442,13 @@
       </div>
 
       <div data-booking-overlay
-        class="pointer-events-none fixed inset-0 z-[2147483549] bg-black/65 opacity-0 backdrop-blur-[1px] transition duration-200"></div>
+        class="pointer-events-none fixed inset-0 z-[2147483549] bg-black/65 opacity-0 backdrop-blur-[1px] transition duration-200">
+      </div>
 
       <div data-booking-modal
         class="pointer-events-none fixed bottom-[22px] right-[22px] z-[2147483551] w-[488px] max-w-[calc(100%-44px)] max-h-[calc(100vh-44px)] overflow-hidden rounded-[16px] border border-[color:var(--site-line)] bg-[color:rgba(10,8,8,0.92)] opacity-0 shadow-[0_30px_90px_-36px_rgba(0,0,0,0.85)] backdrop-blur-xl transition duration-200 translate-y-2">
-        <div class="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#7b533d]/45 via-[#5a3c2b]/25 to-transparent"
+        <div
+          class="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#7b533d]/45 via-[#5a3c2b]/25 to-transparent"
           aria-hidden="true"></div>
         <div class="pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-[color:var(--site-accent-light)]/60"
           aria-hidden="true"></div>
@@ -553,7 +562,7 @@
                 1,
                 1566LK Assendelft</a>
               <span class="text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">KvK: 69985545</span>
-              <span class="text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">BTW: NL000000000B00</span>
+              <span class="text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">BTW: NL206423445B01</span>
             </address>
             <a href="#" data-booking-open class="site-button site-button--ghost py-[4px] min-h-0 text-xs"><span>Boek een
                 afspraak</span></a>
@@ -591,4 +600,3 @@
 </body>
 
 </html>
-

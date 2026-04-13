@@ -11,7 +11,6 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="./css/behandelingen.css">
   <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
 </head>
 
@@ -160,8 +159,11 @@
         <div class="max-w-[72rem] mx-auto px-4 md:px-8">
           <div class="glass-card overflow-hidden lg:grid lg:grid-cols-[0.9fr_1.1fr]">
             <div class="min-h-[18rem] lg:min-h-full">
-              <img src="./assets/images/hero.jpg" alt="Elegante powder brows behandeling in detail"
-                class="h-full w-full object-cover" loading="lazy" decoding="async">
+              <picture>
+                <source media="(min-width: 768px)" srcset="./assets/images/hero-desktop.jpg">
+                <img src="./assets/images/hero-mobile.jpg" alt="Elegante powder brows behandeling in detail"
+                  class="h-full w-full object-cover" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="p-6 md:p-8 lg:p-10 flex flex-col justify-center gap-4">
               <p class="eyebrow text-xs md:text-[0.76rem] tracking-[0.18em]">Voor wie</p>
@@ -289,7 +291,7 @@
                 1,
                 1566LK Assendelft</a>
               <span class="text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">KvK: 69985545</span>
-              <span class="text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">BTW: NL000000000B00</span>
+              <span class="text-base md:text-lg xl:text-[1.2rem] leading-[1.65]">BTW: NL206423445B01</span>
             </address>
             <a href="#" data-booking-open class="site-button site-button--ghost py-[4px] min-h-0 text-xs"><span>Boek een
                 afspraak</span></a>
@@ -323,6 +325,7 @@
   </div>
 
   <script src="./js/script.js" defer></script>
+  <script src="./js/powder-brows-basisopleiding.js" defer></script>
 </body>
 
 </html>

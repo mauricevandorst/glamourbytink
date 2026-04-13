@@ -1,5 +1,6 @@
 @import "./home-experience.css";
 @import "./footer.css";
+@import "./behandelingen.css";
 
 @tailwind base;
 @tailwind components;
