@@ -462,7 +462,13 @@ function initFooterItemIcons() {
     return;
   }
 
-  const iconBasePath = '/assets/icons/';
+  const scriptSource = Array.from(document.scripts)
+    .map((script) => script.getAttribute('src'))
+    .find((src) => typeof src === 'string' && /(^|\/)js\/script\.js(?:[?#].*)?$/.test(src));
+
+  const iconBaseUrl = scriptSource
+    ? new URL('../assets/icons/', new URL(scriptSource, window.location.href))
+    : new URL('./assets/icons/', window.location.href);
 
   const applyIcon = (element, iconFile, altText) => {
     if (!element || element.dataset.footerIconApplied === 'true') {
@@ -470,7 +476,7 @@ function initFooterItemIcons() {
     }
 
     const icon = document.createElement('img');
-    icon.src = `${iconBasePath}${iconFile}`;
+    icon.src = new URL(iconFile, iconBaseUrl).href;
     icon.alt = altText;
     icon.className = 'h-[0.95em] w-[0.95em] shrink-0 object-contain opacity-90';
     icon.loading = 'lazy';
