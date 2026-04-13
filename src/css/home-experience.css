@@ -826,14 +826,25 @@ body.is-ready .scroll-indicator__inner {
 
 .story-panel {
   position: relative;
-  min-height: min(60vh, 33rem);
+  min-height: auto;
   border-radius: 15px;
   overflow: hidden;
   display: flex;
-  align-items: end;
-  padding: 1rem;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
   scroll-snap-align: center;
   scroll-snap-stop: always;
+}
+
+.story-panel .panel-media {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: 250px;
+  max-height: 250px;
+  border-radius: 15px 15px 0 0;
+  flex-shrink: 0;
 }
 
 .story-panels.has-story-anim .story-panel {
@@ -942,8 +953,8 @@ body.is-ready .scroll-indicator__inner {
 }
 
 .story-panel .panel-copy.depth-card {
-  position: absolute;
-  inset: auto 0 0 0;
+  position: relative;
+  inset: auto;
   max-width: none;
   width: 100%;
   padding: 1.25rem 1.15rem 1.1rem;
