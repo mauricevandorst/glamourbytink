@@ -1,5 +1,5 @@
 import chokidar from "chokidar";
-import { mkdirSync, cpSync, existsSync, rmSync } from "node:fs";
+import { mkdirSync, cpSync, existsSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { spawn } from "node:child_process";
 import { readdirSync } from "node:fs";
@@ -18,6 +18,24 @@ function copyFile(from, to) {
   ensureDirs();
   mkdirSync(path.dirname(to), { recursive: true });
   cpSync(from, to, { force: true });
+}
+
+function rewritePublishedHtml(html, depth = 0) {
+  const prefix = depth === 0 ? "./" : "../";
+
+  return html
+    .replace(/(href|src|srcset)=(["'])\/(css|js|assets)\//g, `$1=$2${prefix}$3/`)
+    .replace(/href=(["'])\/(?!\/)(?!css\/|js\/|assets\/)([^"']*)\1/g, (_match, quote, target) => {
+      const normalizedTarget = target ? `${prefix}${target}` : prefix;
+      return `href=${quote}${normalizedTarget}${quote}`;
+    });
+}
+
+function copyPublishedHtml(from, to, depth = 0) {
+  ensureDirs();
+  mkdirSync(path.dirname(to), { recursive: true });
+  const source = readFileSync(from, "utf8");
+  writeFileSync(to, rewritePublishedHtml(source, depth), "utf8");
 }
 
 function copyDir(from, to) {
@@ -41,12 +59,16 @@ function syncRootStaticFile(file) {
   const srcFile = path.join(SRC, file);
   const ext = path.extname(file).toLowerCase();
 
-  copyFile(srcFile, path.join(DOCS, file));
+  if (ext === ".html") {
+    copyPublishedHtml(srcFile, path.join(DOCS, file), 0);
+  } else {
+    copyFile(srcFile, path.join(DOCS, file));
+  }
 
   // GitHub Pages supports clean routes when a folder has an index.html file.
   if (ext === ".html" && file !== "index.html") {
     const slug = file.slice(0, -5);
-    copyFile(srcFile, path.join(DOCS, slug, "index.html"));
+    copyPublishedHtml(srcFile, path.join(DOCS, slug, "index.html"), 1);
   }
 }
 
