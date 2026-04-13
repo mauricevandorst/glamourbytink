@@ -2715,7 +2715,7 @@ body.is-ready .scroll-indicator__inner {
   display: none;
 }
 
-.faq-panel p {
+.faq-panel p, .faq-panel ul {
   margin: 0.15rem;
   color: rgba(243, 234, 223, 0.82);
   margin: 1.1rem 1.2rem;
@@ -2796,7 +2796,7 @@ body.is-ready .scroll-indicator__inner {
     padding: 1rem;
   }
 
-  .faq-panel p {
+  .faq-panel p, .faq-panel ul {
     margin: 0.5rem 1rem;
   }
 }
@@ -3615,6 +3615,10 @@ video {
   display: none;
 }
 
+.aspect-\[9\/16\] {
+  aspect-ratio: 9/16;
+}
+
 .\!h-px {
   height: 1px !important;
 }
@@ -3711,10 +3715,6 @@ video {
   min-height: 18rem;
 }
 
-.min-h-\[72svh\] {
-  min-height: 72svh;
-}
-
 .w-16 {
   width: 4rem;
 }
@@ -3771,6 +3771,10 @@ video {
 
 .max-w-3xl {
   max-width: 48rem;
+}
+
+.max-w-\[19rem\] {
+  max-width: 19rem;
 }
 
 .max-w-\[72rem\] {
@@ -3874,10 +3878,6 @@ video {
   flex-wrap: wrap;
 }
 
-.items-start {
-  align-items: flex-start;
-}
-
 .items-end {
   align-items: flex-end;
 }
@@ -3965,10 +3965,6 @@ video {
 
 .rounded-\[0_10px_0_10px\] {
   border-radius: 0 10px 0 10px;
-}
-
-.rounded-\[1\.25rem\] {
-  border-radius: 1.25rem;
 }
 
 .rounded-\[1\.2rem\] {
@@ -4112,10 +4108,6 @@ video {
   background-image: linear-gradient(110deg,rgba(15,10,10,0.45) 0%,rgba(15,10,10,0.45) 42%,rgba(15,10,10,0.45) 72%,rgba(15,10,10,0.8) 100%);
 }
 
-.bg-\[linear-gradient\(112deg\2c rgba\(15\2c 10\2c 10\2c 0\.96\)_0\%\2c rgba\(15\2c 10\2c 10\2c 0\.84\)_45\%\2c rgba\(15\2c 10\2c 10\2c 0\.46\)_74\%\2c rgba\(15\2c 10\2c 10\2c 0\.82\)_100\%\)\] {
-  background-image: linear-gradient(112deg,rgba(15,10,10,0.96) 0%,rgba(15,10,10,0.84) 45%,rgba(15,10,10,0.46) 74%,rgba(15,10,10,0.82) 100%);
-}
-
 .bg-\[linear-gradient\(135deg\2c \#000000_0\%\2c \#080808_42\%\2c \#1b150d_100\%\)\] {
   background-image: linear-gradient(135deg,#000000 0%,#080808 42%,#1b150d 100%);
 }
@@ -4164,6 +4156,10 @@ video {
 
 .\!p-0 {
   padding: 0px !important;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .p-5 {
@@ -4236,10 +4232,6 @@ video {
   padding-top: 5rem !important;
 }
 
-.pb-16 {
-  padding-bottom: 4rem;
-}
-
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -4262,10 +4254,6 @@ video {
 
 .pt-10 {
   padding-top: 2.5rem;
-}
-
-.pt-28 {
-  padding-top: 7rem;
 }
 
 .pt-3 {
@@ -4498,8 +4486,12 @@ video {
   line-height: 1.65;
 }
 
-.leading-\[1\.7\] {
-  line-height: 1.7;
+.leading-\[1\.68\] {
+  line-height: 1.68;
+}
+
+.leading-\[1\.6\] {
+  line-height: 1.6;
 }
 
 .leading-none {
@@ -4697,10 +4689,6 @@ video {
   transition-duration: 150ms;
 }
 
-.duration-1000 {
-  transition-duration: 1000ms;
-}
-
 .duration-200 {
   transition-duration: 200ms;
 }
@@ -4861,6 +4849,14 @@ input[type="radio"] {
     width: max-content;
   }
 
+  .sm\:max-w-\[21rem\] {
+    max-width: 21rem;
+  }
+
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -4871,6 +4867,10 @@ input[type="radio"] {
 
   .sm\:justify-start {
     justify-content: flex-start;
+  }
+
+  .sm\:p-5 {
+    padding: 1.25rem;
   }
 
   .sm\:pb-\[6rem\] {
@@ -4935,6 +4935,10 @@ input[type="radio"] {
     height: 1300px;
   }
 
+  .md\:max-w-\[24rem\] {
+    max-width: 24rem;
+  }
+
   .md\:scroll-mt-28 {
     scroll-margin-top: 7rem;
   }
@@ -4972,14 +4976,6 @@ input[type="radio"] {
 
   .md\:\!pt-24 {
     padding-top: 6rem !important;
-  }
-
-  .md\:pb-20 {
-    padding-bottom: 5rem;
-  }
-
-  .md\:pt-32 {
-    padding-top: 8rem;
   }
 
   .md\:pt-6 {
@@ -5051,10 +5047,6 @@ input[type="radio"] {
 }
 
 @media (min-width: 1024px) {
-  .lg\:grid {
-    display: grid;
-  }
-
   .lg\:h-\[1244px\] {
     height: 1244px;
   }
@@ -5067,16 +5059,12 @@ input[type="radio"] {
     max-width: 48rem;
   }
 
+  .lg\:max-w-\[26rem\] {
+    max-width: 26rem;
+  }
+
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-\[0\.95fr_1\.05fr\] {
-    grid-template-columns: 0.95fr 1.05fr;
-  }
-
-  .lg\:grid-cols-\[0\.9fr_1\.1fr\] {
-    grid-template-columns: 0.9fr 1.1fr;
   }
 
   .lg\:grid-cols-\[1\.1fr_0\.9fr\] {
@@ -5090,6 +5078,10 @@ input[type="radio"] {
 
   .lg\:p-10 {
     padding: 2.5rem;
+  }
+
+  .lg\:p-7 {
+    padding: 1.75rem;
   }
 
   .lg\:px-14 {
@@ -5137,6 +5129,10 @@ input[type="radio"] {
     font-size: 2rem !important;
   }
 
+  .xl\:text-\[1\.08rem\] {
+    font-size: 1.08rem;
+  }
+
   .xl\:text-\[1\.2rem\] {
     font-size: 1.2rem;
   }
@@ -5147,10 +5143,6 @@ input[type="radio"] {
 
   .xl\:text-\[3\.35rem\] {
     font-size: 3.35rem;
-  }
-
-  .xl\:text-\[4\.1rem\] {
-    font-size: 4.1rem;
   }
 
   .xl\:text-\[4\.2rem\] {

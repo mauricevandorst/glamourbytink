@@ -496,7 +496,7 @@
     display: none;
 }
 
-.faq-panel p {
+.faq-panel p, .faq-panel ul {
     margin: 0.15rem;
     color: rgba(243, 234, 223, 0.82);
     margin: 1.1rem 1.2rem;
@@ -579,7 +579,7 @@
         padding: 1rem;
     }
 
-    .faq-panel p {
+    .faq-panel p, .faq-panel ul {
         margin: 0.5rem 1rem;
     }
 }
