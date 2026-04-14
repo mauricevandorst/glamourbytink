@@ -1505,7 +1505,7 @@ body.is-ready .scroll-indicator__inner {
   }
 
   .story-panels {
-    grid-auto-columns: 76vw;
+    display: flex;
     gap: 1.8rem;
     padding: 0 0 0.75rem;
     scroll-padding-inline: 12vw;
