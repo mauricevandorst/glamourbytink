@@ -1456,6 +1456,14 @@ body.is-ready .scroll-indicator__inner {
 }
 
 @media (max-width: 767px) {
+  .panel-scroll {
+    scroll-snap-type: none;
+  }
+
+  .scene {
+    scroll-snap-stop: normal;
+  }
+
   .panel-section {
     min-height: auto;
     opacity: 1;

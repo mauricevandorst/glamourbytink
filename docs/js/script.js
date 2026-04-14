@@ -196,6 +196,8 @@ function initImmersiveLoader() {
   const minVisibleMs = 900;
   const simEstimateMs = 2400;
   const exitDurationMs = prefersReducedMotion ? 100 : 420;
+  const fontWaitMs = prefersReducedMotion ? 150 : 900;
+  const hardCloseMs = prefersReducedMotion ? 1800 : 4200;
 
   const animatedGlyph = `
     <svg viewBox="0 0 120 120" class="h-24 w-24" aria-hidden="true" focusable="false">
@@ -315,7 +317,10 @@ function initImmersiveLoader() {
   let displayed = -1;
   let readyToFinish = false;
   let isClosed = false;
+  let isUnlocked = false;
   let rafId = 0;
+  let closeTimerId = 0;
+  let hardCloseTimerId = 0;
 
   const easeOutExpo = (value) => {
     if (value >= 1) {
@@ -342,10 +347,10 @@ function initImmersiveLoader() {
   };
 
   const unlock = () => {
-    if (isClosed) {
+    if (isUnlocked) {
       return;
     }
-    isClosed = true;
+    isUnlocked = true;
 
     inertTargets.forEach((node) => {
       if (node instanceof HTMLElement) {
@@ -359,13 +364,32 @@ function initImmersiveLoader() {
   };
 
   const close = () => {
+    if (isClosed) {
+      return;
+    }
+
+    isClosed = true;
     loader.classList.add('opacity-0');
     panel.classList.add('opacity-0', 'scale-95');
 
-    window.setTimeout(() => {
+    closeTimerId = window.setTimeout(() => {
       loader.remove();
       unlock();
     }, exitDurationMs);
+  };
+
+  const forceClose = () => {
+    if (isClosed) {
+      return;
+    }
+
+    if (rafId) {
+      window.cancelAnimationFrame(rafId);
+      rafId = 0;
+    }
+
+    render(100);
+    close();
   };
 
   const tick = (now) => {
@@ -399,7 +423,12 @@ function initImmersiveLoader() {
   });
 
   const fontPromise = document.fonts?.ready
-    ? document.fonts.ready.catch(() => {})
+    ? Promise.race([
+      document.fonts.ready.catch(() => {}),
+      new Promise((resolve) => {
+        window.setTimeout(resolve, fontWaitMs);
+      })
+    ])
     : Promise.resolve();
 
   const visiblePromise = new Promise((resolve) => {
@@ -408,6 +437,7 @@ function initImmersiveLoader() {
 
   render(0);
   rafId = window.requestAnimationFrame(tick);
+  hardCloseTimerId = window.setTimeout(forceClose, hardCloseMs);
 
   Promise.all([readyPromise, fontPromise, visiblePromise]).then(() => {
     readyToFinish = true;
@@ -417,6 +447,13 @@ function initImmersiveLoader() {
   window.addEventListener('pagehide', () => {
     if (rafId) {
       window.cancelAnimationFrame(rafId);
+      rafId = 0;
+    }
+    if (hardCloseTimerId) {
+      window.clearTimeout(hardCloseTimerId);
+    }
+    if (closeTimerId) {
+      window.clearTimeout(closeTimerId);
     }
     loader.remove();
     unlock();
