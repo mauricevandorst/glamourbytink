@@ -1507,6 +1507,7 @@ body.is-ready .scroll-indicator__inner {
   .story-panel {
     min-height: 56vh;
     padding: 0.75rem;
+    min-width: 325px;
   }
 
   .panel-copy {
