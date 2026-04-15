@@ -5,7 +5,7 @@
 
 const LOADER_TAB_FLAG = '__gbt_loader_seen__';
 
-// initImmersiveLoader();
+initImmersiveLoader();
 
 document.addEventListener('DOMContentLoaded', () => {
   const currentYear = String(new Date().getFullYear());
@@ -707,24 +707,51 @@ function initBookingWidget() {
   const closeTrigger = document.querySelector('[data-booking-close]');
   const overlay = document.querySelector('[data-booking-overlay]');
   const modal = document.querySelector('[data-booking-modal]');
+  let hideTimerId = 0;
 
   if (!openTriggers.length || !closeTrigger || !overlay || !modal) {
     return;
   }
 
   const setWidgetState = (isOpen) => {
+    window.clearTimeout(hideTimerId);
+
+    if (isOpen) {
+      overlay.classList.remove('hidden', 'invisible');
+      modal.classList.remove('hidden', 'invisible');
+      overlay.setAttribute('aria-hidden', 'false');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
     overlay.classList.toggle('pointer-events-auto', isOpen);
     overlay.classList.toggle('opacity-100', isOpen);
     overlay.classList.toggle('opacity-0', !isOpen);
+    overlay.classList.toggle('invisible', !isOpen);
 
     modal.classList.toggle('pointer-events-auto', isOpen);
     modal.classList.toggle('opacity-100', isOpen);
     modal.classList.toggle('opacity-0', !isOpen);
     modal.classList.toggle('translate-y-0', isOpen);
     modal.classList.toggle('translate-y-2', !isOpen);
+    modal.classList.toggle('invisible', !isOpen);
 
     document.body.classList.toggle('overflow-hidden', isOpen);
+
+    if (!isOpen) {
+      overlay.setAttribute('aria-hidden', 'true');
+      modal.setAttribute('aria-hidden', 'true');
+
+      hideTimerId = window.setTimeout(() => {
+        overlay.classList.add('hidden');
+        modal.classList.add('hidden');
+      }, 220);
+    }
   };
+
+  overlay.setAttribute('aria-hidden', 'true');
+  modal.setAttribute('aria-hidden', 'true');
+  overlay.classList.add('hidden', 'invisible');
+  modal.classList.add('hidden', 'invisible');
 
   openTriggers.forEach((trigger) => {
     trigger.addEventListener('click', (event) => {
