@@ -5,7 +5,7 @@
 
 const LOADER_TAB_FLAG = '__gbt_loader_seen__';
 
-initImmersiveLoader();
+// initImmersiveLoader();
 
 document.addEventListener('DOMContentLoaded', () => {
   const currentYear = String(new Date().getFullYear());

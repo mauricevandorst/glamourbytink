@@ -1463,10 +1463,6 @@ body.is-ready .scroll-indicator__inner {
 }
 
 @media (max-width: 767px) {
-  .site-shell {
-    overflow: visible;
-  }
-
   .panel-scroll {
     scroll-snap-type: none;
   }
@@ -1479,13 +1475,6 @@ body.is-ready .scroll-indicator__inner {
     min-height: auto;
     opacity: 1;
     transform: none;
-  }
-
-  .hero-scene {
-    position: relative;
-    top: auto;
-    height: auto;
-    min-height: 100svh;
   }
 
   .noise-overlay {
