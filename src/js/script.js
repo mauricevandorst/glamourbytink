@@ -4,6 +4,20 @@
 // testimonial slider on the home page.
 
 const LOADER_TAB_FLAG = '__gbt_loader_seen__';
+const SALONIZED_WIDGET_SCRIPT_SRC = 'https://static-widget.salonized.com/loader.js';
+const SALONIZED_BOOKING_SELECTOR = '.salonized-booking[data-gbt-booking-widget]';
+const BOOKING_BACKDROP_SELECTOR = '[data-booking-backdrop]';
+const BOOKING_WIDGET_MAX_WIDTH = 560;
+const BOOKING_WIDGET_MAX_HEIGHT = 760;
+const SALONIZED_BOOKING_CONFIG = Object.freeze({
+  company: 'aN9GJytSPxkVewbFheHoF2bo',
+  color: '#FF6575',
+  language: 'nl',
+  outline: 'shadow'
+});
+
+let bookingWidgetReadyPromise;
+let bookingBackdropHideTimerId = 0;
 
 initImmersiveLoader();
 
@@ -704,54 +718,23 @@ function initFooterReveal() {
 
 function initBookingWidget() {
   const openTriggers = Array.from(document.querySelectorAll('[data-booking-open]'));
-  const closeTrigger = document.querySelector('[data-booking-close]');
-  const overlay = document.querySelector('[data-booking-overlay]');
-  const modal = document.querySelector('[data-booking-modal]');
-  let hideTimerId = 0;
 
-  if (!openTriggers.length || !closeTrigger || !overlay || !modal) {
+  if (!openTriggers.length) {
     return;
   }
 
-  const setWidgetState = (isOpen) => {
-    window.clearTimeout(hideTimerId);
+  const openBookingWidget = () => {
+    ensureBookingWidgetReady()
+      .then((bookingWidget) => {
+        if (!bookingWidget?.showWidget) {
+          return;
+        }
 
-    if (isOpen) {
-      overlay.classList.remove('hidden', 'invisible');
-      modal.classList.remove('hidden', 'invisible');
-      overlay.setAttribute('aria-hidden', 'false');
-      modal.setAttribute('aria-hidden', 'false');
-    }
-
-    overlay.classList.toggle('pointer-events-auto', isOpen);
-    overlay.classList.toggle('opacity-100', isOpen);
-    overlay.classList.toggle('opacity-0', !isOpen);
-    overlay.classList.toggle('invisible', !isOpen);
-
-    modal.classList.toggle('pointer-events-auto', isOpen);
-    modal.classList.toggle('opacity-100', isOpen);
-    modal.classList.toggle('opacity-0', !isOpen);
-    modal.classList.toggle('translate-y-0', isOpen);
-    modal.classList.toggle('translate-y-2', !isOpen);
-    modal.classList.toggle('invisible', !isOpen);
-
-    document.body.classList.toggle('overflow-hidden', isOpen);
-
-    if (!isOpen) {
-      overlay.setAttribute('aria-hidden', 'true');
-      modal.setAttribute('aria-hidden', 'true');
-
-      hideTimerId = window.setTimeout(() => {
-        overlay.classList.add('hidden');
-        modal.classList.add('hidden');
-      }, 220);
-    }
+        hideDefaultSalonizedButton();
+        bookingWidget.showWidget();
+      })
+      .catch(() => {});
   };
-
-  overlay.setAttribute('aria-hidden', 'true');
-  modal.setAttribute('aria-hidden', 'true');
-  overlay.classList.add('hidden', 'invisible');
-  modal.classList.add('hidden', 'invisible');
 
   openTriggers.forEach((trigger) => {
     trigger.addEventListener('click', (event) => {
@@ -759,22 +742,264 @@ function initBookingWidget() {
         event.preventDefault();
       }
 
-      setWidgetState(true);
+      openBookingWidget();
     });
   });
 
-  closeTrigger.addEventListener('click', () => {
-    setWidgetState(false);
-  });
-
-  overlay.addEventListener('click', () => {
-    setWidgetState(false);
-  });
-
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      setWidgetState(false);
+    if (event.key === 'Escape' && window.szBooking?.hideWidget) {
+      window.szBooking.hideWidget();
     }
   });
+
+  ensureBookingWidgetReady().catch(() => {});
+}
+
+function ensureBookingWidgetReady() {
+  if (window.szBooking?.showWidget) {
+    decorateBookingWidget(window.szBooking);
+    hideDefaultSalonizedButton();
+    return Promise.resolve(window.szBooking);
+  }
+
+  if (bookingWidgetReadyPromise) {
+    return bookingWidgetReadyPromise;
+  }
+
+  bookingWidgetReadyPromise = new Promise((resolve, reject) => {
+    createSalonizedBookingContainer();
+
+    const settleWhenReady = () => {
+      const startedAt = Date.now();
+      const pollId = window.setInterval(() => {
+        if (window.szBooking?.showWidget) {
+          window.clearInterval(pollId);
+          decorateBookingWidget(window.szBooking);
+          hideDefaultSalonizedButton();
+          resolve(window.szBooking);
+          return;
+        }
+
+        if (Date.now() - startedAt >= 6000) {
+          window.clearInterval(pollId);
+          bookingWidgetReadyPromise = undefined;
+          reject(new Error('Salonized booking widget could not be initialized.'));
+        }
+      }, 50);
+    };
+
+    const existingScript = document.querySelector(`script[src="${SALONIZED_WIDGET_SCRIPT_SRC}"]`);
+    if (existingScript) {
+      settleWhenReady();
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = SALONIZED_WIDGET_SCRIPT_SRC;
+    script.async = true;
+    script.addEventListener('load', settleWhenReady, { once: true });
+    script.addEventListener('error', () => {
+      bookingWidgetReadyPromise = undefined;
+      reject(new Error('Salonized widget loader failed to load.'));
+    }, { once: true });
+    document.body.appendChild(script);
+  });
+
+  return bookingWidgetReadyPromise;
+}
+
+function createSalonizedBookingContainer() {
+  const existingContainer = document.querySelector(SALONIZED_BOOKING_SELECTOR);
+  if (existingContainer) {
+    return existingContainer;
+  }
+
+  const container = document.createElement('div');
+  container.className = 'salonized-booking';
+  container.dataset.gbtBookingWidget = 'true';
+  container.dataset.company = SALONIZED_BOOKING_CONFIG.company;
+  container.dataset.color = SALONIZED_BOOKING_CONFIG.color;
+  container.dataset.language = SALONIZED_BOOKING_CONFIG.language;
+  container.dataset.outline = SALONIZED_BOOKING_CONFIG.outline;
+  container.hidden = true;
+  container.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(container);
+
+  return container;
+}
+
+function hideDefaultSalonizedButton() {
+  const buttonFrame = window.szBooking?.$buttonFrame;
+  if (!buttonFrame) {
+    return;
+  }
+
+  buttonFrame.style.setProperty('display', 'none', 'important');
+  buttonFrame.style.setProperty('opacity', '0', 'important');
+  buttonFrame.style.setProperty('pointer-events', 'none', 'important');
+  buttonFrame.setAttribute('tabindex', '-1');
+  buttonFrame.setAttribute('aria-hidden', 'true');
+}
+
+function decorateBookingWidget(bookingWidget) {
+  if (!bookingWidget || bookingWidget.__gbtBookingDecorated) {
+    return;
+  }
+
+  const originalShowWidget = bookingWidget.showWidget?.bind(bookingWidget);
+  const originalHideWidget = bookingWidget.hideWidget?.bind(bookingWidget);
+  const originalToggleWidget = bookingWidget.toggleWidget?.bind(bookingWidget);
+
+  if (originalShowWidget) {
+    bookingWidget.showWidget = (...args) => {
+      syncBookingBackdrop(true);
+      const result = originalShowWidget(...args);
+      scheduleBookingFrameSync();
+      return result;
+    };
+  }
+
+  if (originalHideWidget) {
+    bookingWidget.hideWidget = (...args) => {
+      syncBookingBackdrop(false);
+      return originalHideWidget(...args);
+    };
+  }
+
+  if (originalToggleWidget) {
+    bookingWidget.toggleWidget = (...args) => {
+      const willOpen = !bookingWidget.state?.isWidgetVisible;
+      syncBookingBackdrop(willOpen);
+      const result = originalToggleWidget(...args);
+      if (willOpen) {
+        scheduleBookingFrameSync();
+      }
+      return result;
+    };
+  }
+
+  bookingWidget.__gbtBookingDecorated = 'true';
+
+  window.addEventListener('resize', () => {
+    updateBookingBackdropInset();
+    applyBookingFrameStyles();
+  }, { passive: true });
+}
+
+function scheduleBookingFrameSync() {
+  window.requestAnimationFrame(() => {
+    applyBookingFrameStyles();
+  });
+
+  window.setTimeout(() => {
+    applyBookingFrameStyles();
+  }, 80);
+
+  window.setTimeout(() => {
+    applyBookingFrameStyles();
+  }, 220);
+}
+
+function applyBookingFrameStyles() {
+  const widgetFrame = window.szBooking?.$widgetFrame;
+  if (!widgetFrame) {
+    return;
+  }
+
+  const viewportInset = getBookingViewportInset();
+  const frameWidth = `min(${BOOKING_WIDGET_MAX_WIDTH}px, calc(100vw - ${viewportInset * 2}px))`;
+  const frameHeight = `min(${BOOKING_WIDGET_MAX_HEIGHT}px, calc(100vh - ${viewportInset * 2}px))`;
+
+  widgetFrame.style.setProperty('right', `${viewportInset}px`, 'important');
+  widgetFrame.style.setProperty('bottom', `${viewportInset}px`, 'important');
+  widgetFrame.style.setProperty('left', 'auto', 'important');
+  widgetFrame.style.setProperty('top', 'auto', 'important');
+  widgetFrame.style.setProperty('width', frameWidth, 'important');
+  widgetFrame.style.setProperty('max-width', frameWidth, 'important');
+  widgetFrame.style.setProperty('height', frameHeight, 'important');
+  widgetFrame.style.setProperty('max-height', frameHeight, 'important');
+  widgetFrame.style.setProperty('border-radius', viewportInset <= 14 ? '18px' : '22px', 'important');
+  widgetFrame.style.setProperty('box-shadow', '0 28px 80px -34px rgba(0, 0, 0, 0.72)', 'important');
+  widgetFrame.style.setProperty('overflow', 'hidden', 'important');
+  widgetFrame.style.setProperty('background-color', '#ffffff', 'important');
+}
+
+function syncBookingBackdrop(isVisible) {
+  const backdrop = getBookingBackdrop();
+  if (!backdrop) {
+    return;
+  }
+
+  window.clearTimeout(bookingBackdropHideTimerId);
+
+  if (isVisible) {
+    updateBookingBackdropInset();
+    backdrop.hidden = false;
+    backdrop.setAttribute('aria-hidden', 'false');
+    window.requestAnimationFrame(() => {
+      backdrop.style.opacity = '1';
+      backdrop.style.pointerEvents = 'auto';
+    });
+    return;
+  }
+
+  backdrop.style.opacity = '0';
+  backdrop.style.pointerEvents = 'none';
+  backdrop.setAttribute('aria-hidden', 'true');
+  bookingBackdropHideTimerId = window.setTimeout(() => {
+    backdrop.hidden = true;
+  }, 220);
+}
+
+function getBookingBackdrop() {
+  const existingBackdrop = document.querySelector(BOOKING_BACKDROP_SELECTOR);
+  if (existingBackdrop instanceof HTMLDivElement) {
+    return existingBackdrop;
+  }
+
+  const backdrop = document.createElement('div');
+  backdrop.dataset.bookingBackdrop = 'true';
+  backdrop.hidden = true;
+  backdrop.setAttribute('aria-hidden', 'true');
+  backdrop.style.position = 'fixed';
+  backdrop.style.zIndex = '2147483550';
+  backdrop.style.borderRadius = '24px';
+  backdrop.style.background = 'rgba(4, 3, 3, 0.54)';
+  backdrop.style.backdropFilter = 'blur(3px)';
+  backdrop.style.webkitBackdropFilter = 'blur(3px)';
+  backdrop.style.opacity = '0';
+  backdrop.style.pointerEvents = 'none';
+  backdrop.style.transition = 'opacity 0.2s ease';
+  updateBookingBackdropInset(backdrop);
+  backdrop.addEventListener('click', () => {
+    if (window.szBooking?.hideWidget) {
+      window.szBooking.hideWidget();
+    }
+  });
+  document.body.appendChild(backdrop);
+
+  return backdrop;
+}
+
+function updateBookingBackdropInset(existingBackdrop) {
+  const backdrop = existingBackdrop || document.querySelector(BOOKING_BACKDROP_SELECTOR);
+  if (!(backdrop instanceof HTMLDivElement)) {
+    return;
+  }
+
+  const viewportInset = getBookingViewportInset();
+  backdrop.style.inset = `${viewportInset}px`;
+}
+
+function getBookingViewportInset() {
+  if (window.innerWidth <= 640) {
+    return 12;
+  }
+
+  if (window.innerWidth <= 1024) {
+    return 16;
+  }
+
+  return 22;
 }
 

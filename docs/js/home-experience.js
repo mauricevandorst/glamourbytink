@@ -829,7 +829,7 @@ function initCursorGlow(reducedMotion) {
 function initScrollIndicatorMotion({ reducedMotion }) {
   const indicator = document.querySelector('[data-scroll-indicator]');
   const heroSection = document.querySelector('.hero-scene');
-  let bookingWidget = document.querySelector('[data-booking-fab]');
+  const bookingWidget = document.querySelector('[data-booking-fab]');
   const indicatorLabel = indicator?.querySelector('p');
   const indicatorIcon = indicator?.querySelector('svg');
 
@@ -842,16 +842,6 @@ function initScrollIndicatorMotion({ reducedMotion }) {
   let widgetVisible = false;
   const widgetShowThreshold = 200;
   const widgetHideThreshold = 225;
-
-  const resolveBookingWidget = () => {
-    if (bookingWidget && document.body.contains(bookingWidget)) {
-      return bookingWidget;
-    }
-
-    bookingWidget = document.querySelector('[data-booking-fab]')
-      || document.querySelector('iframe[src*="widget.salonized.com/button"]');
-    return bookingWidget;
-  };
 
   const applyWidgetVisibility = (targetWidget, isVisible) => {
     targetWidget.style.setProperty('opacity', isVisible ? '1' : '0', 'important');
@@ -873,35 +863,15 @@ function initScrollIndicatorMotion({ reducedMotion }) {
     targetWidget.dataset.gbtWidgetInitialized = 'true';
   };
 
-  const initialWidget = resolveBookingWidget();
-
-  if (initialWidget) {
-    initializeWidget(initialWidget);
+  if (bookingWidget) {
+    initializeWidget(bookingWidget);
   }
 
-  const widgetObserver = new MutationObserver((mutations) => {
-    for (const mutation of mutations) {
-      for (const node of mutation.addedNodes) {
-        if (!(node instanceof Element)) {
-          continue;
-        }
-
-        const widget = node.matches('[data-booking-fab], iframe[src*="widget.salonized.com/button"]')
-          ? node
-          : node.querySelector('[data-booking-fab], iframe[src*="widget.salonized.com/button"]');
-
-        if (widget) {
-          bookingWidget = widget;
-          initializeWidget(widget);
-          return;
-        }
-      }
-    }
-  });
-
-  widgetObserver.observe(document.body, { childList: true, subtree: true });
-
   if (reducedMotion) {
+    if (bookingWidget) {
+      applyWidgetVisibility(bookingWidget, true);
+    }
+
     indicator.style.transform = 'translate3d(0, 0, 0)';
     if (indicatorLabel) {
       indicatorLabel.style.transform = 'translate3d(0, 0, 0)';
@@ -968,18 +938,14 @@ function initScrollIndicatorMotion({ reducedMotion }) {
     indicator.style.transform = `translate3d(0, ${offsetY.toFixed(2)}px, 0)`;
     indicator.style.opacity = opacity.toFixed(3);
 
-    const activeWidget = resolveBookingWidget();
-
-    if (activeWidget) {
-      initializeWidget(activeWidget);
-
+    if (bookingWidget) {
       const shouldShowWidget = widgetVisible
         ? window.scrollY > widgetHideThreshold
         : window.scrollY > widgetShowThreshold;
 
       if (shouldShowWidget !== widgetVisible) {
         widgetVisible = shouldShowWidget;
-        applyWidgetVisibility(activeWidget, widgetVisible);
+        applyWidgetVisibility(bookingWidget, widgetVisible);
       }
     }
   };
