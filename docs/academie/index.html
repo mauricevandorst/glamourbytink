@@ -100,22 +100,27 @@
                 <div
                     class="absolute inset-0 bg-[linear-gradient(110deg,rgba(15,10,10,0.45)_0%,rgba(15,10,10,0.45)_42%,rgba(15,10,10,0.45)_72%,rgba(15,10,10,0.8)_100%)]">
                 </div>
+                <div class="treatments-hero__veil" aria-hidden="true"></div>
 
                 <div
                     class="scene-frame relative max-w-[88rem] min-h-[100svh] mx-auto px-4 md:px-8 h-full flex items-end pt-10 pb-[4rem] sm:pb-[6rem]">
-                    <div class="w-full lg:max-w-3xl mt-16">
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-[4.2rem] leading-[0.96] tracking-[-0.03em]">
+                    <div class="w-full lg:max-w-3xl mt-16 treatments-hero__content">
+                        <h1
+                            class="treatments-hero__title treatments-reveal text-4xl sm:text-5xl lg:text-6xl xl:text-[4.2rem] leading-[0.96] tracking-[-0.03em]"
+                            style="--delay: 0.08s;">
                             Academy voor <span class="!inline subtle-hero-title">vaardigheid</span> en <span
                                 class="!inline subtle-hero-title">vertrouwen.</span>
                         </h1>
-                        <p class="mt-5 max-w-2xl text-base md:text-lg xl:text-[1.2rem] leading-[1.65] text-white/80">
+                        <p
+                            class="treatments-hero__intro treatments-reveal mt-5 max-w-2xl text-base md:text-lg xl:text-[1.2rem] leading-[1.65] text-white/80"
+                            style="--delay: 0.16s;">
                             Met onze Academy leer je de techniek, inzicht, rust en het
                             zelfvertrouwen om klanten écht verder te helpen met mooi, natuurlijk werk.
                         </p>
-                        <div class="mt-7 flex flex-wrap gap-3">
-                            <a href="#opleiding" class="site-button site-button--solid"><span>Bekijk
+                        <div class="treatments-reveal mt-7 flex flex-wrap gap-3" style="--delay: 0.22s;">
+                            <a href="#opleiding" class="site-button site-button--ghost"><span>Bekijk
                                     opleiding</span></a>
-                            <a href="#contact" class="site-button site-button--ghost"><span>Contact</span></a>
+                            <a href="#contact" class="site-button site-button--solid"><span>Contact</span></a>
                         </div>
                     </div>
                 </div>
@@ -134,10 +139,10 @@
 
                     <article
                         class="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start glass-card overflow-hidden">
-                        <div class="relative min-h-[18rem] overflow-hidden bg-black/35 aspect-[4/5] lg:aspect-[3/4] lg:max-h-[44rem]">
-                            <video src="../assets/videos/academy-movie.mp4"
-                                class="h-full w-full object-cover"
-                                autoplay muted loop playsinline controls preload="metadata"
+                        <div
+                            class="relative min-h-[18rem] overflow-hidden bg-black/35 aspect-[4/5] lg:aspect-[3/4] lg:max-h-[44rem]">
+                            <video src="../assets/videos/academy-movie.mp4" class="h-full w-full object-cover" autoplay
+                                muted loop playsinline controls preload="metadata"
                                 aria-label="Powder brows training video in de academy"></video>
                         </div>
                         <div class="p-6 md:p-8 lg:p-10 flex flex-col gap-5 self-start">
