@@ -23,7 +23,15 @@ jobs:
       - name: Decide whether to run today
         id: schedule_gate
         shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
         run: |
+          if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            echo "Handmatige run gedetecteerd. Workflow draait altijd bij workflow_dispatch."
+            exit 0
+          fi
+
           days_since=$(( ( $(date -u +%s) - $(date -u -d "$ANCHOR_DATE" +%s) ) / 86400 ))
 
           if (( days_since < 0 )); then
