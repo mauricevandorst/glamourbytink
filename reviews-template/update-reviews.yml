@@ -1,0 +1,76 @@
+name: Update Google Reviews
+
+on:
+  schedule:
+    - cron: '23 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  RUN_EVERY_DAYS: '7'
+  ANCHOR_DATE: '2026-04-23'
+
+jobs:
+  update-reviews:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Decide whether to run today
+        id: schedule_gate
+        shell: bash
+        run: |
+          days_since=$(( ( $(date -u +%s) - $(date -u -d "$ANCHOR_DATE" +%s) ) / 86400 ))
+
+          if (( days_since < 0 )); then
+            echo "ANCHOR_DATE ligt in de toekomst: $ANCHOR_DATE" >&2
+            exit 1
+          fi
+
+          if (( days_since % RUN_EVERY_DAYS == 0 )); then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            echo "Workflow draait vandaag. days_since=$days_since"
+          else
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+            echo "Workflow slaat vandaag over. days_since=$days_since"
+          fi
+
+      - name: Set up Node.js
+        if: steps.schedule_gate.outputs.should_run == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.schedule_gate.outputs.should_run == 'true'
+        run: npm ci
+
+      - name: Update reviews
+        if: steps.schedule_gate.outputs.should_run == 'true'
+        env:
+          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
+        run: npm run update-reviews
+
+      - name: Build site
+        if: steps.schedule_gate.outputs.should_run == 'true'
+        run: npm run build
+
+      - name: Commit and push changes
+        if: steps.schedule_gate.outputs.should_run == 'true'
+        shell: bash
+        run: |
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo "Geen wijzigingen om te committen."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/assets/files/google-reviews.json docs/assets/files/google-reviews.json
+          git commit -m "chore: update Google reviews"
+          git push
