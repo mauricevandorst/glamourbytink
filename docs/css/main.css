@@ -3588,10 +3588,6 @@ video {
   margin-top: 0px !important;
 }
 
-.-mt-1 {
-  margin-top: -0.25rem;
-}
-
 .-mt-\[31px\] {
   margin-top: -31px;
 }
@@ -3762,10 +3758,6 @@ video {
   height: 100%;
 }
 
-.h-1 {
-  height: 0.25rem;
-}
-
 .max-h-\[85svh\] {
   max-height: 85svh;
 }
@@ -3784,14 +3776,6 @@ video {
 
 .min-h-\[18rem\] {
   min-height: 18rem;
-}
-
-.min-h-\[24rem\] {
-  min-height: 24rem;
-}
-
-.min-h-\[22rem\] {
-  min-height: 22rem;
 }
 
 .w-14 {
@@ -3846,10 +3830,6 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
-}
-
-.w-1 {
-  width: 0.25rem;
 }
 
 .min-w-0 {
@@ -3999,12 +3979,12 @@ video {
   gap: 1.5rem;
 }
 
-.gap-\[5px\] {
-  gap: 5px;
-}
-
 .gap-\[0\.35rem\] {
   gap: 0.35rem;
+}
+
+.gap-\[5px\] {
+  gap: 5px;
 }
 
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
@@ -4135,11 +4115,6 @@ video {
 
 .border-l-\[rgba\(221\2c 172\2c 138\2c 0\.9\)\] {
   border-left-color: rgba(221,172,138,0.9);
-}
-
-.bg-\[\#120f0d\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(18 15 13 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#141210\] {
@@ -4292,8 +4267,8 @@ video {
   padding-bottom: 0px !important;
 }
 
-.\!pb-6 {
-  padding-bottom: 1.5rem !important;
+.\!pb-16 {
+  padding-bottom: 4rem !important;
 }
 
 .\!pt-20 {
@@ -4334,10 +4309,6 @@ video {
 
 .pt-6 {
   padding-top: 1.5rem;
-}
-
-.\!pb-16 {
-  padding-bottom: 4rem !important;
 }
 
 .text-left {
@@ -4966,14 +4937,6 @@ input[type="radio"] {
     right: 1.5rem;
   }
 
-  .sm\:order-3 {
-    order: 3;
-  }
-
-  .sm\:order-none {
-    order: 0;
-  }
-
   .sm\:order-1 {
     order: 1;
   }
@@ -4982,12 +4945,12 @@ input[type="radio"] {
     order: 2;
   }
 
-  .sm\:order-4 {
-    order: 4;
+  .sm\:order-3 {
+    order: 3;
   }
 
-  .sm\:mt-2 {
-    margin-top: 0.5rem;
+  .sm\:order-4 {
+    order: 4;
   }
 
   .sm\:mt-4 {
@@ -5019,10 +4982,6 @@ input[type="radio"] {
     flex: 1 1 0%;
   }
 
-  .sm\:basis-auto {
-    flex-basis: auto;
-  }
-
   .sm\:basis-0 {
     flex-basis: 0px;
   }
@@ -5033,10 +4992,6 @@ input[type="radio"] {
 
   .sm\:flex-row {
     flex-direction: row;
-  }
-
-  .sm\:flex-nowrap {
-    flex-wrap: nowrap;
   }
 
   .sm\:items-center {
