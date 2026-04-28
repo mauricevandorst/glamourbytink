@@ -4172,6 +4172,10 @@ video {
   background-color: rgb(255 255 255 / 0.9);
 }
 
+.bg-\[linear-gradient\(0deg\2c rgba\(0\2c 0\2c 0\2c 0\.92\)_0\%\2c rgba\(0\2c 0\2c 0\2c 0\.56\)_45\%\2c rgba\(0\2c 0\2c 0\2c 0\.22\)_100\%\)\] {
+  background-image: linear-gradient(0deg,rgba(0,0,0,0.92) 0%,rgba(0,0,0,0.56) 45%,rgba(0,0,0,0.22) 100%);
+}
+
 .bg-\[linear-gradient\(0deg\2c rgba\(0\2c 0\2c 0\2c 1\)_0\%\2c rgba\(0\2c 0\2c 0\2c 0\.5\)_50\%\2c rgba\(0\2c 0\2c 0\2c 0\)_100\%\)\] {
   background-image: linear-gradient(0deg,rgba(0,0,0,1) 0%,rgba(0,0,0,0.5) 50%,rgba(0,0,0,0) 100%);
 }
@@ -4281,6 +4285,10 @@ video {
 
 .pb-5 {
   padding-bottom: 1.25rem;
+}
+
+.pb-\[4\.6rem\] {
+  padding-bottom: 4.6rem;
 }
 
 .pb-\[4rem\] {
@@ -4901,18 +4909,6 @@ input[type="radio"] {
 
 .hover\:text-white\/70:hover {
   color: rgb(255 255 255 / 0.7);
-}
-
-.hover\:text-white\/80:hover {
-  color: rgb(255 255 255 / 0.8);
-}
-
-.hover\:opacity-80:hover {
-  opacity: 0.8;
-}
-
-.hover\:opacity-70:hover {
-  opacity: 0.7;
 }
 
 .focus\:outline-none:focus {
