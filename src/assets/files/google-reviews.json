@@ -1,21 +1,21 @@
 {
-  "updatedAt": "2026-10-08T04:39:03.215Z",
+  "updatedAt": "2026-10-15T04:33:49.067Z",
   "reviews": [
     {
       "position": 1,
-      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25Wd1VWb3RjR2xWU1c5bFF6aHZWblJmTmxsT2RtYxAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOnVwUVotcGlVSW9lQzhvVnRfNllOdmc%7C%7C?hl=en-GB",
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25Wd1VWb3RjR2xWU1c5bFF6aHZWblJmTmxsT2RtYxAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOnVwUVotcGlVSW9lQzhvVnRfNllOdmc%7C%7C?hl=en-US",
       "rating": 5,
       "date": "a month ago",
       "iso_date": "2026-08-20T12:02:26Z",
       "iso_date_of_last_edit": "2026-08-20T12:05:19Z",
       "images": [
-        "https://lh3.googleusercontent.com/grass-cs/ACvplmNsV8r8aaacbamGotDGQGruzutNbmREtmZcbCaQwqxJ6F64s7kmnIe84dRj24ldpzsVg4VLuOQq6YLyJoUiivYjInIbCe6xuhYGhEq--k9GO6DXWbEfjnAt_eOP8b724qpIPJz2IpMQBLc=k-no"
+        "https://lh3.googleusercontent.com/grass-cs/AABkmLcZfJcxfnrEdPmXSidm0l0aW2SBL0MGTet4tp-kT_p8wECXP6bScgaXUvH-VVBQ28m8MBvr42CW61MTGRDC5qudWbL8vLOE8VwxvKF-n50oabYc3ydwgnZSWZH2WcTzldmC2dm8bM0elPw=k-no"
       ],
       "source": "Google",
       "review_id": "Ci9DQUlRQUNvZENodHljRjlvT25Wd1VWb3RjR2xWU1c5bFF6aHZWblJmTmxsT2RtYxAB",
       "user": {
         "name": "Anita van steen",
-        "link": "https://www.google.com/maps/contrib/116082645066281741321?hl=en-GB",
+        "link": "https://www.google.com/maps/contrib/116082645066281741321?hl=en-US",
         "contributor_id": "116082645066281741321",
         "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI2Z7sQEePRN8lbpoNrbD9ngsuunhCmiCWNFCAZgAD1SNqNCA=s120-c-rp-mo-br100",
         "local_guide": true,
@@ -41,19 +41,19 @@
     },
     {
       "position": 2,
-      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25oSFJEUkxORVpPY21reWFHeEZOVzFOYWkxNlNsRRAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOnhHRDRLNEZOcmkyaGxFNW1Nai16SlE%7C%7C?hl=en-GB",
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25oSFJEUkxORVpPY21reWFHeEZOVzFOYWkxNlNsRRAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOnhHRDRLNEZOcmkyaGxFNW1Nai16SlE%7C%7C?hl=en-US",
       "rating": 5,
       "date": "2 months ago",
       "iso_date": "2026-07-18T09:28:08Z",
       "iso_date_of_last_edit": "2026-07-18T09:28:08Z",
       "images": [
-        "https://lh3.googleusercontent.com/grass-cs/ACvplmPk7qBu8fJZBHTKYfjEh8UGBd-MVmqkWL9FnDeA_iQZXzHm7C5xg1BLZkt9lvPSmda9NsSvjaleqlS80qclptQ-bWn2OFw9yr8Dy9iLub_VT7eJ_yYTAY0QmXZaUADtIU4HXp0gSEgzWhdR=k-no"
+        "https://lh3.googleusercontent.com/grass-cs/AABkmLeUr3tgGhNR1FOaAI8pY_QVXWNDzPsXMZ1BYovMG3kJZzucMrOvtmIrLFp0Z6S8nNopjDXRkY0-6G5WrSrncLEyjlHferknbs71xNjrXVviciMea7asVV4EXkaLUWmZFs89uKS3XVHRHFLP=k-no"
       ],
       "source": "Google",
       "review_id": "Ci9DQUlRQUNvZENodHljRjlvT25oSFJEUkxORVpPY21reWFHeEZOVzFOYWkxNlNsRRAB",
       "user": {
         "name": "jacqueline Van Dorp",
-        "link": "https://www.google.com/maps/contrib/112831081577043671940?hl=en-GB",
+        "link": "https://www.google.com/maps/contrib/112831081577043671940?hl=en-US",
         "contributor_id": "112831081577043671940",
         "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK37agX9hqwyhsI9AYGotmMLtnRdMiKXgea2KrMITcP6fiDvQ=s120-c-rp-mo-br100",
         "local_guide": true,
@@ -79,7 +79,7 @@
     },
     {
       "position": 3,
-      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21sbGMyTk5TV3BUT0c5M1YzWkpjVWhUYlVaV1VXYxAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOmllc2NNSWpTOG93V3ZJcUhTbUZWUWc%7C%7C?hl=en-GB",
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21sbGMyTk5TV3BUT0c5M1YzWkpjVWhUYlVaV1VXYxAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOmllc2NNSWpTOG93V3ZJcUhTbUZWUWc%7C%7C?hl=en-US",
       "rating": 5,
       "date": "5 months ago",
       "iso_date": "2026-04-20T15:55:54Z",
@@ -88,7 +88,7 @@
       "review_id": "Ci9DQUlRQUNvZENodHljRjlvT21sbGMyTk5TV3BUT0c5M1YzWkpjVWhUYlVaV1VXYxAB",
       "user": {
         "name": "Anneke kuhlman",
-        "link": "https://www.google.com/maps/contrib/117851016081719428704?hl=en-GB",
+        "link": "https://www.google.com/maps/contrib/117851016081719428704?hl=en-US",
         "contributor_id": "117851016081719428704",
         "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIEcrmdd5TavGDTFCfIKBe2K7XAZuMZnh5dxkOGi9wP6UEDtw=s120-c-rp-mo-br100",
         "local_guide": true,
@@ -114,16 +114,16 @@
     },
     {
       "position": 4,
-      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25aVWEyNVpWRzlhU1ZaZmJ6Y3hhMnN0TUdkc1dIYxAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOnZUa25ZVG9aSVZfbzcxa2stMGdsWHc%7C%7C?hl=en-GB",
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25aVWEyNVpWRzlhU1ZaZmJ6Y3hhMnN0TUdkc1dIYxAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOnZUa25ZVG9aSVZfbzcxa2stMGdsWHc%7C%7C?hl=en-US",
       "rating": 5,
-      "date": "11 months ago",
+      "date": "a year ago",
       "iso_date": "2025-10-13T18:42:31Z",
       "iso_date_of_last_edit": "2025-10-13T18:42:31Z",
       "source": "Google",
       "review_id": "Ci9DQUlRQUNvZENodHljRjlvT25aVWEyNVpWRzlhU1ZaZmJ6Y3hhMnN0TUdkc1dIYxAB",
       "user": {
         "name": "Kathy van Zweden",
-        "link": "https://www.google.com/maps/contrib/115857969548582058268?hl=en-GB",
+        "link": "https://www.google.com/maps/contrib/115857969548582058268?hl=en-US",
         "contributor_id": "115857969548582058268",
         "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWiGipeBgtvagEPg21X4JKzaCJKmScBXwfpYUbQybOSVyLrpv6vwg=s120-c-rp-mo-ba12-br100",
         "local_guide": true,
@@ -137,7 +137,7 @@
       },
       "likes": 0,
       "response": {
-        "date": "11 months ago",
+        "date": "a year ago",
         "iso_date": "2025-10-14T06:58:26Z",
         "iso_date_of_last_edit": "2025-10-14T06:58:26Z",
         "snippet": "Wat superlief Kathy, dankjewel voor je mooie woorden! 💖\nIk vond het weer onwijs gezellig met je in de salon en ben blij dat je zo tevreden bent met het resultaat. Heerlijk om te horen dat je helemaal kon ontspannen tijdens de behandeling 🥰\nTot de volgende keer met je prachtige brows!✨\n\nLiefs,\nMarissa – Glamour by Tink 💫",
@@ -149,16 +149,16 @@
     },
     {
       "position": 5,
-      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25wYVkxWkRXSGx6WDBseVNIWjJjbHBaYzFabWVVRRAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOnpaY1ZDWHlzX0lySHZ2clpZc1ZmeUE%7C%7C?hl=en-GB",
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25wYVkxWkRXSGx6WDBseVNIWjJjbHBaYzFabWVVRRAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOnpaY1ZDWHlzX0lySHZ2clpZc1ZmeUE%7C%7C?hl=en-US",
       "rating": 5,
-      "date": "7 months ago",
+      "date": "8 months ago",
       "iso_date": "2026-02-12T16:40:19Z",
       "iso_date_of_last_edit": "2026-02-12T16:40:19Z",
       "source": "Google",
       "review_id": "Ci9DQUlRQUNvZENodHljRjlvT25wYVkxWkRXSGx6WDBseVNIWjJjbHBaYzFabWVVRRAB",
       "user": {
         "name": "S Winkelaar-Zabel",
-        "link": "https://www.google.com/maps/contrib/114547734667531338678?hl=en-GB",
+        "link": "https://www.google.com/maps/contrib/114547734667531338678?hl=en-US",
         "contributor_id": "114547734667531338678",
         "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVYVm-gYTwRFdYEZyBwW2mAR3my7AgqaELcMif_polfq3qbJTU=s120-c-rp-mo-br100",
         "local_guide": true,
@@ -428,7 +428,7 @@
       "iso_date": "2025-03-25T13:53:52Z",
       "iso_date_of_last_edit": "2025-03-25T13:53:52Z",
       "images": [
-        "https://lh3.googleusercontent.com/grass-cs/AABkmLeE1sJRKdI8SjtYTNILaRrZTlgtFibJrJIxzsNDHgud2WrUYYgw68jWM161v9LCndvR3gerwJ9Iz78msnxQNBRqW54ZFcNvKKFA1t0KT9T9Vx4xfEliJp76sI3L8jrXKXmmCDKv=k-no"
+        "https://lh3.googleusercontent.com/grass-cs/AABkmLcZpozeiGOs3W9PAJjA1pbYdgacuVLlBWYLn-lekSjaq8Qkg5crpt8WCEX2qtJdQmPw6e_0LYsybPg1jF_vEVbkxNqenQgc9YR6d0xMVN4ZOd4ty2Q5VniM17jhi_kKt9YBYUNH=k-no"
       ],
       "source": "Google",
       "review_id": "ChZDSUhNMG9nS0VJQ0FnTUR3aHZyWkFREAE",
@@ -499,7 +499,7 @@
       "iso_date": "2024-01-18T21:27:44Z",
       "iso_date_of_last_edit": "2024-01-18T21:31:22Z",
       "images": [
-        "https://lh3.googleusercontent.com/grass-cs/AABkmLcfLpoP9t9WAjVvQWUVBhjXD9ka88896a9vNe9ABTOofboVvYmp7mXF2vZ4D8JAoxeAsExMnj2aATbfxFimwmRsoxsGTTkuDd7p8Uhu8zjZk3ClHGNivhvDtABEwnvqMCe4JN_aCg=k-no"
+        "https://lh3.googleusercontent.com/grass-cs/AABkmLeP62ZhuRJ0ddldBdpKdk-5Nb_zNVWdn2VfqxchT2PAGQ9tJTR55CDzzXYEFhcxFs68ny3lkJn9xEpDpiU73_I1aNRDYoPHgYowCWe4HnAWZ1U36zTzmXDDsGsvuKMzZtPmAOb9YA=k-no"
       ],
       "source": "Google",
       "review_id": "ChdDSUhNMG9nS0VJQ0FnSUNOdDYzdzJnRRAB",
@@ -532,7 +532,7 @@
       "position": 1,
       "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2poMGFrRm5kVlk0YVZKVk5tSXdSMHQ2Vm05Uk0xRRAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOjh0akFndVY4aVJVNmIwR0t6Vm9RM1E%7C%7C?hl=en",
       "rating": 5,
-      "date": "9 months ago",
+      "date": "10 months ago",
       "iso_date": "2025-12-11T10:58:47Z",
       "iso_date_of_last_edit": "2025-12-11T10:58:47Z",
       "source": "Google",
@@ -570,8 +570,8 @@
       "iso_date": "2024-01-10T15:17:37Z",
       "iso_date_of_last_edit": "2024-01-10T15:17:37Z",
       "images": [
-        "https://lh3.googleusercontent.com/grass-cs/ACvplmPanCY35JzXXtjQi-T322G7AY3_LEwjOWmOHICs-ygJz3RZbCID49U3q2aclenU1hHereDLAQRFgetQ_x7e2SI30K9LNjPN-nrZ3nRPYvZABnzff5N3z6qTrntQKM4mk8ezxCzI=k-no",
-        "https://lh3.googleusercontent.com/grass-cs/ACvplmP3GccufPXHAZv9NDVIbJ9QflMJ3uxPaB1eHWit_UbbeK-JvkZRcKAX_fcSGFQhHIB6VHYIs_HskRVU5inmEvo5DcRjxpf8tprPwILJDnilJDhR9kvP6cxDfBBXfCIdabJmujIA=k-no"
+        "https://lh3.googleusercontent.com/grass-cs/AABkmLd32ZS4_VJBWKyIfCSlw8_vuXUfCu0boKQ0VUeOrZR3CtSwAQGa0jdUwxkXbPtayFUI7dMjHuuHBY9heYOESZEThqveTfkPdP9UBLBOL5Wh3Wdmt2Fatr_FkPt2-Tbgk5ljCR6p=k-no",
+        "https://lh3.googleusercontent.com/grass-cs/AABkmLf83OEcxMlSWZ_AqERJfqtP3U1k2YVH2FQqcNoWA2fG_Oup2-wxxg3lE3U-0KYXw5ddTqN0KYIlO4ZsFCvPyK4zHrJuouaEdcgHhUC9Sn92s7mIhYlkGky4Vh8I0XExfQQ7yPVZ=k-no"
       ],
       "source": "Google",
       "review_id": "ChdDSUhNMG9nS0VJQ0FnSUQxaDhqS3BnRRAB",
@@ -676,10 +676,10 @@
       "iso_date": "2025-04-01T16:04:50Z",
       "iso_date_of_last_edit": "2025-04-01T16:04:50Z",
       "images": [
-        "https://lh3.googleusercontent.com/grass-cs/ACvplmO3lLMPqbHYLAgbC96gmpcf9vqIp8IHvTf3U37G95t8ZygFAJKViZzQNByzwSkjZxNpdav5cvlJL-TC5MG2LVjpMkZipNKv-EqPoadn0a79lxCMYft0yjhLN0oRmfDnIdU1iIO9=k-no",
-        "https://lh3.googleusercontent.com/grass-cs/ACvplmOXSScAKmWqZBQGUigwKLYYtVKG3TROkGfdtLtQARgyVfyTRErgYvKTeVXRQGvyMCrHFDQ4GRp0sNuxZezK9nwByb75D4R9M8GF3FCQbeK7MLLCmPPstHGNAHtrMuseMOmFo4Xy1g=k-no",
-        "https://lh3.googleusercontent.com/grass-cs/ACvplmPxIOFk03XUv8NtfaphnTNzeUP-aoV-rzDv3gBRQRA5tildAlce-ACeoN4-H-tZRUQspvIoB97ZRfMl02AW8Jp_1PMBTPgHaA1EvgssMtlezbv0J3D8eJl-BYkc1n7aP0uvZFIO=k-no",
-        "https://lh3.googleusercontent.com/grass-cs/ACvplmOfOVGlCruB5UgXgzdCOSoZ2TwwvXUMlLUFYxCtlROC3A_fYPOwqXSI5mc2krxsofqpLmRh12pe6EYhNk3d2ZdV2v6MZrG3TqFgAmuZw2a074Phj4L36vDWnmPOqfw9vwRSiZgg=k-no"
+        "https://lh3.googleusercontent.com/grass-cs/AABkmLcipDQID7rwzOF7EBlMtKAGEfBIwQ7oarjtRgmyUf8myZtx-PXit28n9RPMkXgrC5w-sfvInR3b35jF_o_nFM0gUNJEPwzJ3EL7X63UeTbmuOfHI_B4SHPS4clhjOgqol2c-Ya-=k-no",
+        "https://lh3.googleusercontent.com/grass-cs/AABkmLd9kJms5TXpDxPzEP87fxqfC2BOscbDasKJAZjBPS_asv-yZC28_ftXq1nYxH44NnsQTSeAjzxk3ur4IxsAezAqihB4LM7SfxNIq5E7onidhrMPXMrn_IW1VWoCmPdXl87iOH6maQ=k-no",
+        "https://lh3.googleusercontent.com/grass-cs/AABkmLce9Sr6rGgTaMuCtKLrjeVk0ltIa_RtCJX8xQqSn79xPfrw8FxEnscbbA2IrI5HtQjWol8w4dh8pgjnJ1DbCKsr2Sq9yu-IvyhG5Cg_jhVx2M-M9-PpvJmAJzWRBgw2JKMR2r4J=k-no",
+        "https://lh3.googleusercontent.com/grass-cs/AABkmLfk-6KrOGsYsrh-GUK2qa3SzFV5zePb1RsY2gpyUYs0djvVSbBDss2cYXBMoZRmid4GTJDBIpS7h8Z2ZS2csSgaT7v0_1emGPGta_KC6FAjcnx_NFGTakPR0nSl5y6BoZgyTQUq=k-no"
       ],
       "source": "Google",
       "review_id": "ChdDSUhNMG9nS0VJQ0FnTUNJbHZiLXNRRRAB",
@@ -762,7 +762,7 @@
       "snippet": "Ik ben 29 april bij marissa geweest voor mijn wenkbrauwen het was een ontzettende fijne ervaring\nMarissa legt alles goed uit neemt.alle tijd en werkt ontzettende vakkundig ook de salon is prachtig ik kijk ernual uit naar mijn toch up behandeling over een aantal weken die afspraak heb ik al direct na de behandeling gemaakt ik raad ook iedereen aan wil je iets moois en vakkundig laten doen kies voor glamour by think",
       "extracted_snippet": {
         "original": "Ik ben 29 april bij marissa geweest voor mijn wenkbrauwen het was een ontzettende fijne ervaring\nMarissa legt alles goed uit neemt.alle tijd en werkt ontzettende vakkundig ook de salon is prachtig ik kijk ernual uit naar mijn toch up behandeling over een aantal weken die afspraak heb ik al direct na de behandeling gemaakt ik raad ook iedereen aan wil je iets moois en vakkundig laten doen kies voor glamour by think",
-        "translated": "I went to Marissa on April 29th for my eyebrows. It was a wonderful experience.\nMarissa explains everything well, takes all the time, and works incredibly professionally. The salon is also beautiful. I'm really looking forward to my Toch Up treatment in a few weeks. I made an appointment right after the treatment. I recommend everyone who wants something beautiful and professionally done to choose Glamour by Think."
+        "translated": "I visited Marissa on April 29th for my eyebrows; it was an incredibly pleasant experience.\nMarissa explains everything well, takes her time, and works incredibly professionally. The salon is also beautiful. I am already looking forward to my touch-up treatment in a few weeks; I made that appointment immediately after the treatment. I also recommend everyone: if you want something beautiful and professionally done, choose Glamour by Think."
       },
       "likes": 0,
       "response": {
@@ -1056,7 +1056,7 @@
       "iso_date": "2025-08-22T11:20:38Z",
       "iso_date_of_last_edit": "2025-08-22T11:20:38Z",
       "images": [
-        "https://lh3.googleusercontent.com/grass-cs/AABkmLd-8fvkDQkVlVy0BZLAbrnajl0GNK3e5nMgpwPwP9oWUzIlrUO7IzFMb9CRA9YE9-9wrmGK9tqyFMkAQxGqIsHe0wxrBUSsqNo0TsAPnnPoa2JFkx74jpfgI2nQo7JA82GtSwl4jCcy-un6=k-no"
+        "https://lh3.googleusercontent.com/grass-cs/AABkmLesPK66ZWaAI5Hxcx-gagS9pnjhvW-tGbBhfd45uiqbTgzOz1-UQdhfZXc0ufeqPrOOYL62z-re1orAo__uDg3zho9peebTTdONnxoSBbuiT0ZupVGa7TXGWYHepMRTSx6VJnsv-5pdTm98=k-no"
       ],
       "source": "Google",
       "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2tsWGJuRkdRWGxWWW5GcVdrTkZjSEpJV0VOa1dsRRAB",
@@ -1215,7 +1215,7 @@
       "position": 1,
       "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2toZlVHbHZNRzl3ZVVOZmNHeE1SbmRSYjBaTlkxRRAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOkhfUGlvMG9weUNfcGxMRndRb0ZNY1E%7C%7C?hl=en",
       "rating": 5,
-      "date": "9 months ago",
+      "date": "10 months ago",
       "iso_date": "2025-12-10T10:05:43Z",
       "iso_date_of_last_edit": "2025-12-10T10:05:43Z",
       "source": "Google",
@@ -1235,7 +1235,7 @@
       },
       "likes": 0,
       "response": {
-        "date": "9 months ago",
+        "date": "10 months ago",
         "iso_date": "2025-12-10T20:06:24Z",
         "iso_date_of_last_edit": "2025-12-10T20:06:24Z",
         "snippet": "Bedankt voor je mooie woorden 🥰🙏🏻",
@@ -1487,7 +1487,7 @@
       "position": 9,
       "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pkbGN6bHRUa042UmtsbFYzVllNVzVmTlhKQlJXYxAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOjdlczltTkN6RkllV3VYMW5fNXJBRWc%7C%7C?hl=en",
       "rating": 5,
-      "date": "3 weeks ago",
+      "date": "a month ago",
       "iso_date": "2026-09-10T10:14:21Z",
       "iso_date_of_last_edit": "2026-09-10T10:14:21Z",
       "source": "Google",
@@ -1507,7 +1507,7 @@
       },
       "likes": 0,
       "response": {
-        "date": "3 weeks ago",
+        "date": "a month ago",
         "iso_date": "2026-09-11T06:54:34Z",
         "iso_date_of_last_edit": "2026-09-11T06:54:34Z",
         "snippet": "Dank je wel voor je mooie review, Petra! 🥰✨ Superfijn om te horen dat je zo blij bent met je Powder Brows en dat je je gehoord voelde tijdens de behandeling. Heel veel plezier met je nieuwe wenkbrauwen! 🤍",
@@ -1521,7 +1521,7 @@
       "position": 10,
       "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25CSVdWRlBkbmhrV2tOYVZucHJPRmx2V0VocldYYxAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOnBIWVFPdnhkWkNaVnprOFlvWEhrWXc%7C%7C?hl=en",
       "rating": 5,
-      "date": "4 weeks ago",
+      "date": "a month ago",
       "iso_date": "2026-09-08T12:55:55Z",
       "iso_date_of_last_edit": "2026-09-08T12:55:55Z",
       "source": "Google",
@@ -1541,7 +1541,7 @@
       },
       "likes": 0,
       "response": {
-        "date": "4 weeks ago",
+        "date": "a month ago",
         "iso_date": "2026-09-08T14:17:30Z",
         "iso_date_of_last_edit": "2026-09-08T14:17:30Z",
         "snippet": "Dank je wel lieve Iris🤍✨\nWat een super mooie review. Fijn dat je het zo ontspannen hebt ervaren bij ons in de salon. 🥰✨ heel graag gedaan 🙏🏻✨",
@@ -1559,7 +1559,7 @@
       "iso_date": "2026-08-17T10:38:26Z",
       "iso_date_of_last_edit": "2026-08-17T10:38:26Z",
       "images": [
-        "https://lh3.googleusercontent.com/grass-cs/ACvplmOV2C2Ob5kv3D8jivhVGM9G_omxEDlavADg3ny9MAhk_fvdILR_JwVy2sCp5lTcehTAUhBK5ULOOr6srFeKjyXsHwq7LSbQf8XHldBPbesIwZtoIK-R22vxc7I481oGIsDjX0_gWI6PCoWn=k-no"
+        "https://lh3.googleusercontent.com/grass-cs/AABkmLdqh-N65eoefrc14paE5ydLTWxRsp7srYWIJ2mOqVc2wF5Cc2pAJ9wbwjhJvsZFIkb5yCnORG0N8ndsvuIzQT23fgKyw-KYmf6rOkMTOHErAXl9zEbrRd4DHBaKPedFgLCkRFi0buRHsrIO=k-no"
       ],
       "source": "Google",
       "review_id": "Ci9DQUlRQUNvZENodHljRjlvT21scmJVNTFNMGhrYldKWmF6WlJhbnBvTkRSalFuYxAB",
@@ -1592,7 +1592,7 @@
       "position": 2,
       "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNOX183V2FBEAE!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CIHM0ogKEICAgICN__7WaA%7C%7C?hl=en",
       "rating": 5,
-      "date": "Edited a month ago",
+      "date": "Edited 2 months ago",
       "iso_date": "2024-01-19T14:07:21Z",
       "iso_date_of_last_edit": "2026-08-11T19:42:19Z",
       "source": "Google",
