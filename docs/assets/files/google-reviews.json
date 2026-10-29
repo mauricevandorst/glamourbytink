@@ -1,24 +1,23 @@
 {
-  "updatedAt": "2026-10-22T04:34:28.250Z",
+  "updatedAt": "2026-10-29T04:28:01.799Z",
   "reviews": [
     {
       "position": 1,
-      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25Wd1VWb3RjR2xWU1c5bFF6aHZWblJmTmxsT2RtYxAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOnVwUVotcGlVSW9lQzhvVnRfNllOdmc%7C%7C?hl=en-US",
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25Wd1VWb3RjR2xWU1c5bFF6aHZWblJmTmxsT2RtYxAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOnVwUVotcGlVSW9lQzhvVnRfNllOdmc%7C%7C?hl=en",
       "rating": 5,
       "date": "2 months ago",
       "iso_date": "2026-08-20T12:02:26Z",
       "iso_date_of_last_edit": "2026-08-20T12:05:19Z",
       "images": [
-        "https://lh3.googleusercontent.com/grass-cs/AABkmLcY5JpllosMaprYo3xQ4Wd1TCSvM6-HZOexExyz7gGW619X4er13IqvGL6Gl-4tWIOysGJbXp-C0Jm-_wT6GtwBPTwBcJx3BHRrpjefz9XBcqQPy_9hq4XQurBEYr99GH_oNa88T4jx7QU=k-no"
+        "https://lh3.googleusercontent.com/grass-cs/AABkmLciCCvnuwAr4ih-C7x0D4PQzgcbhzGBzom7FnkmZtq_8OYKqbZjBvT0rgFs0GPTu6QciHnoqev1XABOcXiVM1-Jb3a7ZrnoGvSKFcZNyq3h0D_pRvqrmWYrnQ0zbcxJmQOvIUc-1_NRpZ8=k-no"
       ],
       "source": "Google",
       "review_id": "Ci9DQUlRQUNvZENodHljRjlvT25Wd1VWb3RjR2xWU1c5bFF6aHZWblJmTmxsT2RtYxAB",
       "user": {
         "name": "Anita van steen",
-        "link": "https://www.google.com/maps/contrib/116082645066281741321?hl=en-US",
+        "link": "https://www.google.com/maps/contrib/116082645066281741321?hl=en",
         "contributor_id": "116082645066281741321",
         "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI2Z7sQEePRN8lbpoNrbD9ngsuunhCmiCWNFCAZgAD1SNqNCA=s120-c-rp-mo-br100",
-        "local_guide": true,
         "reviews": 2,
         "photos": 1
       },
@@ -29,7 +28,7 @@
       },
       "likes": 0,
       "response": {
-        "date": "a month ago",
+        "date": "2 months ago",
         "iso_date": "2026-08-27T17:25:45Z",
         "iso_date_of_last_edit": "2026-08-27T17:25:45Z",
         "snippet": "Dankjewel Anita voor je lieve review! 🥰 Heel fijn om te horen dat je je op je gemak voelde en dat de behandeling zo is meegevallen. En inderdaad… na de genezing worden de wenkbrauwen alleen maar zachter en natuurlijker. Heel veel plezier met je mooie nieuwe brows! 🤎✨",
@@ -41,22 +40,21 @@
     },
     {
       "position": 2,
-      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25oSFJEUkxORVpPY21reWFHeEZOVzFOYWkxNlNsRRAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOnhHRDRLNEZOcmkyaGxFNW1Nai16SlE%7C%7C?hl=en-US",
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25oSFJEUkxORVpPY21reWFHeEZOVzFOYWkxNlNsRRAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOnhHRDRLNEZOcmkyaGxFNW1Nai16SlE%7C%7C?hl=en",
       "rating": 5,
       "date": "3 months ago",
       "iso_date": "2026-07-18T09:28:08Z",
       "iso_date_of_last_edit": "2026-07-18T09:28:08Z",
       "images": [
-        "https://lh3.googleusercontent.com/grass-cs/AABkmLdhoFar3RIBuEOihXBg0akna-5NTw4sQzpFSXWaD4j4z6pLio5a-szzMcYofZtoGHNRLojUWs6Aw0BotEz0qI6qTnP-DEoSnqP_bD6V5ZcTwpY7JEp0EIiMijjRjpYfEVWmMcnbx_V5O-Vu=k-no"
+        "https://lh3.googleusercontent.com/grass-cs/AABkmLcCBdV6mJAm9DCGyaYywvUW5XYQhJAiBAxdVn8vvYKKz1t247uMFRLq347CO11keoQpbleZWEMgHn1RcRVpOpxSyj7Ii6ZSQrVcz0UiRPG1OL-Vym_IW8QfzA5EKaozVF9xhtOchob8vxMc=k-no"
       ],
       "source": "Google",
       "review_id": "Ci9DQUlRQUNvZENodHljRjlvT25oSFJEUkxORVpPY21reWFHeEZOVzFOYWkxNlNsRRAB",
       "user": {
         "name": "jacqueline Van Dorp",
-        "link": "https://www.google.com/maps/contrib/112831081577043671940?hl=en-US",
+        "link": "https://www.google.com/maps/contrib/112831081577043671940?hl=en",
         "contributor_id": "112831081577043671940",
         "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK37agX9hqwyhsI9AYGotmMLtnRdMiKXgea2KrMITcP6fiDvQ=s120-c-rp-mo-br100",
-        "local_guide": true,
         "reviews": 2,
         "photos": 1
       },
@@ -79,7 +77,7 @@
     },
     {
       "position": 3,
-      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21sbGMyTk5TV3BUT0c5M1YzWkpjVWhUYlVaV1VXYxAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOmllc2NNSWpTOG93V3ZJcUhTbUZWUWc%7C%7C?hl=en-US",
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21sbGMyTk5TV3BUT0c5M1YzWkpjVWhUYlVaV1VXYxAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOmllc2NNSWpTOG93V3ZJcUhTbUZWUWc%7C%7C?hl=en",
       "rating": 5,
       "date": "6 months ago",
       "iso_date": "2026-04-20T15:55:54Z",
@@ -88,10 +86,9 @@
       "review_id": "Ci9DQUlRQUNvZENodHljRjlvT21sbGMyTk5TV3BUT0c5M1YzWkpjVWhUYlVaV1VXYxAB",
       "user": {
         "name": "Anneke kuhlman",
-        "link": "https://www.google.com/maps/contrib/117851016081719428704?hl=en-US",
+        "link": "https://www.google.com/maps/contrib/117851016081719428704?hl=en",
         "contributor_id": "117851016081719428704",
         "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIEcrmdd5TavGDTFCfIKBe2K7XAZuMZnh5dxkOGi9wP6UEDtw=s120-c-rp-mo-br100",
-        "local_guide": true,
         "reviews": 8,
         "photos": 0
       },
@@ -114,71 +111,69 @@
     },
     {
       "position": 4,
-      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25aVWEyNVpWRzlhU1ZaZmJ6Y3hhMnN0TUdkc1dIYxAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOnZUa25ZVG9aSVZfbzcxa2stMGdsWHc%7C%7C?hl=en-US",
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pkbGN6bHRUa042UmtsbFYzVllNVzVmTlhKQlJXYxAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOjdlczltTkN6RkllV3VYMW5fNXJBRWc%7C%7C?hl=en",
       "rating": 5,
-      "date": "a year ago",
-      "iso_date": "2025-10-13T18:42:31Z",
-      "iso_date_of_last_edit": "2025-10-13T18:42:31Z",
+      "date": "a month ago",
+      "iso_date": "2026-09-10T10:14:21Z",
+      "iso_date_of_last_edit": "2026-09-10T10:14:21Z",
       "source": "Google",
-      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT25aVWEyNVpWRzlhU1ZaZmJ6Y3hhMnN0TUdkc1dIYxAB",
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2pkbGN6bHRUa042UmtsbFYzVllNVzVmTlhKQlJXYxAB",
       "user": {
-        "name": "Kathy van Zweden",
-        "link": "https://www.google.com/maps/contrib/115857969548582058268?hl=en-US",
-        "contributor_id": "115857969548582058268",
-        "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWiGipeBgtvagEPg21X4JKzaCJKmScBXwfpYUbQybOSVyLrpv6vwg=s120-c-rp-mo-ba12-br100",
-        "local_guide": true,
-        "reviews": 11,
-        "photos": 0
+        "name": "Petra S",
+        "link": "https://www.google.com/maps/contrib/105320981018328907456?hl=en",
+        "contributor_id": "105320981018328907456",
+        "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK5QIMIWaNVJSXt71Vul4xnyMXnGfoGiDuXfHuEoY1Tk5fTPQ=s120-c-rp-mo-br100",
+        "reviews": 10,
+        "photos": 4
       },
-      "snippet": "Vandaag weer bij Marissa geweest voor de touch-up. Even de puntje op de i zetten, waar ze zeker de tijd voor neemt. Vooraf goed advies gehad over de kleur. Ze wil echt het beste en het mooiste voor je wenkbrauwen.  Een fijne sfeer en lekkere muziek , ik lag helamaal zen in de stoel. Marissa dank je wel voor mijn super mooie wenkbrauwen !💕",
+      "snippet": "Super blij met m’n powderbrows.\n\nZe meten je natuurlijk wenkbrauwen eerst uit en luisteren heel goed naar je wensen 🥰",
       "extracted_snippet": {
-        "original": "Vandaag weer bij Marissa geweest voor de touch-up. Even de puntje op de i zetten, waar ze zeker de tijd voor neemt. Vooraf goed advies gehad over de kleur. Ze wil echt het beste en het mooiste voor je wenkbrauwen.  Een fijne sfeer en lekkere muziek , ik lag helamaal zen in de stoel. Marissa dank je wel voor mijn super mooie wenkbrauwen !💕",
-        "translated": "I visited Marissa again today for a touch-up. Just putting the finishing touches on things, for which she certainly takes her time. I received good advice regarding the color beforehand. She really wants the best and most beautiful for your eyebrows. A lovely atmosphere and nice music; I was completely zen in the chair. Marissa, thank you so much for my super beautiful eyebrows! 💕"
+        "original": "Super blij met m’n powderbrows.\n\nZe meten je natuurlijk wenkbrauwen eerst uit en luisteren heel goed naar je wensen 🥰",
+        "translated": "Super happy with my powder brows.\n\nThey measure out your natural eyebrows first and listen very carefully to your wishes 🥰"
       },
       "likes": 0,
       "response": {
-        "date": "a year ago",
-        "iso_date": "2025-10-14T06:58:26Z",
-        "iso_date_of_last_edit": "2025-10-14T06:58:26Z",
-        "snippet": "Wat superlief Kathy, dankjewel voor je mooie woorden! 💖\nIk vond het weer onwijs gezellig met je in de salon en ben blij dat je zo tevreden bent met het resultaat. Heerlijk om te horen dat je helemaal kon ontspannen tijdens de behandeling 🥰\nTot de volgende keer met je prachtige brows!✨\n\nLiefs,\nMarissa – Glamour by Tink 💫",
+        "date": "a month ago",
+        "iso_date": "2026-09-11T06:54:34Z",
+        "iso_date_of_last_edit": "2026-09-11T06:54:34Z",
+        "snippet": "Dank je wel voor je mooie review, Petra! 🥰✨ Superfijn om te horen dat je zo blij bent met je Powder Brows en dat je je gehoord voelde tijdens de behandeling. Heel veel plezier met je nieuwe wenkbrauwen! 🤍",
         "extracted_snippet": {
-          "original": "Wat superlief Kathy, dankjewel voor je mooie woorden! 💖\nIk vond het weer onwijs gezellig met je in de salon en ben blij dat je zo tevreden bent met het resultaat. Heerlijk om te horen dat je helemaal kon ontspannen tijdens de behandeling 🥰\nTot de volgende keer met je prachtige brows!✨\n\nLiefs,\nMarissa – Glamour by Tink 💫",
-          "translated": "That's so sweet Kathy, thank you for your kind words! 💖\nI really enjoyed spending time with you in the salon again and I'm glad you are so satisfied with the result. It's wonderful to hear that you were able to completely relax during the treatment 🥰\nSee you next time with your beautiful brows! ✨\n\nLove,\nMarissa – Glamour by Tink 💫"
+          "original": "Dank je wel voor je mooie review, Petra! 🥰✨ Superfijn om te horen dat je zo blij bent met je Powder Brows en dat je je gehoord voelde tijdens de behandeling. Heel veel plezier met je nieuwe wenkbrauwen! 🤍",
+          "translated": "Thank you for your lovely review, Petra! 🥰✨ It is wonderful to hear that you are so happy with your Powder Brows and that you felt heard during the treatment. Enjoy your new eyebrows! 🤍"
         }
       }
     },
     {
       "position": 5,
-      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25wYVkxWkRXSGx6WDBseVNIWjJjbHBaYzFabWVVRRAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOnpaY1ZDWHlzX0lySHZ2clpZc1ZmeUE%7C%7C?hl=en-US",
+      "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25CSVdWRlBkbmhrV2tOYVZucHJPRmx2V0VocldYYxAB!2m1!1s0x0:0x123915b5e35552e!3m1!1s2@1:CAIQACodChtycF9oOnBIWVFPdnhkWkNaVnprOFlvWEhrWXc%7C%7C?hl=en",
       "rating": 5,
-      "date": "8 months ago",
-      "iso_date": "2026-02-12T16:40:19Z",
-      "iso_date_of_last_edit": "2026-02-12T16:40:19Z",
+      "date": "a month ago",
+      "iso_date": "2026-09-08T12:55:55Z",
+      "iso_date_of_last_edit": "2026-09-08T12:55:55Z",
       "source": "Google",
-      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT25wYVkxWkRXSGx6WDBseVNIWjJjbHBaYzFabWVVRRAB",
+      "review_id": "Ci9DQUlRQUNvZENodHljRjlvT25CSVdWRlBkbmhrV2tOYVZucHJPRmx2V0VocldYYxAB",
       "user": {
-        "name": "S Winkelaar-Zabel",
-        "link": "https://www.google.com/maps/contrib/114547734667531338678?hl=en-US",
-        "contributor_id": "114547734667531338678",
-        "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVYVm-gYTwRFdYEZyBwW2mAR3my7AgqaELcMif_polfq3qbJTU=s120-c-rp-mo-br100",
-        "local_guide": true,
-        "reviews": 5,
+        "name": "Iris",
+        "link": "https://www.google.com/maps/contrib/100633828234289934867?hl=en",
+        "contributor_id": "100633828234289934867",
+        "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJMTxmfJQLGHp-IX7GhCDall7-NchLSHTV-C470x1Iq-oottg=s120-c-rp-mo-br100",
+        "reviews": 2,
         "photos": 0
       },
-      "snippet": "Ben hier erg vriendelijk ontvangen in een prachtige salon door Marissa. Vooraf alles goed besproken en het resultaat……. Geweldig! Heel erg bedankt voor m’n mooie wenkbrauwen. Ik ben er erg blij mee. Dus dames bij twijfel???? Glamour by Tink 👍",
+      "snippet": "Een hele lieve meid die precies weet wat ze doet! Er hangt een fijne, relaxte en ontspannen sfeer. Ik ben superblij met het resultaat. Thank youuuu! ❤️",
       "extracted_snippet": {
-        "original": "Ben hier erg vriendelijk ontvangen in een prachtige salon door Marissa. Vooraf alles goed besproken en het resultaat……. Geweldig! Heel erg bedankt voor m’n mooie wenkbrauwen. Ik ben er erg blij mee. Dus dames bij twijfel???? Glamour by Tink 👍",
-        "translated": "I received a very friendly welcome at Marissa's beautiful salon. We discussed everything thoroughly beforehand, and the result... Fantastic! Thank you so much for my beautiful eyebrows. I'm thrilled with them. So, ladies, if you're unsure, go for Glamour by Tink 👍"
+        "original": "Een hele lieve meid die precies weet wat ze doet! Er hangt een fijne, relaxte en ontspannen sfeer. Ik ben superblij met het resultaat. Thank youuuu! ❤️",
+        "translated": "A very sweet girl who knows exactly what she's doing! There's a nice, relaxed, and laid-back atmosphere. I am super happy with the result. Thank youuuu! ❤️"
       },
       "likes": 0,
       "response": {
-        "date": "8 months ago",
-        "iso_date": "2026-02-16T14:18:17Z",
-        "iso_date_of_last_edit": "2026-02-16T14:18:17Z",
-        "snippet": "Lieve S,\nWat een mooie woorden, dankjewel! 🤍 Superfijn om te horen dat je je welkom voelde en zo blij bent met je wenkbrauwen. Dat is precies waar ik het voor doe! Geniet van je prachtige brows en bedankt voor je vertrouwen in Glamour by Tink ✨",
+        "date": "a month ago",
+        "iso_date": "2026-09-08T14:17:30Z",
+        "iso_date_of_last_edit": "2026-09-08T14:17:30Z",
+        "snippet": "Dank je wel lieve Iris🤍✨\nWat een super mooie review. Fijn dat je het zo ontspannen hebt ervaren bij ons in de salon. 🥰✨ heel graag gedaan 🙏🏻✨",
         "extracted_snippet": {
-          "original": "Lieve S,\nWat een mooie woorden, dankjewel! 🤍 Superfijn om te horen dat je je welkom voelde en zo blij bent met je wenkbrauwen. Dat is precies waar ik het voor doe! Geniet van je prachtige brows en bedankt voor je vertrouwen in Glamour by Tink ✨",
-          "translated": "Dear S,\nWhat beautiful words, thank you! 🤍 So glad to hear you felt welcome and are so happy with your eyebrows. That's exactly what I do it for! Enjoy your beautiful brows and thank you for your trust in Glamour by Tink ✨"
+          "original": "Dank je wel lieve Iris🤍✨\nWat een super mooie review. Fijn dat je het zo ontspannen hebt ervaren bij ons in de salon. 🥰✨ heel graag gedaan 🙏🏻✨",
+          "translated": "Thank you so much, dear Iris🤍✨\nWhat a wonderful review. I'm glad you had such a relaxing experience at our salon. 🥰✨ You're very welcome 🙏🏻✨"
         }
       }
     }
